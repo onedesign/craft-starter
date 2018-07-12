@@ -3,8 +3,8 @@
  * Craft web bootstrap file
  */
 
-// Set path constants
-define('CRAFT_BASE_PATH', dirname(__DIR__));
+// Set path constants (uses absolute path to avoid caching issues with php-fpm and atomic deploys using symlinks)
+define('CRAFT_BASE_PATH', realpath(dirname(__DIR__)));
 define('CRAFT_VENDOR_PATH', CRAFT_BASE_PATH.'/vendor');
 
 // Load Composer's autoloader
