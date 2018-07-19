@@ -50,5 +50,5 @@ return [
 
   // The prefix to use when naming tables.
   // This can be no more than 5 characters.
-  'tablePrefix' => getenv('APP_DB_TABLE_PREFIX'),
+  'tablePrefix' => $databaseConfig['tablePrefix'],
 ];

@@ -21,7 +21,6 @@
   "require": {
     "php": "^7.1",
     "ext-imagick": "*",
-    "ext-gd": "*",
     "ext-mbstring": "*",
     "ext-mcrypt": "*",
     "ext-redis": "*",
