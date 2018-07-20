@@ -8,12 +8,27 @@
  * @see craft\config\GeneralConfig
  */
 
+// No components defined by default
+$components = [];
+
 /**
  * Converts the redis url in the ENV vars to what php expects for the session config
+ * This depends on yiisoft/yii2-redis in composer.json
  */
 if (getenv('REDIS_URL')) {
     $redisConfig = parse_url(getenv('REDIS_URL'));
-    $sessionUrl = 'tcp://' . $redisConfig['host'] . ':' . $redisConfig['port'] . '?auth=' . $redisConfig['pass'];
+
+    $components['redis'] = [
+        'class' => 'yii\redis\Connection',
+        'hostname' => $redisConfig['host'],
+        'port' => $redisConfig['port'],
+        'database' => 0,
+        'password' => $redisConfig['pass']
+    ];
+
+    $components['session'] = [
+        'class' => yii\redis\Session::class,
+    ];
 }
 
 return [
@@ -34,11 +49,8 @@ return [
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
 
-        // If redis is configured, use it for session storage
-        'overridePhpSessionLocation' => $sessionUrl ?? false,
-
-        // If redis is configured, use it for file caching, too
-        'cacheMethod' => getenv('REDIS_URL') ? 'redis' : 'file',
+        // This contains info like session, cache, redis, etc.
+        'components' => $components
     ],
 
     // Dev environment settings
