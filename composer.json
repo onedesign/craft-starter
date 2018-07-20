@@ -26,6 +26,7 @@
     "ext-redis": "*",
     "ext-zip": "*",
     "ext-intl": "*",
+    "ext-bcmath": "*",
     "craftcms/cms": "^3.0.0",
     "vlucas/phpdotenv": "^2.4.0",
     "clubstudioltd/craft-asset-rev": "^6.0",
