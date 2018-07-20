@@ -14,6 +14,7 @@
 // in the environment and that will read/parse the JAWSDB_URL
 if (getenv('DB_URL_ENV_KEY')) {
   $databaseConfig = parse_url(getenv(getenv('DB_URL_ENV_KEY')));
+  $databaseConfig['driver'] = $databaseConfig['scheme'];
 } else {
   $databaseConfig = [
     'driver' => getenv('DB_DRIVER') ?? 'mysql',
@@ -46,7 +47,7 @@ return [
   // The name of the database to select.
   'database'    => trim($databaseConfig['path'], '/'),
 
-  'schema'      => $databaseConfig['schema'];
+  'schema'      => $databaseConfig['schema'],
 
   // The prefix to use when naming tables.
   // This can be no more than 5 characters.
