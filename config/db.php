@@ -8,13 +8,23 @@
  * @see craft\config\DbConfig
  */
 
-// This grabs the dynamic env var for database URL because it may be managed automatically
-// by the hosting provider (e.g. The env contains "JAWSDB_URL=mysql://...").
-// So, we set DB_URL_ENV_KEY="JAWSDB_URL"
-// in the environment and that will read/parse the JAWSDB_URL
-if (getenv('DB_URL_ENV_KEY')) {
-  $databaseConfig = parse_url(getenv(getenv('DB_URL_ENV_KEY')));
+/**
+ * This grabs the dynamic env var for database URL because it may be managed automatically
+ * by the hosting provider (e.g. The env contains "JAWSDB_URL=mysql://...").
+ *
+ * So, we set DB_URL_ENV_KEY="JAWSDB_URL"
+ * in the environment and that will read/parse the JAWSDB_URL
+ */
+if (getenv('DB_URL_ENV_KEY') || getenv('DATABASE_URL')) {
+  if (getenv('DATABASE_URL')) {
+    $databaseConfig = parse_url(getenv('DATABASE_URL'));
+  } else {
+    $databaseConfig = parse_url(getenv(getenv('DB_URL_ENV_KEY')));
+  }
+
   $databaseConfig['driver'] = $databaseConfig['scheme'];
+
+// Fallback to default Craft config vars
 } else {
   $databaseConfig = [
     'driver' => getenv('DB_DRIVER') ?? 'mysql',
@@ -25,9 +35,6 @@ if (getenv('DB_URL_ENV_KEY')) {
     'port' => getenv('DB_PORT') ?? 3306
   ];
 }
-
-$databaseConfig['tablePrefix'] = getenv('DB_TABLE_PREFIX');
-$databaseConfig['schema'] = getenv('DB_SCHEMA');
 
 return [
   'driver' => $databaseConfig['driver'],
@@ -47,9 +54,10 @@ return [
   // The name of the database to select.
   'database'    => trim($databaseConfig['path'], '/'),
 
-  'schema'      => $databaseConfig['schema'],
+  // This is only used for Postgres Databases
+  'schema'      => getenv('DB_SCHEMA'),
 
   // The prefix to use when naming tables.
   // This can be no more than 5 characters.
-  'tablePrefix' => $databaseConfig['tablePrefix'],
+  'tablePrefix' => getenv('DB_TABLE_PREFIX'),
 ];

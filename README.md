@@ -74,6 +74,10 @@ This repo is configured to be able to run on Heroku. Since Craft doesn't come re
 - `yiisoft/yii2-redis` is included to allow for using redis for session and data caching
 - `config/db.php` and `config/general.php` have been updated to respond to certain ENV vars. See `.env.example`
 
+## Environment variables
+
+All ENV vars are documented within `.env.example`. When adding a new ENV var, be sure to add it to this file with proper comments and documentation.
+
 ## Resources
 
 #### Official Resources
