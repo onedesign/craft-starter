@@ -29,6 +29,21 @@ if (getenv('REDIS_URL')) {
     $components['session'] = [
         'class' => yii\redis\Session::class,
     ];
+
+    $components['cache'] = [
+        'class' => yii\redis\Cache::class,
+        'defaultDuration' => 86400
+    ];
+
+    // Builds the session URL required for php setting (different from REDIS_URL default)
+    $phpRedisUrl = 'tcp://' . $redisConfig['host'] . ':' . $redisConfig['port'];
+    if (!empty($redisConfig['user']) && !empty($redisConfig['pass'])) {
+        $phpRedisUrl .= "?auth=" . $redisConfig['pass'];
+    }
+
+    // Sets the URL for php
+    ini_set('session.save_handler', 'redis');
+    ini_set('session.save_path', $phpRedisUrl);
 }
 
 return [
