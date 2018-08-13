@@ -12,7 +12,7 @@ require_once CRAFT_VENDOR_PATH.'/autoload.php';
 
 // Load dotenv?
 if (file_exists(CRAFT_BASE_PATH.'/.env')) {
-    (new Dotenv\Dotenv(CRAFT_BASE_PATH))->load();
+  (new Dotenv\Dotenv(CRAFT_BASE_PATH))->load();
 }
 
 // Load and run Craft

@@ -8,6 +8,50 @@
  * @see craft\config\GeneralConfig
  */
 
+// No components defined by default
+$components = [];
+
+
+if (getenv('REDIS_URL') && !empty(getenv('REDIS_URL'))) {
+    /**
+     * This converts the redis url in the ENV vars to what php expects for the session config
+     * This depends on yiisoft/yii2-redis in composer.json
+     */
+    $redisConfig = parse_url(getenv('REDIS_URL'));
+
+    // Adds the redis connection info for use by the session and cache components
+    $components['redis'] = [
+        'class' => 'yii\redis\Connection',
+        'hostname' => $redisConfig['host'],
+        'port' => $redisConfig['port'],
+        'database' => 0,
+        'password' => $redisConfig['pass']
+    ];
+
+    // Configures the session to use the redis adapter
+    $components['session'] = [
+        'class' => yii\redis\Session::class,
+    ];
+
+    // Configures the data cache layer to use the redis adapter
+    $components['cache'] = [
+        'class' => yii\redis\Cache::class,
+        'defaultDuration' => 86400
+    ];
+
+    // PHP expects the redis session URL to look differently than what we get in the
+    // REDIS_URL from Heroku.
+    $phpRedisUrl = 'tcp://' . $redisConfig['host'] . ':' . $redisConfig['port'];
+    if (!empty($redisConfig['user']) && !empty($redisConfig['pass'])) {
+        $phpRedisUrl .= "?auth=" . $redisConfig['pass'];
+    }
+
+    // Sets the URL for php to know that redis should be used for sessions
+    // Without this, Craft still uses file storage for sessions
+    ini_set('session.save_handler', 'redis');
+    ini_set('session.save_path', $phpRedisUrl);
+}
+
 return [
     // Global settings
     '*' => [
@@ -25,6 +69,9 @@ return [
 
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
+
+        // This contains info like session, cache, redis, etc.
+        'components' => $components
     ],
 
     // Dev environment settings
