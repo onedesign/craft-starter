@@ -3,8 +3,6 @@
 Thumbs.db
 
 # CRAFT ENVIRONMENT
-.env.php
-.env.sh
 .env
 
 # COMPOSER
@@ -13,12 +11,6 @@ Thumbs.db
 # CRAFT STORAGE
 /storage/*
 !/storage/.gitkeep
-
-# ASSETS
-/web/assets/*
-
-# UPLOADS
-/web/uploads/*
 
 # BUILD FILES
 /bower_components/*
@@ -48,9 +40,5 @@ Thumbs.db
 *.tmproj
 *.tmproject
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 config.codekit3
 prepros-6.config
