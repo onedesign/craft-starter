@@ -8,10 +8,6 @@ Thumbs.db
 # COMPOSER
 /vendor
 
-# CRAFT STORAGE
-/storage/*
-!/storage/.gitkeep
-
 # BUILD FILES
 /bower_components/*
 /node_modules/*
