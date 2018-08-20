@@ -9,14 +9,15 @@ Thumbs.db
 /vendor
 
 # BUILD FILES
-/bower_components/*
-/node_modules/*
-/build/*
+/node_modules
 /yarn-error.log
 /npm-debug.log
 
+# ASSETS
+/web/dist
+
 # VM
-.vagrant/*
+.vagrant
 
 # TEMP
 .cache
@@ -35,6 +36,6 @@ Thumbs.db
 *.sublime-project
 *.tmproj
 *.tmproject
-.vscode/*
+.vscode
 config.codekit3
 prepros-6.config
