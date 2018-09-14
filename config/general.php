@@ -40,7 +40,7 @@ if (getenv('REDIS_URL') && !empty(getenv('REDIS_URL'))) {
     ];
 
     // PHP expects the redis session URL to look differently than what we get in the
-    // REDIS_URL from some like Heroku.
+    // REDIS_URL from something like Heroku.
     $phpRedisUrl = 'tcp://' . $redisConfig['host'] . ':' . $redisConfig['port'];
     if (!empty($redisConfig['user']) && !empty($redisConfig['pass'])) {
         $phpRedisUrl .= "?auth=" . $redisConfig['pass'];
