@@ -65,15 +65,6 @@ We've made a few customizations to it off the bat:
 **NOTE**
 Plugins are not installed or activated through this process. You'll have to go into the admin and install them after creating a project
 
-
-## Hosting (Heroku)
-This repo is configured to be able to run on Heroku. Since Craft doesn't come ready for it out of the box, there are a few configurations that were added:
-
-- `composer.json` includes php extensions and php version info
-- `onedesign/onelogger@2.x` is included to send Craft logs to `php://stderr` which shows logs in the Heroku log console
-- `yiisoft/yii2-redis` is included to allow for using redis for session and data caching
-- `config/db.php` and `config/general.php` have been updated to respond to certain ENV vars. See `.env.example`
-
 ## Environment variables
 
 All ENV vars are documented within `.env.example`. When adding a new ENV var, be sure to add it to this file with proper comments and documentation.

@@ -10,18 +10,10 @@
 
 /**
  * This grabs the dynamic env var for database URL because it may be managed automatically
- * by the hosting provider (e.g. The env contains "JAWSDB_URL=mysql://...").
- *
- * So, we set DB_URL_ENV_KEY="JAWSDB_URL"
- * in the environment and that will read/parse the JAWSDB_URL
+ * by the hosting provider (e.g. The env contains "DATABASE_URL=mysql://user:pass@host:port/database_name").
  */
-if (getenv('DB_URL_ENV_KEY') || getenv('DATABASE_URL')) {
-  if (getenv('DATABASE_URL')) {
-    $databaseConfig = parse_url(getenv('DATABASE_URL'));
-  } else {
-    $databaseConfig = parse_url(getenv(getenv('DB_URL_ENV_KEY')));
-  }
-
+if (getenv('DATABASE_URL')) {
+  $databaseConfig = parse_url(getenv('DATABASE_URL'));
   $databaseConfig['driver'] = $databaseConfig['scheme'];
 
 // Fallback to default Craft config vars
