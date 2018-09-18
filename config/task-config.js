@@ -36,7 +36,7 @@ module.exports = {
   browserSync: {
     // Update this to match your development URL
     proxy: {
-      target: env.PUBLIC_URL
+      target: env ? env.PUBLIC_URL : ''
     },
     files: [
       'templates/**/*'
