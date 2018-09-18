@@ -1,7 +1,8 @@
-const path = require('path');
-const env = require('dotenv').config({
+// Loads our .env file into process.env
+require('dotenv').config({
   path: path.resolve(__dirname, '../.env')
-}).parsed;
+});
+const path = require('path');
 
 module.exports = {
   html        : false,
@@ -36,7 +37,7 @@ module.exports = {
   browserSync: {
     // Update this to match your development URL
     proxy: {
-      target: env ? env.PUBLIC_URL : ''
+      target: process.env.PUBLIC_URL,
     },
     files: [
       'templates/**/*'
