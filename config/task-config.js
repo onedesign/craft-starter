@@ -1,8 +1,8 @@
+const path = require('path');
 // Loads our .env file into process.env
 require('dotenv').config({
   path: path.resolve(__dirname, '../.env')
 });
-const path = require('path');
 
 module.exports = {
   html        : false,
