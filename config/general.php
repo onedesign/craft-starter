@@ -71,7 +71,10 @@ return [
         'securityKey' => getenv('SECURITY_KEY'),
 
         // This contains info like session, cache, redis, etc.
-        'components' => $components
+        'components' => $components,
+
+        // Disable system and plugin updates in the Control Panel
+        'allowUpdates' => false,
     ],
 
     // Dev environment settings
