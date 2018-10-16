@@ -7,7 +7,7 @@
     "start": "NODE_ENV=development blendid",
     "build": "NODE_ENV=production blendid build",
     "postinstall": "npm run build",
-    "lint": "eslint src/scripts/**.js"
+    "lint": "eslint ./src --fix"
   },
   "engines": {
     "node": ">=6.11.1",
@@ -42,7 +42,10 @@
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-odc": "^1.1.0",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-react": "^7.9.1"
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.9.1",
+    "prettier": "^1.14.3"
   }
 }
