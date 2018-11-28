@@ -15,6 +15,12 @@ module.exports = {
     autoprefixer: {
       grid: true
     },
+    sass: {
+      includePaths: [
+        './node_modules/',
+        './node_modules/normalize.css'
+      ]
+    }
   },
 
   javascripts: {
