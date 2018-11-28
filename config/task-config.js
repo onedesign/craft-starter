@@ -39,6 +39,11 @@ module.exports = {
     proxy: {
       target: process.env.PUBLIC_URL,
     },
+    ghostMode: {
+      scroll: false,
+      clicks: false,
+      forms: false
+    },
     files: [
       'templates/**/*'
     ],
