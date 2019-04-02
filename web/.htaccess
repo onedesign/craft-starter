@@ -48,7 +48,7 @@
 # This adds CORS headers for static assets
 # ----------------------------------------------------------------------
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js|cur|gif|ico|jpe?g|png|svgz?|webp)$">
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js|cur|gif|ico|jpe?g|png|svgz?|webp|webmanifest)$">
     Header add Access-Control-Allow-Origin: "*"
     Header set Access-Control-Allow-Methods: "GET,OPTIONS"
     Header set Access-Control-Allow-Headers: "Content-Type"
@@ -175,6 +175,13 @@
   ExpiresByType application/javascript                "access plus 1 year"
   ExpiresByType application/x-javascript              "access plus 1 year"
   ExpiresByType text/javascript                       "access plus 1 year"
+
+  
+  # Manifest files
+
+  ExpiresByType application/manifest+json             "access plus 1 week"
+  ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+  ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
 
   # Media files
