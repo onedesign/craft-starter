@@ -4,7 +4,7 @@ This is a starter project for Craft 3 projects at [One Design Company](https://o
 
 ## Requirements
 - [Composer >= 1.6.5](https://getcomposer.org)
-- [Node >=6.11.1 / NPM >=3.10.3](https://nodejs.org/en/)
+- [Node >=10.8.0 / NPM >=3.10.3](https://nodejs.org/en/)
 
 **NOTE:** We only need composer >= 1.6.5 because of the `--remove-vcs` option in the command below. If you run into an issue where Composer says something like "The "--remove-vcs" option does not exist." you're probably on an older version. Either update your composer (`composer self-update`) or run the command without the `--remove-vcs` option.
 
