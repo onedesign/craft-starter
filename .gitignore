@@ -2,8 +2,10 @@
 .DS_Store
 Thumbs.db
 
-# CRAFT ENVIRONMENT
+# CRAFT
 .env
+/storage/config-backups/
+/storage/config-backups/*
 
 # COMPOSER
 /vendor
