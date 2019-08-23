@@ -27,9 +27,10 @@
     "extends": "odc"
   },
   "browserslist": [
-    "last 3 versions",
-    "> 2%",
-    "ie >= 11"
+    "last 1 version",
+    "not dead",
+    ">0.25%",
+    "not ie 11"
   ],
   "dependencies": {
     "blendid": "^4.4.3",
