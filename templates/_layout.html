@@ -23,7 +23,11 @@
 </head>
 
 <body class="{{ bodyClass | default('') }}">
-  {% block content %}{% endblock %}
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <main id="main-content" tabindex="-1" role="main">
+    {% block content %}{% endblock %}
+  </main>
 
   <script src="{{ rev('scripts/app.js') }}"></script>
 </body>
