@@ -1,15 +1,15 @@
 // Variables first
-@import "variables";
+@import 'variables';
 
 // Vendor
-@import "normalize";
-@import "sass-mq/mq";
+@import 'normalize';
+@import 'sass-mq/mq';
 
 // Utils
-@import "util/visually-hidden";
+@import 'util/visually-hidden';
 
 // Base
-@import "base/base";
+@import 'base/base';
 
 // Objects
-@import "objects/skip-link";
+@import 'objects/skip-link';
