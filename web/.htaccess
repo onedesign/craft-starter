@@ -37,6 +37,14 @@
       Header set X-Robots-Tag "noindex,nofollow" ENV=not_production
     </IfModule>
 
+    # Blitz cache rewrite
+    # https://putyourlightson.com/craft-plugins/blitz/docs#/?id=server-rewrites
+    RewriteCond %{DOCUMENT_ROOT}/cache/blitz/%{HTTP_HOST}/%{REQUEST_URI}/%{QUERY_STRING}/index.html -s
+    RewriteCond %{REQUEST_METHOD} GET
+    # Required as of version 2.1.0
+    RewriteCond %{QUERY_STRING} !token= [NC]
+    RewriteRule .* /cache/blitz/%{HTTP_HOST}/%{REQUEST_URI}/%{QUERY_STRING}/index.html [L]
+
     # Send would-be 404 requests to Craft
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
