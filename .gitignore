@@ -41,3 +41,7 @@ Thumbs.db
 .vscode
 config.codekit3
 prepros-6.config
+
+
+# BLITZ CACHING
+/web/cache/blitz/
