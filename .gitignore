@@ -45,4 +45,3 @@ prepros-6.config
 
 # BLITZ CACHING
 /web/cache/blitz/
-/web/cache/blitz/*
