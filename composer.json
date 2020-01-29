@@ -20,7 +20,6 @@
   },
   "minimum-stability": "dev",
   "require": {
-    "php": "^7.2",
     "craftcms/cms": "^3.4.0",
     "craftcms/redactor": "v2.x-dev",
     "vlucas/phpdotenv": "^3.4.0",
@@ -37,7 +36,10 @@
     }
   },
   "config": {
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.0"
+    }
   },
   "scripts": {
     "post-create-project-cmd": [
