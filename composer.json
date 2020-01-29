@@ -38,9 +38,6 @@
   },
   "config": {
     "optimize-autoloader": true,
-    "platform": {
-      "php": "7.2"
-    }
   },
   "scripts": {
     "post-create-project-cmd": [
