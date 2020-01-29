@@ -37,7 +37,7 @@
     }
   },
   "config": {
-    "optimize-autoloader": true,
+    "optimize-autoloader": true
   },
   "scripts": {
     "post-create-project-cmd": [
