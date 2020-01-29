@@ -45,7 +45,11 @@ $ /Applications/MAMP/bin/php/{ACTIVE_PHP_VERSION}/bin/php ./craft setup
 Be sure to replace `ACTIVE_PHP_VERSION` in the above with the version MAMP is currently using. At the time of writing it's probably either `php7.1.12` or `php7.2.1`
 
 ### Generating a Security Key
-Internally Craft uses `Craft::$app->getSecurity()->generateRandomString()` to generate the `SECURITY_KEY`. We could probably create a script that would hook into this and generate a key if people don't want to run `./craft setup` but for now we recommend running the setup script.
+To generate a new security key, use the Craft console command.
+```sh
+./craft setup/security-key
+```
+That will output the command to your terminal and replace the value in your .env file. 
 
 ## Front End
 On the front end of things we're currently opting for [Blendid](https://github.com/vigetlabs/blendid) primarily in order to get a userful starter project up as fast as possible. If you're not familiar with Blendid you'll want to [read their wiki](https://github.com/vigetlabs/blendid/wiki) to get a better understanding of how it's put together and what you can do to customize it.
@@ -69,18 +73,17 @@ Plugins are not installed or activated through this process. You'll have to go i
 
 All ENV vars are documented within `.env.example`. When adding a new ENV var, be sure to add it to this file with proper comments and documentation.
 
-## Resources
+## Tech Specs
 
-#### Official Resources
-- [Craft 3 Documentation](https://docs.craftcms.com/v3/)
-- [Craft 3 Class Reference](https://docs.craftcms.com/api/v3/)
-- [Craft 3 Plugins](https://plugins.craftcms.com)
-- [Demo site](https://demo.craftcms.com/)
-- [Craft Slack](https://craftcms.com/community#slack)
-- [Craft CMS Stack Exchange](http://craftcms.stackexchange.com/)
+Craft is a self-hosted PHP 7 application. It can connect to MySQL and PostgreSQL for content storage. See [Server Requirements](https://docs.craftcms.com/v3/requirements.html) for more details.
 
-#### Community Resources
-- [Mijingo](https://mijingo.com/craft) – Video courses and other learning resources
-- [Envato Tuts+](https://webdesign.tutsplus.com/categories/craft-cms/courses) – Video courses
-- [Straight Up Craft](http://straightupcraft.com/) – Articles, tutorials, and more
-- [pluginfactory.io](https://pluginfactory.io/) – Craft plugin scaffold generator
+## Popular Resources
+
+- **[Documentation](http://docs.craftcms.com/v3/)** – Read the official docs.
+- **[Guides](https://craftcms.com/guides)** – Follow along with the official guides.
+- **[#craftcms](https://twitter.com/hashtag/craftcms)** – See the latest tweets about Craft.
+- **[Discord](https://craftcms.com/discord)** – Meet the community.
+- **[Stack Exchange](http://craftcms.stackexchange.com/)** – Get help and help others.
+- **[CraftQuest](https://craftquest.io/)** – Watch unlimited video lessons and courses.
+- **[Craft Link List](http://craftlinklist.com/)** – Stay in-the-know.
+- **[nystudio107 Blog](https://nystudio107.com/blog)** – Learn Craft and modern web development.
