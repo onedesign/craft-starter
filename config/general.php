@@ -75,6 +75,9 @@ return [
 
         // Disable system and plugin updates in the Control Panel
         'allowUpdates' => false,
+
+        // Dont allow more than 25 revisions otherwise DB gets huge
+        'maxRevisions' => 25,
     ],
 
     // Dev environment settings
