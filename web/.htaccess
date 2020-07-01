@@ -70,6 +70,12 @@
 
   # Enable HSTS, which instructs clients to only connect to a website over encrypted HTTPS connections
   Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
+
+  # Protect against content-sniffing, page-framing and click-jacking, xss attacks
+  # https://htaccessbook.com/increase-security-x-security-headers/
+  Header set X-XSS-Protection "1; mode=block"
+  Header always append X-Frame-Options SAMEORIGIN
+  Header set X-Content-Type-Options nosniff
 </IfModule>
 
 # ----------------------------------------------------------------------
