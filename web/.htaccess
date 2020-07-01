@@ -25,18 +25,6 @@
     RewriteCond %{REQUEST_URI} ^.+\/$
     RewriteRule ^(.+)\/$ /$1 [L,R=301,NC]
 
-    # Adds noindex, nofollow headers for anything non-production
-    <IfModule mod_headers.c>
-      # For Apache 2.4
-      # <If "req('Host') != 'www.example.com'">
-      #     Header set X-Robots-Tag "noindex, nofollow"
-      # </If>
-
-      # For Apache 2.2
-      SetEnvIfNoCase Host [^(www.example.com)] not_production
-      Header set X-Robots-Tag "noindex,nofollow" ENV=not_production
-    </IfModule>
-
     # Blitz cache rewrite
     # https://putyourlightson.com/craft-plugins/blitz/docs#/?id=server-rewrites
     RewriteCond %{DOCUMENT_ROOT}/cache/blitz/%{HTTP_HOST}/%{REQUEST_URI}/%{QUERY_STRING}/index.html -s
