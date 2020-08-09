@@ -75,12 +75,13 @@ All ENV vars are documented within `.env.example`. When adding a new ENV var, be
 
 ## Tech Specs
 
-Craft is a self-hosted PHP 7 application. It can connect to MySQL and PostgreSQL for content storage. See [Server Requirements](https://docs.craftcms.com/v3/requirements.html) for more details.
+Craft is a self-hosted PHP 7 application. It can connect to MySQL and PostgreSQL for content storage. See [Server Requirements](https://craftcms.com/docs/3.x/requirements.html) for more details.
 
 ## Popular Resources
 
-- **[Documentation](http://docs.craftcms.com/v3/)** – Read the official docs.
-- **[Guides](https://craftcms.com/guides)** – Follow along with the official guides.
+- **[Tutorial](https://craftcms.com/docs/getting-started-tutorial/)** – Get set up and learn the basics.
+- **[Documentation](https://craftcms.com/docs/)** – Read the official docs.
+- **[Knowledge Base](https://craftcms.com/knowledge-base)** – Find answers to common problems.
 - **[#craftcms](https://twitter.com/hashtag/craftcms)** – See the latest tweets about Craft.
 - **[Discord](https://craftcms.com/discord)** – Meet the community.
 - **[Stack Exchange](http://craftcms.stackexchange.com/)** – Get help and help others.
