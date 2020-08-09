@@ -4,6 +4,6 @@ module.exports = {
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "func-names": ["warn", "never"]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   }
 };

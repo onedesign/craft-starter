@@ -1,6 +1,5 @@
 const gulp = require("gulp");
 const rev = require("gulp-rev");
-const replace = require("gulp-replace");
 const config = require("../config");
 
 /**
@@ -8,14 +7,11 @@ const config = require("../config");
  */
 function revAssets() {
   return gulp
-    .src([`${config.styles.dest}/**/*.css`, `${config.scripts.dest}/**/*.js`], {
-      base: "./"
-    })
+    .src(`${config.destBase}/**/*.{css,js}`, { base: config.destBase })
     .pipe(rev())
-    .pipe(gulp.dest("."))
+    .pipe(gulp.dest(config.destBase))
     .pipe(rev.manifest())
-    .pipe(replace("public", ""))
-    .pipe(gulp.dest(config.paths.dist));
+    .pipe(gulp.dest(config.destBase));
 }
 
-exports.revAssets = revAssets;
+module.exports = revAssets;

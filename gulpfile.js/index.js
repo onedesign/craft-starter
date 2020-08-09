@@ -9,6 +9,7 @@ const watch = require("./tasks/watch");
 const browserSync = require("./tasks/browserSync");
 const copy = require("./tasks/copy");
 const images = require("./tasks/images");
+const rev = require("./tasks/rev");
 const { bundleScripts } = require("./tasks/scripts");
 
 // Collections of tasks
@@ -17,5 +18,7 @@ const watchTasks = parallel(watch, browserSync);
 
 // The "public" tasks, AKA tasks called by our package.json
 const defaultTask = series(clean, core, watchTasks);
+const buildTask = series(clean, core, rev);
 
 exports.default = defaultTask;
+exports.build = buildTask;

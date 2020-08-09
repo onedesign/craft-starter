@@ -12,14 +12,40 @@ const webpackConfig = {
   output: {
     filename: "[name].js",
     path: path.resolve(config.scripts.dest),
-    publicPath: "/dist/scripts"
+    publicPath: "/dist/scripts/"
   },
   optimization: {
     splitChunks: {
       chunks: "all"
     }
   },
-  plugins: []
+  module: {
+    rules: [
+      {
+        enforce: "pre",
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {
+          fix: true
+        }
+      },
+
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              ["@babel/preset-env", { useBuiltIns: "entry", corejs: 3 }]
+            ],
+            plugins: []
+          }
+        }
+      }
+    ]
+  }
 };
 
 /**
