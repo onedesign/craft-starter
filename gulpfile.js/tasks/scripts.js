@@ -25,10 +25,7 @@ const webpackConfig = {
         enforce: "pre",
         test: /\.m?js$/,
         exclude: /node_modules/,
-        loader: "eslint-loader",
-        options: {
-          fix: true
-        }
+        loader: "eslint-loader"
       },
 
       {
@@ -45,7 +42,8 @@ const webpackConfig = {
         }
       }
     ]
-  }
+  },
+  plugins: config.devMode ? [new webpack.HotModuleReplacementPlugin()] : []
 };
 
 /**

@@ -32,6 +32,7 @@
     "not ie 11"
   ],
   "dependencies": {
+    "gsap": "^3.4.2",
     "normalize.css": "^8.0.0",
     "sass-mq": "^5.0.0"
   },
@@ -65,8 +66,10 @@
     "gulp-sourcemaps": "^2.6.5",
     "postcss-import": "^12.0.1",
     "prettier": "^1.19.1",
+    "strip-ansi": "^6.0.0",
     "webpack": "^4.44.1",
     "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
     "webpack-manifest-plugin": "^2.2.0"
   }
 }

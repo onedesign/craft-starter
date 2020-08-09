@@ -22,3 +22,4 @@ const buildTask = series(clean, core, rev);
 
 exports.default = defaultTask;
 exports.build = buildTask;
+exports.clean = clean;

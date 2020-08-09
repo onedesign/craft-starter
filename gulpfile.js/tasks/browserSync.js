@@ -1,4 +1,6 @@
 const webpack = require("webpack");
+const stripAnsi = require("strip-ansi");
+const webpackDevMiddleware = require("webpack-dev-middleware");
 const { webpackConfig } = require("./scripts");
 const config = require("../config");
 
@@ -13,9 +15,14 @@ function browserSyncTask(cb) {
    * Reload all devices when bundle is complete
    * or send a fullscreen error message to the browser instead
    */
+  // eslint-disable-next-line consistent-return
   compiler.plugin("done", stats => {
     if (stats.hasErrors() || stats.hasWarnings()) {
-      console.log(stats.toString()); // eslint-disable-line
+      return config.browserSync.instance.sockets.emit("fullscreen:message", {
+        title: "Webpack Error:",
+        body: stripAnsi(stats.toString()),
+        timeout: 100000
+      });
     }
     config.browserSync.instance.reload();
   });
@@ -24,10 +31,9 @@ function browserSyncTask(cb) {
     open: false,
     notify: false,
     middleware: [
-      // eslint-disable-next-line global-require
-      require("webpack-dev-middleware")(compiler, {
+      webpackDevMiddleware(compiler, {
         publicPath: webpackConfig.output.publicPath,
-        stats: "errors-only",
+        stats: { colors: true },
         writeToDisk: true
       })
     ],
