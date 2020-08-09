@@ -19,11 +19,18 @@
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/dist/static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/dist/static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/dist/static/favicon-16x16.png">
+  <link rel="manifest" href="/dist/static/site.webmanifest">
+
   {% include '_partials/head' %}
 </head>
 
 <body class="{{ bodyClass | default('') }}">
   <a class="skip-link" href="#main-content">Skip to content</a>
+  {{ svg('@webroot/dist/images/logo.svg') }}
 
   <main id="main-content" tabindex="-1" role="main">
     {% block content %}{% endblock %}
