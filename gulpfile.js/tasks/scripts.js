@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 const colors = require("ansi-colors");
 const log = require("fancy-log");
@@ -8,13 +9,24 @@ const config = require("../config");
 const webpackConfig = {
   entry: config.scripts.entry,
   mode: config.devMode ? "development" : "production",
-  devtool: config.devMode ? "eval-cheap-source-map" : false,
+  devtool: config.devMode ? "eval-cheap-source-map" : "source-map",
   output: {
     filename: "[name].js",
     path: path.resolve(config.scripts.dest),
     publicPath: "/dist/scripts/"
   },
   optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        sourceMap: true,
+        terserOptions: {
+          compress: {
+            drop_console: true
+          }
+        }
+      })
+    ],
     splitChunks: {
       chunks: "all"
     }
@@ -68,7 +80,7 @@ function reportError(err) {
  * @returns {function(...[*]=)}
  */
 function onBuild(done) {
-  return function(err, stats) {
+  return function build(err, stats) {
     const info = stats.toJson();
 
     if (stats.hasErrors()) {
