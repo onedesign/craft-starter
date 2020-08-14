@@ -8,9 +8,7 @@ const config = require("../config");
 function images() {
   return gulp
     .src(config.images.src)
-    .pipe(
-      imageMin(config.images.imageMinConfig)
-    )
+    .pipe(imageMin(config.images.imageMinConfig))
     .pipe(gulp.dest(config.images.dest));
 }
 
