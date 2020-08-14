@@ -5,14 +5,17 @@
 @import "normalize.css";
 @import "sass-mq/mq";
 
-// Utils
-@import "util/visually-hidden";
-
 // Base
+@import "tailwindcss/base";
 @import "base/base";
 
 // Objects
+@import "tailwindcss/components";
 @import "objects/skip-link";
+
+// Utils
+@import "tailwindcss/utilities";
+@import "util/visually-hidden";
 
 @font-face {
   font-family: "GT Flexa";

@@ -10,13 +10,21 @@ const config = require("../config");
 
 sass.compiler = require("dart-sass");
 
-function styles() {
-  const postCssProcessors = [importCss(), autoprefixer()];
+function getPostCssProcessors(devMode) {
+  const postCssProcessors = [
+    importCss(),
+    ...(config.styles.postCssPlugins(devMode) || []),
+    autoprefixer()
+  ];
 
-  if (!config.devMode) {
+  if (!devMode) {
     postCssProcessors.push(cssnano());
   }
 
+  return postCssProcessors;
+}
+
+function styles() {
   return gulp
     .src(config.styles.src)
     .pipe(sourcemaps.init())
@@ -30,7 +38,7 @@ function styles() {
         includePaths: ["node_modules"]
       }).on("error", sass.logError)
     )
-    .pipe(postcss(postCssProcessors))
+    .pipe(postcss(getPostCssProcessors(config.devMode)))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.styles.dest))
     .pipe(config.browserSync.instance.stream());

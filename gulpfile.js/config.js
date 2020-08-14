@@ -23,7 +23,10 @@ const config = {
   },
   styles: {
     src: [`${srcBase}/styles/*.scss`],
-    dest: `${destBase}/styles`
+    dest: `${destBase}/styles`,
+    postCssPlugins() {
+      return [require("tailwindcss")];
+    }
   },
   scripts: {
     entry: {
