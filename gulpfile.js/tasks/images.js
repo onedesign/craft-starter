@@ -9,21 +9,7 @@ function images() {
   return gulp
     .src(config.images.src)
     .pipe(
-      imageMin({
-        progressive: true,
-        svgoPlugins: [
-          {
-            cleanupIDs: false,
-            collapseGroups: false,
-            mergePaths: false,
-            moveElemsAttrsToGroup: false,
-            moveGroupAttrsToElems: false,
-            removeUselessStrokeAndFill: false,
-            removeViewBox: false,
-            removeStyleElement: true
-          }
-        ]
-      })
+      imageMin(config.images.imageMinConfig)
     )
     .pipe(gulp.dest(config.images.dest));
 }

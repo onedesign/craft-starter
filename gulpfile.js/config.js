@@ -39,7 +39,22 @@ const config = {
   },
   images: {
     src: [`${srcBase}/images/**/*.{jpg,png,gif,svg}`],
-    dest: `${destBase}/images`
+    dest: `${destBase}/images`,
+    imageMinConfig: {
+      progressive: true,
+      svgoPlugins: [
+        {
+          cleanupIDs: false,
+          collapseGroups: false,
+          mergePaths: false,
+          moveElemsAttrsToGroup: false,
+          moveGroupAttrsToElems: false,
+          removeUselessStrokeAndFill: false,
+          removeViewBox: false,
+          removeStyleElement: true
+        }
+      ]
+    }
   },
   watch: [
     {
