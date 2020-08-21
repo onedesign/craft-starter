@@ -28,12 +28,11 @@
   },
   "browserslist": [
     "last 1 version",
-    "not dead",
     ">0.25%",
     "not ie 11"
   ],
   "dependencies": {
-    "blendid": "^4.4.3",
+    "blendid": "^4.5.3",
     "dotenv": "^6.0.0",
     "normalize.css": "^8.0.0",
     "sass-mq": "^5.0.0"
