@@ -5,6 +5,7 @@ const autoprefixer = require("autoprefixer");
 const postcss = require("gulp-postcss");
 const importCss = require("postcss-import");
 const sourcemaps = require("gulp-sourcemaps");
+const gulpif = require("gulp-if");
 const cssnano = require("cssnano");
 const config = require("../config");
 
@@ -27,7 +28,7 @@ function getPostCssProcessors(devMode) {
 function styles() {
   return gulp
     .src(config.styles.src)
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(config.devMode, sourcemaps.init()))
     .pipe(
       cssGlobbing({
         extensions: [".scss"]
@@ -39,7 +40,7 @@ function styles() {
       }).on("error", sass.logError)
     )
     .pipe(postcss(getPostCssProcessors(config.devMode)))
-    .pipe(sourcemaps.write())
+    .pipe(gulpif(config.devMode, sourcemaps.write()))
     .pipe(gulp.dest(config.styles.dest))
     .pipe(config.browserSync.instance.stream());
 }
