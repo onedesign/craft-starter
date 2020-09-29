@@ -1,62 +1,8 @@
 const webpack = require("webpack");
-const TerserPlugin = require("terser-webpack-plugin");
-const path = require("path");
 const colors = require("ansi-colors");
 const log = require("fancy-log");
 const { error, warn } = require("fancy-log");
-const config = require("../config");
-
-const webpackConfig = {
-  entry: config.scripts.entry,
-  mode: config.devMode ? "development" : "production",
-  devtool: config.devMode ? "eval-cheap-source-map" : "source-map",
-  output: {
-    filename: "[name].js",
-    path: path.resolve(config.scripts.dest),
-    publicPath: "/dist/scripts/"
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        sourceMap: true,
-        terserOptions: {
-          compress: {
-            drop_console: true
-          }
-        }
-      })
-    ],
-    splitChunks: {
-      chunks: "all"
-    }
-  },
-  module: {
-    rules: [
-      {
-        enforce: "pre",
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
-
-      {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              ["@babel/preset-env", { useBuiltIns: "entry", corejs: 3 }]
-            ],
-            plugins: []
-          }
-        }
-      }
-    ]
-  },
-  plugins: config.devMode ? [new webpack.HotModuleReplacementPlugin()] : []
-};
+const webpackConfig = require("../../webpack.config.js");
 
 /**
  * Report webpack errors
@@ -80,11 +26,10 @@ function reportError(err) {
  * @returns {function(...[*]=)}
  */
 function onBuild(done) {
-  return function build(err, stats) {
+  return (err, stats) => {
     const info = stats.toJson();
 
     if (stats.hasErrors()) {
-      // eslint-disable-next-line no-console
       info.errors.forEach(errorText => {
         error(reportError(errorText));
       });
