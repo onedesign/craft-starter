@@ -1,44 +1,30 @@
-import ComponentManifest from "./ComponentManifest";
+import ModuleManifest from "./ModuleManifest";
 
 export default class App {
-  DATA_ATTRIBUTE = {
-    INSTANCE: "instance",
-    COMPONENT: "component",
-    COMPONENT_OPTIONS: "component-options"
+  static defaults = {
+    moduleAttribute: "data-module",
+    optionsAttribute: "data-module-options"
   };
 
-  init() {
-    this.createComponents(document.documentElement);
+  constructor(scope = document, config = {}) {
+    this.config = { ...config, ...App.defaults };
+    this.registerModules(scope);
+
+    return this;
   }
 
-  createComponents(scope) {
-    /* eslint-disable */
-    scope = scope ? scope : document.body;
-    /* eslint-enable */
-    const componentNodes = scope.querySelectorAll(
-      `[data-${this.DATA_ATTRIBUTE.COMPONENT}]`
-    );
-    const components = [...componentNodes];
-    if (scope.hasAttribute(`[data-${this.DATA_ATTRIBUTE.COMPONENT}]`)) {
-      components.push(scope);
-    }
-    const componentsLength = components.length;
-    let i = 0;
-    for (i = 0; i !== componentsLength; i += 1) {
-      this.registerComponent(components[i]);
-    }
-  }
+  registerModules(scope) {
+    const modules = scope.querySelectorAll(`[${this.config.moduleAttribute}]`);
 
-  registerComponent(component) {
-    const name = component.getAttribute(
-      `data-${this.DATA_ATTRIBUTE.COMPONENT}`
-    );
-    const options = JSON.parse(
-      component.getAttribute(`data-${this.DATA_ATTRIBUTE.COMPONENT_OPTIONS}`)
-    );
-    const Constructor = ComponentManifest[name];
-    const instance = new Constructor(component, options);
+    // Loop over each component so we can register it
+    modules.forEach(module => {
+      const name = module.getAttribute(this.config.moduleAttribute);
+      const options = JSON.parse(
+        module.getAttribute(this.config.optionsAttribute)
+      );
 
-    return instance;
-  }
-}
+      const Constructor = ModuleManifest[name];
+      // eslint-disable-next-line no-new
+      new Constructor(module, options);
+    });
+  }}
