@@ -16,7 +16,7 @@ function browserSyncTask(cb) {
    * or send a fullscreen error message to the browser instead
    */
   // eslint-disable-next-line consistent-return
-  compiler.plugin("done", stats => {
+  compiler.hooks.done.tap("ReloadDevices", stats => {
     if (stats.hasErrors() || stats.hasWarnings()) {
       return config.browserSync.instance.sockets.emit("fullscreen:message", {
         title: "Webpack Error:",
