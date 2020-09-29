@@ -7,7 +7,7 @@ export default class App {
   };
 
   constructor(scope = document, config = {}) {
-    this.config = { ...config, ...App.defaults };
+    this.config = { ...App.defaults, ...config };
     this.registerModules(scope);
 
     return this;
@@ -19,9 +19,23 @@ export default class App {
     // Loop over each component so we can register it
     modules.forEach(module => {
       const name = module.getAttribute(this.config.moduleAttribute);
-      const options = JSON.parse(
-        module.getAttribute(this.config.optionsAttribute)
-      );
+      let options;
+      try {
+        options = JSON.parse(module.getAttribute(this.config.optionsAttribute));
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(
+          `Error parsing module options for module ${name}: ${error}`
+        );
+      }
+
+      if (!ModuleManifest[name]) {
+        // eslint-disable-next-line no-console
+        console.error(
+          `Module "${name}" does not exist in the manifest. Did you forget to add it?`
+        );
+        return;
+      }
 
       const Constructor = ModuleManifest[name];
       // eslint-disable-next-line no-new
