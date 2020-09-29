@@ -1,4 +1,6 @@
 const browserSync = require("browser-sync");
+const imagemin = require("gulp-imagemin");
+const tailwindcss = require("tailwindcss");
 
 const srcBase = "./src";
 const destBase = "./web/dist";
@@ -25,7 +27,7 @@ const config = {
     src: [`${srcBase}/styles/*.scss`],
     dest: `${destBase}/styles`,
     postCssPlugins() {
-      return [require("tailwindcss")];
+      return [tailwindcss];
     }
   },
   scripts: {
@@ -40,21 +42,21 @@ const config = {
   images: {
     src: [`${srcBase}/images/**/*.{jpg,png,gif,svg}`],
     dest: `${destBase}/images`,
-    imageMinConfig: {
-      progressive: true,
-      svgoPlugins: [
-        {
-          cleanupIDs: false,
-          collapseGroups: false,
-          mergePaths: false,
-          moveElemsAttrsToGroup: false,
-          moveGroupAttrsToElems: false,
-          removeUselessStrokeAndFill: false,
-          removeViewBox: false,
-          removeStyleElement: true
-        }
-      ]
-    }
+    imageMinConfig: [
+      imagemin.mozjpeg({ progressive: true }),
+      imagemin.svgo({
+        plugins: [
+          { cleanupAttrs: true },
+          { cleanupIDs: false },
+          { collapseGroups: false },
+          { mergePaths: false },
+          { moveElemsAttrsToGroup: false },
+          { moveGroupAttrsToElems: false },
+          { removeViewBox: false },
+          { removeStyleElement: true }
+        ]
+      })
+    ]
   },
   watch: [
     {
