@@ -41,5 +41,4 @@ export default class App {
       // eslint-disable-next-line no-new
       new Constructor(module, options);
     });
-  }
-}
+  }}
