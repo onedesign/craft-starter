@@ -17,7 +17,7 @@ composer create-project onedesign/craft-starter \
   --repository "{ \"type\": \"vcs\", \"url\": \"https://github.com/onedesign/craft-starter.git\" }" \
   --remove-vcs \
   ./project-name \
-  dev-master && \
+  dev-main && \
   cd project-name && \
   git init
 ```
