@@ -57,7 +57,10 @@ module.exports = {
             presets: [
               ["@babel/preset-env", { useBuiltIns: "entry", corejs: 3 }]
             ],
-            plugins: []
+            plugins: [
+              "@babel/plugin-transform-runtime",
+              "@babel/plugin-proposal-class-properties"
+            ]
           }
         }
       }
