@@ -32,7 +32,7 @@ const config = {
   },
   scripts: {
     entry: {
-      app: [`${srcBase}/scripts/app.js`]
+      app: [`${srcBase}/scripts/main.js`]
     },
     dest: `${destBase}/scripts`
   },
