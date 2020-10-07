@@ -1,3 +1,5 @@
+// Fallback to dev if no env is supplied.
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
 require("dotenv").config();
 const { series, parallel } = require("gulp");
 
