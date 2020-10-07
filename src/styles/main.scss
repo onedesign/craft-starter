@@ -6,29 +6,10 @@
 @import "sass-mq/mq";
 
 // Base
-@import "tailwindcss/base";
 @import "base/base";
 
 // Objects
-@import "tailwindcss/components";
 @import "objects/skip-link";
 
 // Utils
-@import "tailwindcss/utilities";
 @import "util/visually-hidden";
-
-@font-face {
-  font-family: "GT Flexa";
-  src: url("/dist/fonts/GT Flexa VAR Trial.woff2");
-}
-
-body {
-  font-family: "GT Flexa", serif;
-}
-
-.box {
-  width: 24px;
-  height: 24px;
-  background-color: red;
-  margin: 0 auto;
-}
