@@ -1,6 +1,5 @@
 const browserSync = require("browser-sync");
 const imagemin = require("gulp-imagemin");
-const tailwindcss = require("tailwindcss");
 
 const srcBase = "./src";
 const destBase = "./web/dist";
@@ -26,9 +25,7 @@ const config = {
   styles: {
     src: [`${srcBase}/styles/*.scss`],
     dest: `${destBase}/styles`,
-    postCssPlugins() {
-      return [tailwindcss];
-    }
+    postCssPlugins() {}
   },
   scripts: {
     entry: {
