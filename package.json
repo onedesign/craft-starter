@@ -32,7 +32,6 @@
     "not ie 11"
   ],
   "dependencies": {
-    "gsap": "^3.4.2",
     "normalize.css": "^8.0.1",
     "sass-mq": "^5.0.1"
   },
