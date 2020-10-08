@@ -13,7 +13,7 @@ const config = {
   browserSync: {
     instance: browserSync.create(),
     options: {
-      proxy: process.env.PRIMARY_SITE_URL || false
+      proxy: process.env.DEFAULT_SITE_URL || false
     }
   },
   copy: {
