@@ -6,7 +6,7 @@ export default class App {
     optionsAttribute: "data-module-options"
   };
 
-  constructor(scope = document, config = {}) {
+  constructor(scope = document.documentElement, config = {}) {
     this.config = { ...App.defaults, ...config };
     this.registerModules(scope);
 
@@ -17,7 +17,7 @@ export default class App {
    * Loop over all modules in the defined scope, get any option values,
    * and initialize each module if it exists in the `ModuleManifest` object.
    *
-   * @param {Node} scope
+   * @param {HTMLElement} scope
    */
   registerModules(scope) {
     const modules = scope.querySelectorAll(`[${this.config.moduleAttribute}]`);
