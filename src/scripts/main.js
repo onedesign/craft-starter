@@ -1,3 +1,5 @@
+import "core-js";
+
 import App from "./App";
 
 document.documentElement.classList.remove("no-js");
