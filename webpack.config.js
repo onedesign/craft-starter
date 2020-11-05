@@ -1,9 +1,14 @@
 const path = require("path");
 const webpack = require("webpack");
+const ESLintPlugin = require("eslint-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const config = require("./gulpfile.js/config");
 
-const webpackPlugins = [];
+const webpackPlugins = [
+  new ESLintPlugin({
+    context: `${config.srcBase}/scripts`
+  })
+];
 
 if (config.devMode) {
   webpackPlugins.push(new webpack.HotModuleReplacementPlugin());
@@ -41,13 +46,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        enforce: "pre",
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
-
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
