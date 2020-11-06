@@ -5,7 +5,7 @@ module.exports = {
   ],
   "parser": "babel-eslint",
   "rules": {
-    "no-console": 2,
+    "no-console": "error",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   },
   "env": {
