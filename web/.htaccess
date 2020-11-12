@@ -51,7 +51,7 @@
   Header set X-XSS-Protection "1; mode=block" 
 
   # Disable the ablity to render a page on this website in a '<frame>', '<iframe>' or '<object>'
-  Header set X-Frame-Options "deny"
+  Header set X-Frame-Options "SAMEORIGIN"
 
   # Enable HSTS, which instructs clients to only connect to a website over encrypted HTTPS connections
   Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
