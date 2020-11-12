@@ -10,13 +10,15 @@
     SetEnvIf X-Forwarded-Proto https HTTPS=on
 
     # Force redirect to HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
-    RewriteCond %{HTTP_HOST} ^www.example.com [NC,OR]
-    RewriteCond %{HTTP_HOST} ^.+\.oneis.us [NC]
-    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    # Uncomment the rules below to enable. If hosting on Cloudways, these rules do not need to be enabled: https://support.cloudways.com/redirect-http-to-https/
+    # RewriteCond %{HTTPS} off
+    # RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    # RewriteCond %{HTTP_HOST} ^www.example.com [NC,OR]
+    # RewriteCond %{HTTP_HOST} ^.+\.oneis.us [NC]
+    # RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # Redirect non-www to www
+    # Uncomment the rules below to enable
     # RewriteCond %{HTTP_HOST} ^example.com [NC]
     # RewriteRule ^(.*)$ https://www.example.com/$1 [L,R=301,NC]
 
