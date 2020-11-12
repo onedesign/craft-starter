@@ -43,14 +43,9 @@
 </IfModule>
 
 # ----------------------------------------------------------------------
-# This adds CORS headers for static assets
+# Security headers
 # ----------------------------------------------------------------------
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js|cur|gif|ico|jpe?g|png|svgz?|webp|webmanifest)$">
-    Header add Access-Control-Allow-Origin: "*"
-    Header set Access-Control-Allow-Methods: "GET,OPTIONS"
-    Header set Access-Control-Allow-Headers: "Content-Type"
-  </FilesMatch>
 
   # Stop pages from loading when they detect XSS attacks
   Header set X-XSS-Protection "1; mode=block" 
