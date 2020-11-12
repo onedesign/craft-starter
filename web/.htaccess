@@ -10,13 +10,15 @@
     SetEnvIf X-Forwarded-Proto https HTTPS=on
 
     # Force redirect to HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
-    RewriteCond %{HTTP_HOST} ^www.example.com [NC,OR]
-    RewriteCond %{HTTP_HOST} ^.+\.oneis.us [NC]
-    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    # Uncomment the rules below to enable. If hosting on Cloudways, these rules do not need to be enabled: https://support.cloudways.com/redirect-http-to-https/
+    # RewriteCond %{HTTPS} off
+    # RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    # RewriteCond %{HTTP_HOST} ^www.example.com [NC,OR]
+    # RewriteCond %{HTTP_HOST} ^.+\.oneis.us [NC]
+    # RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # Redirect non-www to www
+    # Uncomment the rules below to enable
     # RewriteCond %{HTTP_HOST} ^example.com [NC]
     # RewriteRule ^(.*)$ https://www.example.com/$1 [L,R=301,NC]
 
@@ -41,20 +43,15 @@
 </IfModule>
 
 # ----------------------------------------------------------------------
-# This adds CORS headers for static assets
+# Security headers
 # ----------------------------------------------------------------------
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js|cur|gif|ico|jpe?g|png|svgz?|webp|webmanifest)$">
-    Header add Access-Control-Allow-Origin: "*"
-    Header set Access-Control-Allow-Methods: "GET,OPTIONS"
-    Header set Access-Control-Allow-Headers: "Content-Type"
-  </FilesMatch>
 
   # Stop pages from loading when they detect XSS attacks
   Header set X-XSS-Protection "1; mode=block" 
 
   # Disable the ablity to render a page on this website in a '<frame>', '<iframe>' or '<object>'
-  Header set X-Frame-Options "deny"
+  Header set X-Frame-Options "SAMEORIGIN"
 
   # Enable HSTS, which instructs clients to only connect to a website over encrypted HTTPS connections
   Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
