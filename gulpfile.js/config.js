@@ -1,3 +1,7 @@
+const path = require("path");
+require("dotenv").config({
+  path: path.resolve(process.cwd(), ".env")
+});
 const browserSync = require("browser-sync");
 const imagemin = require("gulp-imagemin");
 
