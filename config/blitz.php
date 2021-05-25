@@ -22,7 +22,7 @@ return [
     'debug' => false,
 
     // Whether static file caching should be enabled.
-    'cachingEnabled' => filter_var(getenv('ENABLE_TEMPLATE_CACHING'), FILTER_VALIDATE_BOOLEAN),
+    'cachingEnabled' => filter_var(getenv('ENABLE_BLITZ_CACHING'), FILTER_VALIDATE_BOOLEAN),
 
     // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
     'includedUriPatterns' => [
