@@ -27,7 +27,8 @@
     "nystudio107/craft-typogrify": "^1.1",
     "topshelfcraft/environment-label": "^3.1",
     "yiisoft/yii2-redis": "~2.0.0",
-    "nystudio107/craft-seomatic": "^3.3.12"
+    "nystudio107/craft-seomatic": "^3.3.12",
+    "putyourlightson/craft-blitz": "^3.10.0"
   },
   "require-dev": {
     "yiisoft/yii2-shell": "^2.0.3"
