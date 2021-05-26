@@ -17,12 +17,14 @@
  * you do for 'general.php'
  */
 
+use craft\helpers\App;
+
 return [
     // Debugging
     'debug' => false,
 
     // Whether static file caching should be enabled.
-    'cachingEnabled' => filter_var(getenv('ENABLE_BLITZ_CACHING'), FILTER_VALIDATE_BOOLEAN),
+    'cachingEnabled' => App::env('ENVIRONMENT') !== 'dev' || filter_var(App::env('ENABLE_BLITZ_CACHING'), FILTER_VALIDATE_BOOLEAN),
 
     // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
     'includedUriPatterns' => [
@@ -52,9 +54,23 @@ return [
     // Whether the cache should automatically be refreshed after a global set is updated.
     'refreshCacheAutomaticallyForGlobals' => true,
 
+    // The integrations to initialise.
+    'integrations' => [
+        // Uncomment below if using Feed Me
+        // 'putyourlightson\blitz\drivers\integrations\FeedMeIntegration',
+        'putyourlightson\blitz\drivers\integrations\SeomaticIntegration',
+    ],
+
     // Whether URLs with query strings should cached and how.
     // 0: Do not cache URLs with query strings
     // 1: Cache URLs with query strings as unique pages
     // 2: Cache URLs with query strings as the same page
     'queryStringCaching' => 0,
+
+    // The query string parameters to exclude when determining if and how a page should be cached (regular expressions may be used).
+    'excludedQueryStringParams' => [
+        'utm_*',
+        'gclid',
+        'fbclid',
+    ],
 ];
