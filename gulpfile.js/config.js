@@ -1,12 +1,12 @@
 const path = require("path");
 require("dotenv").config({
-  path: path.resolve(process.cwd(), ".env")
+  path: path.resolve(process.cwd(), "./app/.env")
 });
 const browserSync = require("browser-sync");
 const imagemin = require("gulp-imagemin");
 
 const srcBase = "./src";
-const destBase = "./web/dist";
+const destBase = "./app/web/dist";
 
 const env = process.env.NODE_ENV || "development";
 
@@ -38,7 +38,7 @@ const config = {
     dest: `${destBase}/scripts`
   },
   templates: {
-    src: ["./templates/**/*.{html,twig}"]
+    src: ["./app/templates/**/*.{html,twig}"]
   },
   images: {
     src: [`${srcBase}/images/**/*.{jpg,png,gif,svg}`],
@@ -65,7 +65,7 @@ const config = {
       task: require.resolve("./tasks/styles")
     },
     {
-      globs: ["./templates/**/*.{html,twig}"],
+      globs: ["./app/templates/**/*.{html,twig}"],
       task: require.resolve("./tasks/templates")
     },
     {
