@@ -1,0 +1,14 @@
+{
+  "buttons": [
+    "html",
+    "formatting",
+    "bold",
+    "italic",
+    "unorderedlist",
+    "orderedlist",
+    "link"
+  ],
+  "plugins": [],
+  "linkNewTab": true,
+  "toolbarFixed": true
+}
