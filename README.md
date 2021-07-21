@@ -3,8 +3,8 @@
 This is a starter project for Craft 3 projects at [One Design Company](https://onedesigncompany.com).
 
 ## Requirements
-- [Composer >= 1.6.5](https://getcomposer.org)
-- [Node >=10.8.0 / NPM >=3.10.3](https://nodejs.org/en/)
+- [Composer >= 2](https://getcomposer.org)
+- [Node - Long Term Stable (LTS)](https://nodejs.org/en/)
 
 ## Getting Started
 
