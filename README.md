@@ -6,34 +6,43 @@ This is a starter project for Craft 3 projects at [One Design Company](https://o
 - [Composer >= 1.6.5](https://getcomposer.org)
 - [Node >=10.8.0 / NPM >=3.10.3](https://nodejs.org/en/)
 
-**NOTE:** We only need composer >= 1.6.5 because of the `--remove-vcs` option in the command below. If you run into an issue where Composer says something like "The "--remove-vcs" option does not exist." you're probably on an older version. Either update your composer (`composer self-update`) or run the command without the `--remove-vcs` option.
-
 ## Getting Started
-Before getting too far you should set up your database and virtual host so you have all the info you need to connect to things later.
 
-To create a project using this repo as a base, open up your favorite terminal and run:
+### Create a new Repo
+This repo is a [Template Repo](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template#about-repository-templates) which means you can use it to quickly and easily create a new project by clicking the "Use this template" button visible on the main repo page. 
+
+That button will ask you select an owner (onedesign) and a name for the repository (client name). You can also select a visibility (private 99% of the time). This will create a new repo using this repo as a base. Once the repo has been created, you can clone it onto your system like any other repo. 
+
+
+### Install Dependencies
+After you've cloned the repo, you'll want to run the following commands from the root of the repo:
+
+```sh
+# Run composer install using ./app as the directory
+composer install -d app
+
+# Get the correct version of node
+nvm use
+
+# Install node dependencies
+npm install 
 ```
-composer create-project onedesign/craft-starter \
-  --repository "{ \"type\": \"vcs\", \"url\": \"https://github.com/onedesign/craft-starter.git\" }" \
-  --remove-vcs \
-  ./project-name \
-  dev-main && \
-  cd project-name && \
-  git init
-```
 
-That will take a little bit, and output a bunch of junk to your console. The command is doing a few things:
-1. Grabbing this repo, cloning it (without history) into the `project-name` folder as well as running composer install
-2. Running `npm install` in the newly created directory
-3. Navigating you into the newly created directory
-4. Initializing an empty git repo for the project
+### Setup Webserver
 
-When `creact-project` is done doing all that, run:
+We primarily recommend using [Homestead](https://laravel.com/docs/8.x/homestead) as your webserver, but [Nitro](https://getnitro.sh/) or [MAMP](https://www.mamp.info/en/mamp-pro/mac/) are also good options. Setting up your webserver is out of the scope of this repo. If you need help getting your repo set up, reach out to another developer on the team, and we'll get you up and running. 
+
+After you have your server up and running, you'll also want to add a database table for your new project. Again, instructions on this vary depending on which server you're using. If you need help, reach out to another developer, and we'll help you out. 
+
+### Configuration
+Now that you have your repo cloned, dependencies installed and server running, it's time to configure Craft. 
+
+If you're using Homestead, `ssh` into the server, navigate to your project and run:
 ```
 $ ./craft setup
 ```
 
-This command will ask you question about your environment (mysql vs. postgres, databse user, database password, etc.), basically it will create a `.env` file with your answers which is why you're going to want to have your database created before hand. Otherwise, it will complain that it can't connect to the database. After asking all the .env questions, it will ask if you'd like to install Craft now or later, feel free to do whichever you'd like.
+This command will ask you question about your environment (mysql vs. postgres, databse user, database password, etc.), basically it will create a `.env` file with your answers which is why you're going to want to have your database created beforehand. Otherwise, it will complain that it can't connect to the database. After asking all the .env questions, it will ask if you'd like to install Craft now or later, feel free to do whichever you'd like.
 
 If you don't want to use the setup command, just copy the `.env.example` file to a `.env` file and replace the values with your local environment configuration. Just be sure to add a random string to the `SECURITY_KEY` variable.
 
@@ -52,26 +61,29 @@ To generate a new security key, use the Craft console command.
 That will output the command to your terminal and replace the value in your .env file. 
 
 ## Front End
-On the front end of things we're currently opting for [Blendid](https://github.com/vigetlabs/blendid) primarily in order to get a userful starter project up as fast as possible. If you're not familiar with Blendid you'll want to [read their wiki](https://github.com/vigetlabs/blendid/wiki) to get a better understanding of how it's put together and what you can do to customize it.
+On the front end, we have a [gulp](https://gulpjs.com/) build process that will compile your CSS, bundle your JS and _hopefully_ handle all the boring stuff you don't want to deal with.
 
-We've made a few customizations to it off the bat:
-- Add [normalize.css](https://necolas.github.io/normalize.css/) to the main CSS file
-- Add [sass-mq](https://github.com/sass-mq/sass-mq) for easier media queryin'
-- Set our autoprefixer browsers
-- Provide jQuery to all modules
+To kick off this build use one of the two main commands:
+```sh
+# Development
+npm run start
+
+# Production build (no dev server)
+npm run build
+```
 
 ## Included Plugins:
 - [Craft 3 Asset Rev](https://github.com/clubstudioltd/craft3-asset-rev)
 - [AWS S3 Asset Source](https://github.com/craftcms/aws-s3)
 - [Typogrify](https://github.com/nystudio107/craft-typogrify)
 - [Environment Label](https://github.com/TopShelfCraft/Environment-Label)
-
-**NOTE**
-Plugins are not installed or activated through this process. You'll have to go into the admin and install them after creating a project
+- [Redactor](https://plugins.craftcms.com/redactor)
+- [SEOMatic](https://plugins.craftcms.com/seomatic)
+- [Blitz](https://plugins.craftcms.com/blitz)
 
 ## Environment variables
 
-All ENV vars are documented within `.env.example`. When adding a new ENV var, be sure to add it to this file with proper comments and documentation.
+All ENV vars are documented within `./app/.env.example`. When adding a new ENV var, be sure to add it to this file with proper comments and documentation.
 
 ## Tech Specs
 
