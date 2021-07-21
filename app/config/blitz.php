@@ -28,10 +28,10 @@ return [
 
     // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
     'includedUriPatterns' => [
-       [
-           'siteId' => '',
-           'uriPattern' => '.*',
-       ],
+        [
+            'siteId' => '',
+            'uriPattern' => '.*',
+        ],
     ],
 
     // The URI patterns to exclude from caching (overrides any matching patterns to include). Set `siteId` to a blank string to indicate all sites.

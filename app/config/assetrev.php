@@ -12,23 +12,23 @@ use club\assetrev\utilities\strategies\ManifestFileStrategy;
 use club\assetrev\utilities\strategies\QueryStringStrategy;
 
 if (getenv('ASSET_REV_CDN_URL_PREFIX')) {
-  $assetUrlPrefix = rtrim(getenv('ASSET_REV_CDN_URL_PREFIX'), '/') . '/dist/';
+    $assetUrlPrefix = rtrim(getenv('ASSET_REV_CDN_URL_PREFIX'), '/') . '/dist/';
 } else {
-  $assetUrlPrefix = '/dist/';
+    $assetUrlPrefix = '/dist/';
 }
 
-return array(
-  '*' => array(
-    'strategies' => array(
-      'manifest' => ManifestFileStrategy::class,
-      'querystring' => QueryStringStrategy::class,
-      'passthrough' => function ($filename) {
-          return $filename;
-      },
-    ),
-    'pipeline' => 'manifest|querystring|passthrough',
-    'manifestPath' => 'web/dist/rev-manifest.json',
-    'assetsBasePath' => 'web/dist/',
-    'assetUrlPrefix' => $assetUrlPrefix
-  )
-);
+return [
+    '*' => [
+        'strategies' => [
+            'manifest' => ManifestFileStrategy::class,
+            'querystring' => QueryStringStrategy::class,
+            'passthrough' => function($filename) {
+                return $filename;
+            },
+        ],
+        'pipeline' => 'manifest|querystring|passthrough',
+        'manifestPath' => 'web/dist/rev-manifest.json',
+        'assetsBasePath' => 'web/dist/',
+        'assetUrlPrefix' => $assetUrlPrefix
+    ]
+];
