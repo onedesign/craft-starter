@@ -7,8 +7,10 @@
  * @link      https://nystudio107.com/
  * @copyright Copyright (c) 2017 nystudio107
  */
+
 use \PHP_Typography\Settings\Dash_Style;
 use \PHP_Typography\Settings\Quote_Style;
+
 /**
  * Typogrify config.php
  *

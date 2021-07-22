@@ -1,0 +1,11 @@
+# CRAFT
+/.env
+
+# COMPOSER
+/vendor
+
+# ASSETS
+/web/dist
+
+# BLITZ CACHING
+/web/cache/blitz/
