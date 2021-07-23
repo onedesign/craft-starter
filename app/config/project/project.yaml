@@ -1,8 +1,14 @@
-dateModified: 1626882194
+dateModified: 1627073939
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
   transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    5a65d799-e124-43c8-bcd9-66db8a636252: 'Public Schema' # Public Schema
+    49af70e5-d7a8-4ef3-8972-beaa63fb1554: Common # Common
+    a8fddc7a-6bfe-4458-b4e3-85c6e20d9394: 'Craft Starter' # Craft Starter
+    fa640f1e-84c7-4ea7-8070-f0649bde137e: 'Craft Starter' # Craft Starter
 plugins:
   assetrev:
     edition: standard
@@ -36,7 +42,7 @@ system:
   edition: solo
   live: true
   name: 'Craft Starter'
-  schemaVersion: 3.5.13
+  schemaVersion: 3.7.7
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
