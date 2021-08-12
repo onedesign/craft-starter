@@ -10,42 +10,31 @@
 
 use craft\helpers\App;
 
+$isDev = App::env('ENVIRONMENT') === 'dev';
+$isProd = App::env('ENVIRONMENT') === 'production';
+
 return [
-    // Global settings
-    '*' => [
-        // Default Week Start Day (0 = Sunday, 1 = Monday...)
-        'defaultWeekStartDay' => 1,
+    // Default Week Start Day (0 = Sunday, 1 = Monday...)
+    'defaultWeekStartDay' => 1,
 
-        // Whether generated URLs should omit "index.php"
-        'omitScriptNameInUrls' => true,
+    // Whether generated URLs should omit "index.php"
+    'omitScriptNameInUrls' => true,
 
-        // Control Panel trigger word
-        'cpTrigger' => 'admin',
+    // The URI segment that tells Craft to load the control panel
+    'cpTrigger' => App::env('CP_TRIGGER') ?: 'admin',
 
-        // The secure key Craft will use for hashing and encrypting data
-        'securityKey' => App::env('SECURITY_KEY'),
+    // The secure key Craft will use for hashing and encrypting data
+    'securityKey' => App::env('SECURITY_KEY'),
 
-        // Dont allow more than 25 revisions otherwise DB gets huge
-        'maxRevisions' => 25,
+    // Whether Dev Mode should be enabled (see https://craftcms.com/guides/what-dev-mode-does)
+    'devMode' => $isDev,
 
-        // Don't allow admin changes by default
-        'allowAdminChanges' => false,
-    ],
+    // Whether administrative changes should be allowed
+    'allowAdminChanges' => $isDev,
 
-    // Dev environment settings
-    'dev' => [
-        // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
-        'devMode' => true,
+    // Whether crawlers should be allowed to index pages and following links
+    'disallowRobots' => !$isProd,
 
-        // Only allow admin changes in dev so project config doesn't get out of sync
-        'allowAdminChanges' => true,
-    ],
-
-    // Staging environment settings
-    'staging' => [
-    ],
-
-    // Production environment settings
-    'production' => [
-    ],
+	// Dont allow more than 25 revisions otherwise DB gets huge
+    'maxRevisions' => 25,
 ];
