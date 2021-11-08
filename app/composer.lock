@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "599846f220ba9b66a17a637378b6301d",
+    "content-hash": "70c3e4f266971c9579ae7e72dec663c0",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3181,6 +3181,45 @@
                 "source": "https://github.com/nystudio107/craft-typogrify/tree/v1"
             },
             "time": "2019-04-30T21:24:04+00:00"
+        },
+        {
+            "name": "onedesign/atomic-deploy",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onedesign/atomic-deployments.git",
+                "reference": "b7620d772804972b50705f51b9e6eb2ea700c796"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onedesign/atomic-deployments/zipball/b7620d772804972b50705f51b9e6eb2ea700c796",
+                "reference": "b7620d772804972b50705f51b9e6eb2ea700c796",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/deploy"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Olson",
+                    "email": "david.olson@onedesigncompany.com"
+                },
+                {
+                    "name": "Brian Hanson",
+                    "email": "brian@onedesigncompany.com"
+                }
+            ],
+            "description": "A script to easily handle atomic deployments in a Linux environment.",
+            "support": {
+                "issues": "https://github.com/onedesign/atomic-deployments/issues",
+                "source": "https://github.com/onedesign/atomic-deployments/tree/v1.1.0"
+            },
+            "time": "2021-10-19T14:26:40+00:00"
         },
         {
             "name": "opis/closure",
