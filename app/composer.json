@@ -26,6 +26,7 @@
     "nystudio107/craft-autocomplete": "^1.0",
     "nystudio107/craft-seomatic": "^3.3.12",
     "nystudio107/craft-typogrify": "^1.1",
+    "onedesign/atomic-deploy": "^1.1",
     "putyourlightson/craft-blitz": "^3.10.0",
     "topshelfcraft/environment-label": "^3.1",
     "vlucas/phpdotenv": "^3.4.0"
