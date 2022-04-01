@@ -1,4 +1,4 @@
-dateModified: 1627073939
+dateModified: 1648843616
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -21,6 +21,7 @@ plugins:
   blitz:
     edition: standard
     enabled: true
+    licenseKey: 0LIUIZ7OLN5PYEYFCPEYFSFP
     schemaVersion: 3.10.0
   environment-label:
     edition: standard
@@ -33,7 +34,8 @@ plugins:
   seomatic:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.10
+    licenseKey: PWZDEYYB3BW70MHQ4G2WB89Y
+    schemaVersion: 3.0.11
   typogrify:
     edition: standard
     enabled: true
@@ -42,7 +44,7 @@ system:
   edition: solo
   live: true
   name: 'Craft Starter'
-  schemaVersion: 3.7.7
+  schemaVersion: 3.7.33
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
