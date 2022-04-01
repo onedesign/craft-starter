@@ -6,9 +6,14 @@
     "italic",
     "unorderedlist",
     "orderedlist",
-    "link"
+    "link",
+    "image",
+    "video"
   ],
-  "plugins": [],
+  "plugins": [
+    "fullscreen",
+    "video"
+  ],
   "linkNewTab": true,
   "toolbarFixed": true
 }
