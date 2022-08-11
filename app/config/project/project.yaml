@@ -1,14 +1,18 @@
-dateModified: 1648843616
+dateModified: 1660240055
 email:
-  fromEmail: dev@onedesigncompany.com
+  fromEmail: brian@onedesigncompany.com
   fromName: 'Craft Starter'
   transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
 meta:
   __names__:
-    5a65d799-e124-43c8-bcd9-66db8a636252: 'Public Schema' # Public Schema
-    49af70e5-d7a8-4ef3-8972-beaa63fb1554: Common # Common
-    a8fddc7a-6bfe-4458-b4e3-85c6e20d9394: 'Craft Starter' # Craft Starter
-    fa640f1e-84c7-4ea7-8070-f0649bde137e: 'Craft Starter' # Craft Starter
+    23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: Primary # Craft Starter
+    439b957e-893e-4d96-ae87-cbd86af179c1: Common # Common
+    911bd1d5-53ff-4a53-b9da-5546fba0a849: Default # Default
+    ffe220d8-2d21-4ccf-97f6-de256bcf34fb: 'Public Schema' # Public Schema
 plugins:
   assetrev:
     edition: standard
@@ -17,24 +21,24 @@ plugins:
   aws-s3:
     edition: standard
     enabled: true
-    schemaVersion: '1.2'
+    schemaVersion: '2.0'
   blitz:
     edition: standard
     enabled: true
-    licenseKey: 0LIUIZ7OLN5PYEYFCPEYFSFP
-    schemaVersion: 3.10.0
+    licenseKey: ZCZZPY7AIA8L73K89TRD4012
+    schemaVersion: 4.2.0
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   environment-label:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  redactor:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.3.0
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: PWZDEYYB3BW70MHQ4G2WB89Y
+    licenseKey: 220GG8BTXE76LKQF6P7OZ47W
     schemaVersion: 3.0.11
   typogrify:
     edition: standard
@@ -44,7 +48,8 @@ system:
   edition: solo
   live: true
   name: 'Craft Starter'
-  schemaVersion: 3.7.33
+  retryDuration: null
+  schemaVersion: 4.0.0.9
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
