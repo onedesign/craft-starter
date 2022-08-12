@@ -25,12 +25,6 @@
   "eslint": {
     "extends": "odc"
   },
-  "browserslist": [
-    "last 1 version",
-    "not dead",
-    ">0.25%",
-    "not ie 11"
-  ],
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.9",
     "autoprefixer": "^10.4.8",
