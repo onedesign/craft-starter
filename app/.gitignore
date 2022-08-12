@@ -9,3 +9,6 @@
 
 # BLITZ CACHING
 /web/cache/blitz/
+
+# Vite
+vite.twig

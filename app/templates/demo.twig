@@ -1,0 +1,33 @@
+{# ================================================================== #}
+{# Homepage
+{# ================================================================== #}
+
+{% extends "_layout" %}
+{% import '_partials/vite' as vite %}
+
+{% block content %}
+  <div class="py-10">
+
+    <h1 class="text-2xl mb-2">Demo</h1>
+
+    <div class="my-8">
+      <h2 class="text-lg font-bold">Custom Font</h2>
+      <p class="font-fira">This is a custom typeface <strong class="font-bold">BOLD!</strong></p>
+    </div>
+
+    <div class="my-8">
+      <h2 class="text-lg font-bold">Include a static image</h2>
+      <img src="{{ vite.url('/images/sprout.jpg') }}" alt="">
+    </div>
+
+    <div class="my-8">
+      <h2 class="text-lg font-bold">Background Image</h2>
+      <div class="bg-example aspect-video bg-center"></div>
+    </div>
+
+    <div class="my-8">
+      <h2 class="text-lg font-bold">Javascript Example</h2>
+      <div data-module="Hello" data-module-options='{ "timeOfDay": "afternoon" }'></div>
+    </div>
+  </div>
+{% endblock %}
