@@ -18,12 +18,31 @@
  */
 
 use craft\helpers\App;
+use craft\mail\transportadapters\Smtp;
 use modules\Module;
 
 return [
-    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
-    'modules' => [
-        'my-module' => Module::class,
+    '*' => [
+        'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
+        'modules' => [
+            'my-module' => Module::class,
+        ],
+        //'bootstrap' => ['my-module'],
     ],
-    //'bootstrap' => ['my-module'],
+    'dev' => [
+        'components' => [
+            'mailer' => function() {
+                $settings = App::mailSettings();
+                $settings->transportType = Smtp::class;
+                $settings->transportSettings = [
+                    'host' => '127.0.0.1',
+                    'port' => '1025',
+                    'useAuthentication' => false,
+                ];
+
+                $config = App::mailerConfig($settings);
+                return Craft::createObject($config);
+            },
+        ]
+    ]
 ];

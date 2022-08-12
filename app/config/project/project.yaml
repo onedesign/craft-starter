@@ -1,7 +1,11 @@
-dateModified: 1660247518
+dateModified: 1660312816
 email:
-  fromEmail: brian@onedesigncompany.com
+  fromEmail: $FROM_EMAIL_ADDRESS
   fromName: 'Craft Starter'
+  replyToEmail: null
+  template: null
+  transportSettings:
+    command: '/usr/sbin/sendmail -bs'
   transportType: craft\mail\transportadapters\Sendmail
 graphql:
   publicToken:
