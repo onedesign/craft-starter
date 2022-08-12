@@ -1,6 +1,7 @@
 # SYSTEM
 .DS_Store
 Thumbs.db
+.eslintcache
 
 
 # BUILD FILES
