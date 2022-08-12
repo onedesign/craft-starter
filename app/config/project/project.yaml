@@ -1,4 +1,4 @@
-dateModified: 1660240055
+dateModified: 1660247518
 email:
   fromEmail: brian@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -9,7 +9,7 @@ graphql:
     expiryDate: null
 meta:
   __names__:
-    23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: Primary # Craft Starter
+    23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: Primary # Primary
     439b957e-893e-4d96-ae87-cbd86af179c1: Common # Common
     911bd1d5-53ff-4a53-b9da-5546fba0a849: Default # Default
     ffe220d8-2d21-4ccf-97f6-de256bcf34fb: 'Public Schema' # Public Schema
@@ -50,7 +50,7 @@ system:
   name: 'Craft Starter'
   retryDuration: null
   schemaVersion: 4.0.0.9
-  timeZone: America/Los_Angeles
+  timeZone: America/Chicago
 users:
   allowPublicRegistration: false
   defaultGroup: null

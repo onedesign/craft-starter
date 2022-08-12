@@ -19,12 +19,14 @@
 
 use craft\helpers\App;
 
+$isDev = App::env('CRAFT_ENVIRONMENT') === 'dev';
+
 return [
     // Debugging
-    'debug' => false,
+    'debug' => $isDev,
 
     // Whether static file caching should be enabled.
-    'cachingEnabled' => App::env('ENVIRONMENT') !== 'dev' || filter_var(App::env('ENABLE_BLITZ_CACHING'), FILTER_VALIDATE_BOOLEAN),
+    'cachingEnabled' => !$isDev,
 
     // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
     'includedUriPatterns' => [
