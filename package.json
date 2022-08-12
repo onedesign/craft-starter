@@ -22,9 +22,6 @@
     "url": "https://github.com/onedesign/craft/issues"
   },
   "homepage": "https://github.com/onedesign/craft#readme",
-  "eslint": {
-    "extends": "odc"
-  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.9",
     "autoprefixer": "^10.4.8",
