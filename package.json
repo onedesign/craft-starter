@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/onedesign/craft.git"
+    "url": "git@github.com:onedesign/craft-starter.git"
   },
   "author": "One Design Company <dev@onedesigncompany.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/onedesign/craft/issues"
+    "url": "https://github.com/onedesign/craft-starter/issues"
   },
-  "homepage": "https://github.com/onedesign/craft#readme",
+  "homepage": "https://github.com/onedesign/craft-starter/blob/main/README.md",
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.9",
     "autoprefixer": "^10.4.8",
