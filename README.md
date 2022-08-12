@@ -4,7 +4,7 @@ This is a starter project for Craft 3 projects at [One Design Company](https://o
 
 ## Requirements
 - [Composer >= 2](https://getcomposer.org)
-- [Node - Long Term Stable (LTS)](https://nodejs.org/en/)
+- [Node - 16 (Current LTS)](https://nodejs.org/en/)
 
 ## Getting Started
 
@@ -30,16 +30,22 @@ npm install
 
 ### Setup Webserver
 
-We primarily recommend using [Homestead](https://laravel.com/docs/8.x/homestead) as your webserver, but [Nitro](https://getnitro.sh/) or [MAMP](https://www.mamp.info/en/mamp-pro/mac/) are also good options. Setting up your webserver is out of the scope of this repo. If you need help getting your repo set up, reach out to another developer on the team, and we'll get you up and running. 
+We primarily recommend using [DDev](https://ddev.com/) as your webserver. If you decide to use something other than than, you're on your own. When using DDev, getting things up and running is as simple as running:
 
-After you have your server up and running, you'll also want to add a database table for your new project. Again, instructions on this vary depending on which server you're using. If you need help, reach out to another developer, and we'll help you out. 
+```shell
+ddev start
+```
+
+DDev will automatically create a whole environment for you via Docker. We recommend [checking out the documentation on their CLI Commands](https://ddev.readthedocs.io/en/stable/users/basics/cli-usage/). There's some useful stuff in there.
+
+If you need help, reach out to another developer, and we'll help you out. 
 
 ### Configuration
 Now that you have your repo cloned, dependencies installed and server running, it's time to configure Craft. 
 
-If you're using Homestead, `ssh` into the server, navigate to your project and run:
+If you're using DDev, you can just run
 ```
-$ ./craft setup
+$ ddev php app/craft setup
 ```
 
 This command will ask you question about your environment (mysql vs. postgres, databse user, database password, etc.), basically it will create a `.env` file with your answers which is why you're going to want to have your database created beforehand. Otherwise, it will complain that it can't connect to the database. After asking all the .env questions, it will ask if you'd like to install Craft now or later, feel free to do whichever you'd like.
@@ -56,12 +62,12 @@ Be sure to replace `ACTIVE_PHP_VERSION` in the above with the version MAMP is cu
 ### Generating a Security Key
 To generate a new security key, use the Craft console command.
 ```sh
-./craft setup/security-key
+ddev php app/craft setup/security-key
 ```
 That will output the command to your terminal and replace the value in your .env file. 
 
 ## Front End
-On the front end, we have a [gulp](https://gulpjs.com/) build process that will compile your CSS, bundle your JS and _hopefully_ handle all the boring stuff you don't want to deal with.
+On the front end, we have a [vite](https://vitejs.dev/) build process that will compile your CSS, bundle your JS and _hopefully_ handle all the boring stuff you don't want to deal with.
 
 To kick off this build use one of the two main commands:
 ```sh
