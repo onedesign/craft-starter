@@ -1,11 +1,14 @@
 module.exports = {
-  extends: ["airbnb-base", "plugin:prettier/recommended"],
-  parser: "babel-eslint",
+  extends: ["eslint:recommended", "prettier"],
+  parser: "@babel/eslint-parser",
+  parserOptions: {
+    requireConfigFile: false,
+  },
   rules: {
     "no-console": "warn",
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }]
   },
   env: {
-    browser: true
-  }
+    node: true,
+    browser: true,
+  },
 };
