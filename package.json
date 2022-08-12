@@ -37,6 +37,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.9",
     "autoprefixer": "^10.4.8",
+    "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "2.7.1",
