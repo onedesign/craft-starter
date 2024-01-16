@@ -54,7 +54,7 @@ This project is meant to run on DDEV, and that is the officially supported metho
 3. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
 4. Import a database by running `ddev import-db --src="full/path/to/your/db.sql.gz"` (note: this command will drop any existing database).
 5. Install Composer dependencies: `ddev composer install`.
-6. Install front end dependencies: `ddev npm install`.
+6. Use the correct version of Node and install front end dependencies: `ddev nvm use && ddev npm install`.
 7. Verify the front end build: `ddev npm run build`.
 8. Open your site in a browser: `ddev launch`.
 
