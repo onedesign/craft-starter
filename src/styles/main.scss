@@ -1,44 +1,17 @@
+// Vendor
 @tailwind base;
-
-@layer base {
-  // Just for demo purposes, remove before starting
-  @import "demo";
-
-  .skip-link {
-    padding: 1em;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    border: 3px solid;
-    background-color: #fff;
-
-    &:not(:focus) {
-      position: absolute;
-      width: 1px;
-      height: auto;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      clip: rect(0 0 0 0);
-      border: 0;
-    }
-
-    &:focus {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 10000;
-    }
-
-    &:focus:not(:hover) {
-      outline: 1px dotted;
-      outline-offset: -0.5em;
-    }
-  }
-}
-
 @tailwind components;
 @tailwind utilities;
+
+// Configuration
+@import 'variables';
+
+// Base
+@import 'base/base';
+@import 'base/webfonts';
+
+// Components
+@import 'components/skip-link';
+
+// Utilities
+@import 'utilities';

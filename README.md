@@ -1,108 +1,99 @@
-# ODC Craft Starter
+# One Craft Starter
 
-This is a starter project for Craft 3 projects at [One Design Company](https://onedesigncompany.com).
+This is a starter project for Craft 4 projects at [One Design Company](https://onedesigncompany.com).
 
-## Requirements
-- [Composer >= 2](https://getcomposer.org)
-- [Node - 16 (Current LTS)](https://nodejs.org/en/)
+Local development is handled by DDEV, which means that the Craft application and its related services run inside of Docker containers provided by DDEV. For consistency and in order to avoid using binaries at different versions than the application requires, it is recommended that you run all project commands from within the DDEV containers.
+
+DDEV provides wrappers for most things you will need (including the `craft` command), so you do not actually have to `ssh` into the container to run (most) commands. Examples:
+
+`ddev composer require foo/bar`
+
+`ddev npm install`
+
+`ddev npm run start`
+
+`ddev craft project-config/apply`
+
+`ddev craft plugin/enable imager-x`
+
+## Requirements for Local Development
+
+- [Docker](https://www.docker.com/)
+- [DDEV](https://ddev.com/)
+
+## Requirements for Deployment Infrastructure
+
+- [Composer >= 2](https://getcomposer.org/)
+- [Node >= 16.17.1](https://nodejs.org/en/)
+- [NPM >= 8.15.0](https://www.npmjs.com/)
+
+## Front End Dependencies
+
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Pre-Installed Craft Plugins
+
+- [Servd Assets and Helpers](https://plugins.craftcms.com/servd-asset-storage)
+- [CKEditor](https://plugins.craftcms.com/ckeditor)
+- [Twig Perversion](https://plugins.craftcms.com/twig-perversion)
+- [SEOMatic](https://plugins.craftcms.com/seomatic)
+- [Typogrify](https://plugins.craftcms.com/typogrify)
+- [Imager X](https://plugins.craftcms.com/imager-x)
+- [NEO](https://plugins.craftcms.com/neo)
+- [Hyper](https://plugins.craftcms.com/hyper)
 
 ## Getting Started
 
-### Create a new Repo
-This repo is a [Template Repo](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template#about-repository-templates) which means you can use it to quickly and easily create a new project by clicking the "Use this template" button visible on the main repo page. 
+This project is meant to run on DDEV, and that is the officially supported method for local development. You will first need to install Docker and then DDEV in order to work on this project locally.
 
-That button will ask you select an owner (onedesign) and a name for the repository (client name). You can also select a visibility (private 99% of the time). This will create a new repo using this repo as a base. Once the repo has been created, you can clone it onto your system like any other repo. 
+### Initial Startup
 
+1. Start DDEV by running `ddev start` from the project root.
+2. Run `ddev describe` and make note of the database connection information as well as primary site url.
+3. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
+4. Import a database by running `ddev import-db --src="full/path/to/your/db.sql.gz"` (note: this command will drop any existing database).
+5. Install Composer dependencies: `ddev composer install`.
+6. Install front end dependencies: `ddev npm install`.
+7. Verify the front end build: `ddev npm run build`.
+8. Open your site in a browser: `ddev launch`.
 
-### Install Dependencies
-After you've cloned the repo, you'll want to run the following commands from the root of the repo:
+### Ongoing Development
 
-```sh
-# Run composer install using ./app as the directory
-composer install -d app
+1. `ddev start`
+2. `ddev npm run start`
+3. `ddev launch`
 
-# Get the correct version of node
-nvm use
+### Production Configuration
 
-# Install node dependencies
-npm install 
-```
+This project template comes with an `.htaccess` file that contains updates and optimizations for One Design Craft CMS projects. Once you have a production domain for you project, go into this file and update all the places where `yourproject.com` appears with the actual production domain.
 
-### Setup Webserver
+## Common Pitfalls
 
-We primarily recommend using [DDev](https://ddev.com/) as your webserver. If you decide to use something other than than, you're on your own. When using DDev, getting things up and running is as simple as running:
+### The Vite Server Doesn't Work
 
-```shell
-ddev start
-```
+Vite uses `esbuild` under the hood, and that compiles differently based on the system architecture of where it was installed. If you ran `npm install` outside of DDEV, then `ddev npm run start` will not work, because the container expects to be working with a version of `esbuild` that was installed from within the container.
 
-DDev will automatically create a whole environment for you via Docker. We recommend [checking out the documentation on their CLI Commands](https://ddev.readthedocs.io/en/stable/users/basics/cli-usage/). There's some useful stuff in there.
+If you have this issue, try `rm -rf node_modules` and then `ddev npm install`.
 
-If you need help, reach out to another developer, and we'll help you out. 
+If you did initially run `ddev npm install` and your Vite server isn't working, be sure you're actually running `ddev npm run start` and not simply `npm run start`, as the project is configured to expect the Vite dev server to be running from with DDEV.
 
-### Configuration
-Now that you have your repo cloned, dependencies installed and server running, it's time to configure Craft. 
+### Static Assets
 
-If you're using DDev, you can just run
-```
-$ ddev php app/craft setup
-```
+Because of the way that Vite resolves references to static assets, static assets referenced in your CSS or templates need to have an absolute URL with the `static/` directory as the root. Examples:
 
-This command will ask you question about your environment (mysql vs. postgres, databse user, database password, etc.), basically it will create a `.env` file with your answers which is why you're going to want to have your database created beforehand. Otherwise, it will complain that it can't connect to the database. After asking all the .env questions, it will ask if you'd like to install Craft now or later, feel free to do whichever you'd like.
+A template image: `<img src="{{ vite.url('/images/sprout.jpg') }}" alt="">`
 
-If you don't want to use the setup command, just copy the `.env.example` file to a `.env` file and replace the values with your local environment configuration. Just be sure to add a random string to the `SECURITY_KEY` variable.
+A font file: `src: url('/fonts/fira-code-v21-latin-regular.woff2') format('woff2');`
 
-**NOTE:**
-If you're using MAMP as your local server of choice, the above command won't work. You have two options. First, you can copy the `.env.example` file in the repo and edit values on your own (be sure to generate a security key) OR you can point the command at your active version of PHP and run it that way. On macOS that looks something like
-```
-$ /Applications/MAMP/bin/php/{ACTIVE_PHP_VERSION}/bin/php ./craft setup
-```
-Be sure to replace `ACTIVE_PHP_VERSION` in the above with the version MAMP is currently using. At the time of writing it's probably either `php7.1.12` or `php7.2.1`
+### Composer Packages Requiring Authentication
 
-### Generating a Security Key
-To generate a new security key, use the Craft console command.
-```sh
-ddev php app/craft setup/security-key
-```
-That will output the command to your terminal and replace the value in your .env file. 
+If you are referencing a Composer package that requires authentication, for example, a package hosted on Repman, you may need to authenticate while running `ddev composer install`. In a normal scenario, you would add an auth token to your global Composer configuration. With DDEV, you will need to add this token inside of the running web container.
 
-## Front End
-On the front end, we have a [vite](https://vitejs.dev/) build process that will compile your CSS, bundle your JS and _hopefully_ handle all the boring stuff you don't want to deal with.
+`ddev ssh`
 
-To kick off this build use one of the two main commands:
-```sh
-# Development
-npm run start
+`composer config --global --auth http-basic.onedesign.repo.repman.io token [your-token]`
 
-# Production build (no dev server)
-npm run build
-```
+`exit`
 
-## Included Plugins:
-- [Craft 3 Asset Rev](https://github.com/clubstudioltd/craft3-asset-rev)
-- [AWS S3 Asset Source](https://github.com/craftcms/aws-s3)
-- [Typogrify](https://github.com/nystudio107/craft-typogrify)
-- [Environment Label](https://github.com/TopShelfCraft/Environment-Label)
-- [Redactor](https://plugins.craftcms.com/redactor)
-- [SEOMatic](https://plugins.craftcms.com/seomatic)
-- [Blitz](https://plugins.craftcms.com/blitz)
-
-## Environment variables
-
-All ENV vars are documented within `./app/.env.example`. When adding a new ENV var, be sure to add it to this file with proper comments and documentation.
-
-## Tech Specs
-
-Craft is a self-hosted PHP application. It can connect to MySQL and PostgreSQL for content storage. See [Server Requirements](https://craftcms.com/docs/3.x/requirements.html) for more details.
-
-## Popular Resources
-
-- **[Tutorial](https://craftcms.com/docs/getting-started-tutorial/)** – Get set up and learn the basics.
-- **[Documentation](https://craftcms.com/docs/)** – Read the official docs.
-- **[Knowledge Base](https://craftcms.com/knowledge-base)** – Find answers to common problems.
-- **[#craftcms](https://twitter.com/hashtag/craftcms)** – See the latest tweets about Craft.
-- **[Discord](https://craftcms.com/discord)** – Meet the community.
-- **[Stack Exchange](http://craftcms.stackexchange.com/)** – Get help and help others.
-- **[CraftQuest](https://craftquest.io/)** – Watch unlimited video lessons and courses.
-- **[Craft Link List](http://craftlinklist.com/)** – Stay in-the-know.
-- **[nystudio107 Blog](https://nystudio107.com/blog)** – Learn Craft and modern web development.
+Doing that will allow `ddev composer install` to succeed. The downside is that the container's global Composer config is ephemeral, so if you need to authenticate again for any reason, you will have to repeat the steps above.

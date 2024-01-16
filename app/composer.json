@@ -1,37 +1,21 @@
 {
-  "name": "onedesign/craft-starter",
-  "description": "Craft CMS",
-  "keywords": [
-    "craft",
-    "cms",
-    "craftcms",
-    "project"
-  ],
-  "license": "Unlicense",
-  "homepage": "https://craftcms.com/",
-  "type": "project",
-  "support": {
-    "email": "support@craftcms.com",
-    "issues": "https://github.com/craftcms/cms/issues",
-    "forum": "https://craftcms.stackexchange.com/",
-    "source": "https://github.com/craftcms/cms",
-    "docs": "https://craftcms.com/docs",
-    "rss": "https://craftcms.com/changelog.rss"
-  },
   "require": {
-    "craftcms/cms": "^4.2.0.2",
-    "vlucas/phpdotenv": "^5.4.0",
-    "clubstudioltd/craft-asset-rev": "^7.0",
-    "craftcms/aws-s3": "^2.0",
-    "craftcms/ckeditor": "^2.0",
-    "nystudio107/craft-autocomplete": "^1.0",
+    "craftcms/ckeditor": "^3.6",
+    "craftcms/cms": "^4.4.0",
+    "marionnewlevant/twig-perversion": "^3.0",
     "nystudio107/craft-seomatic": "^4.0",
     "nystudio107/craft-typogrify": "^4.0",
-    "onedesign/atomic-deploy": "^1.1",
-    "putyourlightson/craft-blitz": "^4.0",
-    "topshelfcraft/environment-label": "^4.0"
+    "servd/craft-asset-storage": "^3.5",
+    "spacecatninja/imager-x": "^4.2",
+    "spicyweb/craft-neo": "^4.0",
+    "verbb/formie": "^2.1",
+    "verbb/hyper": "^1.1",
+    "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
+    "craftcms/generator": "^1.3.0",
+    "nystudio107/craft-autocomplete": "^1.11",
+    "roave/security-advisories": "dev-latest",
     "yiisoft/yii2-shell": "^2.0.3"
   },
   "autoload": {
@@ -51,9 +35,8 @@
     }
   },
   "scripts": {
-    "post-create-project-cmd": [
-      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-      "@composer dump-autoload -o"
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\""
     ]
   }
 }

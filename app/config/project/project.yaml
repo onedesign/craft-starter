@@ -1,4 +1,4 @@
-dateModified: 1660312816
+dateModified: 1705445217
 email:
   fromEmail: $FROM_EMAIL_ADDRESS
   fromName: 'Craft Starter'
@@ -7,16 +7,17 @@ email:
   transportSettings:
     command: '/usr/sbin/sendmail -bs'
   transportType: craft\mail\transportadapters\Sendmail
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 meta:
   __names__:
+    0d1c338d-da32-4a10-88f4-f030b2e38530: Simple # Simple
+    1cbb67d5-972c-4346-8cac-eddbfa9e6084: Home # Home
     23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: Primary # Primary
     439b957e-893e-4d96-ae87-cbd86af179c1: Common # Common
     911bd1d5-53ff-4a53-b9da-5546fba0a849: Default # Default
-    ffe220d8-2d21-4ccf-97f6-de256bcf34fb: 'Public Schema' # Public Schema
+    a36e767a-ddfe-4b61-bcc4-01b8c65ff48b: Home # Home
+    c51820fb-df82-4cd2-b955-e6f381846903: 'Contact Form' # Contact Form
+    e32fd166-977b-4969-8fd4-021cfac178cc: New # New
+    f19c0ae7-fefa-45b3-aeee-297dea098f94: 'Public Schema' # Public Schema
 plugins:
   assetrev:
     edition: standard
@@ -34,26 +35,54 @@ plugins:
   ckeditor:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion: 3.0.0.0
   environment-label:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: O2NVRSJ23TB2YP8ZE0GSDSJG
+    schemaVersion: 2.0.13
+  hyper:
+    edition: standard
+    enabled: true
+    licenseKey: 98INQLNY33MBISZR8KBX4AFF
+    schemaVersion: 1.0.0
+  imager-x:
+    edition: lite
+    enabled: true
+    licenseKey: XJEDPYG6ZF3WVRSH9R8LBSL7
+    schemaVersion: 4.0.0
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: UOUQ2H3KES8RW34T46OUK9A1
+    schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
     licenseKey: 220GG8BTXE76LKQF6P7OZ47W
-    schemaVersion: 3.0.11
+    schemaVersion: 3.0.12
+  servd-asset-storage:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+  twig-perversion:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   typogrify:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
 system:
-  edition: solo
+  edition: pro
   live: true
-  name: 'Craft Starter'
+  name: 'One Craft Starter'
   retryDuration: null
-  schemaVersion: 4.0.0.9
+  schemaVersion: 4.5.3.0
   timeZone: America/Chicago
 users:
   allowPublicRegistration: false

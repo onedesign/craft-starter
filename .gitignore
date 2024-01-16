@@ -3,15 +3,12 @@
 Thumbs.db
 .eslintcache
 
-
 # BUILD FILES
 /node_modules
 /yarn-error.log
 /npm-debug.log
-
-
-# VM
-.vagrant
+app/web/dist
+app/templates/_partials/vite.twig
 
 # TEMP
 .cache
@@ -31,5 +28,3 @@ Thumbs.db
 .vscode
 config.codekit3
 prepros-6.config
-
-

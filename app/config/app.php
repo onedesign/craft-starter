@@ -15,34 +15,13 @@
  * If you want to modify the application config for *only* web requests or
  * *only* console requests, create an app.web.php or app.console.php file in
  * your config/ folder, alongside this one.
+ * 
+ * Read more about application configuration:
+ * https://craftcms.com/docs/4.x/config/app.html
  */
 
 use craft\helpers\App;
-use craft\mail\transportadapters\Smtp;
-use modules\Module;
 
 return [
-    '*' => [
-        'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
-        'modules' => [
-            'my-module' => Module::class,
-        ],
-        //'bootstrap' => ['my-module'],
-    ],
-    'dev' => [
-        'components' => [
-            'mailer' => function() {
-                $settings = App::mailSettings();
-                $settings->transportType = Smtp::class;
-                $settings->transportSettings = [
-                    'host' => '127.0.0.1',
-                    'port' => '1025',
-                    'useAuthentication' => false,
-                ];
-
-                $config = App::mailerConfig($settings);
-                return Craft::createObject($config);
-            },
-        ]
-    ]
+    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
 ];
