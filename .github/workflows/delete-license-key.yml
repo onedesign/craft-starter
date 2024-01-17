@@ -1,0 +1,27 @@
+name: Delete License Key and Commit Changes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  delete-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Delete File and Commit Changes
+        run: |
+          rm app/config/license.key
+          git add .
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Delete license.key file"
+
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
