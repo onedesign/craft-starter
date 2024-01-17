@@ -1,11 +1,9 @@
-name: Delete License Key and Commit Changes
+name: Delete File and Commit Changes
 
 on:
   push:
     branches:
       - main
-
-permissions: write-all
 
 jobs:
   delete-commit:
@@ -17,13 +15,18 @@ jobs:
 
       - name: Delete File and Commit Changes
         run: |
-          rm app/config/license.key
-          git add .
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "Delete license.key file"
+          rm -f app/config/license.key        # Use '-f' flag to suppress error if the file doesn't exist
+          if git status --porcelain | grep 'app/config/license.key'; then
+            git add .
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git commit -m "Delete license.key file"
+          else
+            echo "Nothing to commit. File does not exist."
+          fi
 
       - name: Push Changes
+        if: ${{ !contains(github.event.head_commit.message, 'Delete license.key file') }}  # Skip push if no changes were committed
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
