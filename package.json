@@ -4,76 +4,43 @@
   "description": "Base craft install for ODC projects",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
-    "build": "NODE_ENV=production gulp build",
+    "start": "vite",
+    "build": "vite build",
     "lint": "eslint ./src --fix"
   },
   "engines": {
-    "node": ">=6.11.1",
-    "npm": ">=3.10.3"
+    "node": ">= 20.10.0",
+    "npm": ">= 10.2.3"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/onedesign/craft.git"
+    "url": "git@github.com:onedesign/craft-starter.git"
   },
   "author": "One Design Company <dev@onedesigncompany.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/onedesign/craft/issues"
+    "url": "https://github.com/onedesign/craft-starter/issues"
   },
-  "homepage": "https://github.com/onedesign/craft#readme",
-  "eslint": {
-    "extends": "odc"
+  "homepage": "https://github.com/onedesign/craft-starter/blob/main/README.md",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@rollup/plugin-eslint": "^9.0.3",
+    "autoprefixer": "^10.4.12",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.24.0",
+    "eslint-plugin-compat": "^4.0.2",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8",
+    "sass": "^1.55.0",
+    "vite": "^4.0.4",
+    "vite-plugin-craftcms": "^1.0.0",
+    "vite-plugin-restart": "^0.3.0"
   },
   "browserslist": [
-    "last 1 version",
-    "not dead",
-    ">0.25%",
-    "not ie 11"
-  ],
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "normalize.css": "^8.0.1",
-    "sass-mq": "^5.0.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "ansi-colors": "^4.1.1",
-    "autoprefixer": "^10.0.1",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.27.4",
-    "cssnano": "^4.1.10",
-    "dart-sass": "^1.25.0",
-    "del": "^6.0.0",
-    "dotenv": "^8.2.0",
-    "eslint": "^7.10.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.3",
-    "eslint-webpack-plugin": "^2.2.0",
-    "fancy-log": "^1.3.3",
-    "gulp": "^4.0.2",
-    "gulp-css-globbing": "^0.2.2",
-    "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-rev": "^9.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "postcss": "^8.3.5",
-    "postcss-import": "^12.0.1",
-    "prettier": "^1.19.1",
-    "strip-ansi": "^6.0.0",
-    "terser-webpack-plugin": "^4.2.3",
-    "webpack": "^4.44.2",
-    "webpack-dev-middleware": "^3.7.2",
-    "webpack-manifest-plugin": "^2.2.0"
-  }
+    "defaults",
+    "not op_mini all",
+    "not kaios >= 2.5"
+  ]
 }

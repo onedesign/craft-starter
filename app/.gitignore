@@ -1,11 +1,4 @@
-# CRAFT
 /.env
-
-# COMPOSER
+/.idea
 /vendor
-
-# ASSETS
-/web/dist
-
-# BLITZ CACHING
-/web/cache/blitz/
+.DS_Store

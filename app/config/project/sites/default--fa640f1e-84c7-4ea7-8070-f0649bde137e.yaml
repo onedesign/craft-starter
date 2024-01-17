@@ -1,9 +1,0 @@
-baseUrl: $PRIMARY_SITE_URL
-enabled: true
-handle: default
-hasUrls: true
-language: en-US
-name: 'Craft Starter'
-primary: true
-siteGroup: a8fddc7a-6bfe-4458-b4e3-85c6e20d9394 # Craft Starter
-sortOrder: 1

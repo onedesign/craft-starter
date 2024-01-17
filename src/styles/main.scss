@@ -1,15 +1,17 @@
-// Variables first
-@import "variables";
-
 // Vendor
-@import "normalize.css";
-@import "sass-mq/mq";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Configuration
+@import 'variables';
 
 // Base
-@import "base/base";
+@import 'base/base';
+@import 'base/webfonts';
 
-// Objects
-@import "objects/skip-link";
+// Components
+@import 'components/skip-link';
 
-// Utils
-@import "util/visually-hidden";
+// Utilities
+@import 'utilities';
