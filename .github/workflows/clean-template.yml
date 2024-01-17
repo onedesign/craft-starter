@@ -11,23 +11,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  first-time-setup:
-    # ensure run only once, when repo generated
-    if: github.run_number == 1
-
+  delete-commit:
     runs-on: ubuntu-latest
 
     steps:
-      # get main branch repo contents
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-      # remove files not needed for user instance of template
-      - name: Remove unneeded files
-        run: rm -f app/config/license.key
+      - name: Delete File and Commit Changes
+        run: |
+          rm app/config/license.key
+          git add .
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Delete license.key file"
 
-      # save changed files
-      - name: Commit changed files
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
         with:
-          commit_message: "Setup repo"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
