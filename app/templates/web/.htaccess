@@ -1,0 +1,231 @@
+# ----------------------------------------------------------------------
+# Rewrites
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # This sets the environment variable HTTPS to "on"
+    # if the request is behind a load balancer which terminates SSL.
+    # In PHP, you can access this via $_SERVER['HTTPS']
+    SetEnvIf X-Forwarded-Proto https HTTPS=on
+
+    # Force redirect to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    RewriteCond %{HTTP_HOST} ^www.yourproject.com [NC,OR]
+    RewriteCond %{HTTP_HOST} ^.+\.oneis.us [NC]
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    # Redirect non-www to www
+    RewriteCond %{HTTP_HOST} ^yourproject.com [NC]
+    RewriteRule ^(.*)$ https://www.yourproject.com/$1 [L,R=301,NC]
+
+    # Strip trailing slashes from the end of URLs. Redirect them to non-slash versions.
+    # This ignores the trailing slash on the base URL (e.g. https://www.yourproject.com/)
+    RewriteCond %{REQUEST_URI} ^.+\/$
+    RewriteRule ^(.+)\/$ /$1 [L,R=301,NC]
+
+
+    # Blitz cache rewrite
+    # https://putyourlightson.com/craft-plugins/blitz/docs#/?id=server-rewrites
+    # RewriteCond %{DOCUMENT_ROOT}/cache/blitz/%{HTTP_HOST}/%{REQUEST_URI}/%{QUERY_STRING}/index.html -s
+    # RewriteCond %{REQUEST_METHOD} GET
+    # Required as of version 2.1.0
+    # RewriteCond %{QUERY_STRING} !token= [NC]
+    # RewriteRule .* /cache/blitz/%{HTTP_HOST}/%{REQUEST_URI}/%{QUERY_STRING}/index.html [L]
+
+    # Send would-be 404 requests to Craft
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+    RewriteRule (.+) index.php?p=$1 [QSA,L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# This adds CORS headers for static assets
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js|cur|gif|ico|jpe?g|png|svgz?|webp|webmanifest)$">
+    Header add Access-Control-Allow-Origin: "*"
+    Header set Access-Control-Allow-Methods: "GET,OPTIONS"
+    Header set Access-Control-Allow-Headers: "Content-Type"
+  </FilesMatch>
+
+  # Stop pages from loading when they detect XSS attacks
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Disable the ablity to render a page on this website in a '<frame>', '<iframe>' or '<object>'
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  # Enable HSTS, which instructs clients to only connect to a website over encrypted HTTPS connections
+  Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
+
+  # Protect against content-sniffing, page-framing and click-jacking, xss attacks
+  # https://htaccessbook.com/increase-security-x-security-headers/
+  Header set X-XSS-Protection "1; mode=block"
+  Header always append X-Frame-Options SAMEORIGIN
+  Header set X-Content-Type-Options nosniff
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Compression
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+
+    # Force compression for mangled `Accept-Encoding` request headers
+    # https://developer.yahoo.com/blogs/ydn/pushing-beyond-gzipping-25601.html
+
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Compress all output labeled with one of the following media types.
+    #
+    # (!) For Apache versions below version 2.3.7 you don't need to
+    # enable `mod_filter` and can remove the `<IfModule mod_filter.c>`
+    # and `</IfModule>` lines as `AddOutputFilterByType` is still in
+    # the core directives.
+    #
+    # https://httpd.apache.org/docs/current/mod/mod_filter.html#addoutputfilterbytype
+
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE "application/atom+xml" \
+                                      "application/javascript" \
+                                      "application/json" \
+                                      "application/ld+json" \
+                                      "application/manifest+json" \
+                                      "application/rdf+xml" \
+                                      "application/rss+xml" \
+                                      "application/schema+json" \
+                                      "application/vnd.geo+json" \
+                                      "application/vnd.ms-fontobject" \
+                                      "application/x-font-ttf" \
+                                      "application/x-javascript" \
+                                      "application/x-web-app-manifest+json" \
+                                      "application/xhtml+xml" \
+                                      "application/xml" \
+                                      "font/eot" \
+                                      "font/opentype" \
+                                      "image/bmp" \
+                                      "image/svg+xml" \
+                                      "image/vnd.microsoft.icon" \
+                                      "image/x-icon" \
+                                      "text/cache-manifest" \
+                                      "text/css" \
+                                      "text/html" \
+                                      "text/javascript" \
+                                      "text/plain" \
+                                      "text/vcard" \
+                                      "text/vnd.rim.location.xloc" \
+                                      "text/vtt" \
+                                      "text/x-component" \
+                                      "text/x-cross-domain-policy" \
+                                      "text/xml"
+
+    </IfModule>
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Map the following filename extensions to the specified
+    # encoding type in order to make Apache serve the file types
+    # with the appropriate `Content-Encoding` response header
+    # (do note that this will NOT make Apache compress them!).
+    #
+    # If these files types would be served without an appropriate
+    # `Content-Enable` response header, client applications (e.g.:
+    # browsers) wouldn't know that they first need to uncompress
+    # the response, and thus, wouldn't be able to understand the
+    # content.
+    #
+    # https://httpd.apache.org/docs/current/mod/mod_mime.html#addencoding
+
+    <IfModule mod_mime.c>
+        AddEncoding gzip              svgz
+    </IfModule>
+
+</IfModule>
+
+
+# ----------------------------------------------------------------------
+# Expires headers - requires `mod_expires` to be enabled
+# ----------------------------------------------------------------------
+
+# Serve resources with far-future expires headers.
+#
+# (!) If you don't control versioning with filename-based
+# cache busting, you should consider lowering the cache times
+# to something like one week.
+#
+# https://httpd.apache.org/docs/current/mod/mod_expires.html
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresDefault                                      "access plus 1 month"
+
+  # CSS
+
+  ExpiresByType text/css                              "access plus 1 year"
+
+
+  # Favicon (cannot be renamed!) and cursor images
+
+  ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
+  ExpiresByType image/x-icon                          "access plus 1 week"
+
+  # HTML
+
+  ExpiresByType text/html                             "access plus 0 seconds"
+
+
+  # JavaScript
+
+  ExpiresByType application/javascript                "access plus 1 year"
+  ExpiresByType application/x-javascript              "access plus 1 year"
+  ExpiresByType text/javascript                       "access plus 1 year"
+
+
+  # Manifest files
+
+  ExpiresByType application/manifest+json             "access plus 1 week"
+  ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+  ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+
+  # Media files
+
+  ExpiresByType audio/ogg                             "access plus 1 year"
+  ExpiresByType image/bmp                             "access plus 1 year"
+  ExpiresByType image/gif                             "access plus 1 year"
+  ExpiresByType image/jpeg                            "access plus 1 year"
+  ExpiresByType image/png                             "access plus 1 year"
+  ExpiresByType image/svg+xml                         "access plus 1 year"
+  ExpiresByType image/webp                            "access plus 1 year"
+  ExpiresByType video/mp4                             "access plus 1 year"
+  ExpiresByType video/ogg                             "access plus 1 year"
+  ExpiresByType video/webm                            "access plus 1 year"
+
+  # Web fonts
+
+  # Embedded OpenType (EOT)
+  ExpiresByType application/vnd.ms-fontobject         "access plus 1 year"
+  ExpiresByType font/eot                              "access plus 1 year"
+
+  # OpenType
+  ExpiresByType font/opentype                         "access plus 1 year"
+
+  # TrueType
+  ExpiresByType application/x-font-ttf                "access plus 1 year"
+
+  # Web Open Font Format (WOFF) 1.0
+  ExpiresByType application/font-woff                 "access plus 1 year"
+  ExpiresByType application/x-font-woff               "access plus 1 year"
+  ExpiresByType font/woff                             "access plus 1 year"
+
+  # Web Open Font Format (WOFF) 2.0
+  ExpiresByType application/font-woff2                "access plus 1 year"
+</IfModule>
