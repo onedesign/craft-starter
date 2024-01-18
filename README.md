@@ -2,6 +2,34 @@
 
 This is a starter project for Craft 4 projects at [One Design Company](https://onedesigncompany.com).
 
+
+## Requirements for Local Development
+
+- [Docker](https://www.docker.com/)
+- [DDEV](https://ddev.com/)
+
+
+### Initial Startup
+
+1. Rename the `name:` in the `.ddev/config.yaml` file to match the name of your project.
+2. Start DDEV by running `ddev start` from the project root.
+3. Run `ddev describe` and make note of the database connection information as well as primary site url.
+4. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
+5. Import a database by running `ddev import-db --src="full/path/to/your/db.sql.gz"` (note: this command will drop any existing database).
+6. Install Composer dependencies: `ddev composer install`.
+7. Use the correct version of Node and install front end dependencies: `ddev nvm use && ddev npm install`.
+8. Verify the front end build: `ddev npm run build`.
+9. Open your site in a browser: `ddev launch`.
+
+### Ongoing Development
+
+1. `ddev start`
+2. `ddev npm run start`
+3. `ddev launch`
+
+
+### About DDEV
+
 Local development is handled by DDEV, which means that the Craft application and its related services run inside of Docker containers provided by DDEV. For consistency and in order to avoid using binaries at different versions than the application requires, it is recommended that you run all project commands from within the DDEV containers.
 
 DDEV provides wrappers for most things you will need (including the `craft` command), so you do not actually have to `ssh` into the container to run (most) commands. Examples:
@@ -16,17 +44,13 @@ DDEV provides wrappers for most things you will need (including the `craft` comm
 
 `ddev craft plugin/enable imager-x`
 
-## Requirements for Local Development
-
-- [Docker](https://www.docker.com/)
-- [DDEV](https://ddev.com/)
 
 ## Requirements for Deployment Infrastructure
 
 - [Composer >= 2](https://getcomposer.org/)
 - [Node >= 20](https://nodejs.org/en/)
 
-## Front End Dependencies
+## Front End Tooling
 
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
@@ -41,27 +65,6 @@ DDEV provides wrappers for most things you will need (including the `craft` comm
 - [Imager X](https://plugins.craftcms.com/imager-x)
 - [NEO](https://plugins.craftcms.com/neo)
 - [Hyper](https://plugins.craftcms.com/hyper)
-
-## Getting Started
-
-This project is meant to run on DDEV, and that is the officially supported method for local development. You will first need to install Docker and then DDEV in order to work on this project locally.
-
-### Initial Startup
-
-1. Start DDEV by running `ddev start` from the project root.
-2. Run `ddev describe` and make note of the database connection information as well as primary site url.
-3. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
-4. Import a database by running `ddev import-db --src="full/path/to/your/db.sql.gz"` (note: this command will drop any existing database).
-5. Install Composer dependencies: `ddev composer install`.
-6. Use the correct version of Node and install front end dependencies: `ddev nvm use && ddev npm install`.
-7. Verify the front end build: `ddev npm run build`.
-8. Open your site in a browser: `ddev launch`.
-
-### Ongoing Development
-
-1. `ddev start`
-2. `ddev npm run start`
-3. `ddev launch`
 
 ### Production Configuration
 
