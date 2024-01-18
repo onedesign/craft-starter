@@ -12,14 +12,17 @@ This is a starter project for Craft 4 projects at [One Design Company](https://o
 ### Initial Startup
 
 1. Rename the `name:` in the `.ddev/config.yaml` file to match the name of your project.
-2. Start DDEV by running `ddev start` from the project root.
-3. Run `ddev describe` and make note of the database connection information as well as primary site url.
-4. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
-5. Import a database by running `ddev import-db --src="full/path/to/your/db.sql.gz"` (note: this command will drop any existing database).
-6. Install Composer dependencies: `ddev composer install`.
-7. Use the correct version of Node and install front end dependencies: `ddev nvm use && ddev npm install`.
-8. Verify the front end build: `ddev npm run build`.
-9. Open your site in a browser: `ddev launch`.
+1. Start DDEV by running `ddev start` from the project root.
+1. Run `ddev describe` and make note of the database connection information as well as primary site url.
+1. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
+1. Install Composer dependencies: `ddev composer install`.
+1. Create an application key: `ddev craft setup/app-id`
+1. Set a security key in your `.env` by typing: `ddev craft setup/security-key`
+1. Use the correct version of Node and install front end dependencies: `ddev nvm use && ddev npm install`.
+1. Install Craft: `ddev craft install`
+1. (If importing an existing project) - Run `ddev launch -p` to fire up PHPMyAdmin and import a database.
+1. Start your vite server: `ddev npm start`.
+1. Fire up your site: `ddev launch`.
 
 ### Ongoing Development
 
