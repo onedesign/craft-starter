@@ -25,7 +25,6 @@ DDEV provides wrappers for most things you will need (including the `craft` comm
 
 - [Composer >= 2](https://getcomposer.org/)
 - [Node >= 20](https://nodejs.org/en/)
-- [NPM >= 9](https://www.npmjs.com/)
 
 ## Front End Dependencies
 
