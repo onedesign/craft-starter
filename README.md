@@ -24,8 +24,7 @@ DDEV provides wrappers for most things you will need (including the `craft` comm
 ## Requirements for Deployment Infrastructure
 
 - [Composer >= 2](https://getcomposer.org/)
-- [Node >= 16.17.1](https://nodejs.org/en/)
-- [NPM >= 8.15.0](https://www.npmjs.com/)
+- [Node >= 20](https://nodejs.org/en/)
 
 ## Front End Dependencies
 
