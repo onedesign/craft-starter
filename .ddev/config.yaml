@@ -14,7 +14,9 @@ composer_root: app
 composer_version: '2'
 web_environment:
   - CRAFT_CMD_ROOT=./app
-nodejs_version: '20'
+hooks:
+  post-start:
+    - exec: 'nvm install 20 && nvm use 20'
 # Key features of DDEV's config.yaml:
 
 # name: <projectname> # Name of the project, automatically provides
