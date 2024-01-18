@@ -1,4 +1,18 @@
-/.env
-/.idea
+# ENVIRONMENT
+.env
+
+# COMPOSER
 /vendor
-.DS_Store
+
+# CRAFT STORAGE
+!/storage/
+/storage/*
+!/storage/rebrand/
+
+# WEB
+/web/cpresources
+/web/assets
+/web/dist
+
+# BUILD FILES
+/templates/_partials/vite.twig

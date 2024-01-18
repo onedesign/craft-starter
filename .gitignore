@@ -7,8 +7,6 @@ Thumbs.db
 /node_modules
 /yarn-error.log
 /npm-debug.log
-app/web/dist
-app/templates/_partials/vite.twig
 
 # TEMP
 .cache
