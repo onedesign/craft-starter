@@ -19,7 +19,7 @@ This is a starter project for Craft 4 projects at [One Design Company](https://o
 1. Set a security key in your `.env` by typing: `ddev craft setup/security-key`
 1. Use the correct version of Node and install front end dependencies: `ddev nvm use && ddev npm install`.
 1. Install Craft: `ddev craft install`
-1. (If importing an existing project) - Run `ddev launch -p` to fire up PHPMyAdmin and import a database.
+1. (If importing an existing project) - Run `ddev get ddev/ddev-phpmyadmin` and use `ddev phpmyadmin` to launch phpMyAdminand import a database.
 1. Start your vite server: `ddev npm start`.
 1. Fire up your site: `ddev launch`.
 
