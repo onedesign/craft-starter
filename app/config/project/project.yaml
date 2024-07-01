@@ -19,32 +19,10 @@ meta:
     e32fd166-977b-4969-8fd4-021cfac178cc: New # New
     f19c0ae7-fefa-45b3-aeee-297dea098f94: 'Public Schema' # Public Schema
 plugins:
-  assetrev:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  aws-s3:
-    edition: standard
-    enabled: true
-    schemaVersion: '2.0'
-  blitz:
-    edition: standard
-    enabled: true
-    licenseKey: ZCZZPY7AIA8L73K89TRD4012
-    schemaVersion: 4.2.0
   ckeditor:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
-  environment-label:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  formie:
-    edition: standard
-    enabled: true
-    licenseKey: O2NVRSJ23TB2YP8ZE0GSDSJG
-    schemaVersion: 2.0.13
   hyper:
     edition: standard
     enabled: true
@@ -69,10 +47,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0
-  twig-perversion:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   typogrify:
     edition: standard
     enabled: true
