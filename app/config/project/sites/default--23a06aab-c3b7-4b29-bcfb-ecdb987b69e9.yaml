@@ -3,7 +3,7 @@ enabled: true
 handle: default
 hasUrls: true
 language: en-US
-name: Primary
+name: 'Craft Starter'
 primary: true
 siteGroup: 911bd1d5-53ff-4a53-b9da-5546fba0a849 # Default
 sortOrder: 1
