@@ -1,5 +1,7 @@
 defaultPlacement: end
 enableVersioning: true
+entryTypes:
+  - 1cbb67d5-972c-4346-8cac-eddbfa9e6084 # Home
 handle: home
 name: Home
 previewTargets:
@@ -16,7 +18,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: # Primary
+  23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: # Craft Starter
     enabledByDefault: true
     hasUrls: true
     template: index.twig

@@ -1,4 +1,4 @@
-dateModified: 1705445217
+dateModified: 1721070125
 email:
   fromEmail: $FROM_EMAIL_ADDRESS
   fromName: 'Craft Starter'
@@ -11,7 +11,7 @@ meta:
   __names__:
     0d1c338d-da32-4a10-88f4-f030b2e38530: Simple # Simple
     1cbb67d5-972c-4346-8cac-eddbfa9e6084: Home # Home
-    23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: Primary # Primary
+    23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: 'Craft Starter' # Craft Starter
     439b957e-893e-4d96-ae87-cbd86af179c1: Common # Common
     911bd1d5-53ff-4a53-b9da-5546fba0a849: Default # Default
     a36e767a-ddfe-4b61-bcc4-01b8c65ff48b: Home # Home
@@ -33,11 +33,6 @@ plugins:
     enabled: true
     licenseKey: XJEDPYG6ZF3WVRSH9R8LBSL7
     schemaVersion: 4.0.0
-  neo:
-    edition: standard
-    enabled: true
-    licenseKey: UOUQ2H3KES8RW34T46OUK9A1
-    schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
@@ -56,7 +51,7 @@ system:
   live: true
   name: 'One Craft Starter'
   retryDuration: null
-  schemaVersion: 4.5.3.0
+  schemaVersion: 5.0.0.21
   timeZone: America/Chicago
 users:
   allowPublicRegistration: false

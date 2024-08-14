@@ -1,6 +1,6 @@
 # One Craft Starter
 
-This is a starter project for Craft 4 projects at [One Design Company](https://onedesigncompany.com).
+This is a starter project for Craft 5 projects at [One Design Company](https://onedesigncompany.com).
 
 ## Requirements for Local Development
 
@@ -63,7 +63,6 @@ DDEV provides wrappers for most things you will need (including the `craft` comm
 - [SEOMatic](https://plugins.craftcms.com/seomatic)
 - [Typogrify](https://plugins.craftcms.com/typogrify)
 - [Imager X](https://plugins.craftcms.com/imager-x)
-- [NEO](https://plugins.craftcms.com/neo)
 - [Hyper](https://plugins.craftcms.com/hyper)
 
 ### Production Configuration
