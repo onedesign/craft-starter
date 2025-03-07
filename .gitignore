@@ -26,3 +26,7 @@ Thumbs.db
 .vscode
 config.codekit3
 prepros-6.config
+
+# Template Repo Files To Ignore
+app/config/project/
+app/config/license.key
