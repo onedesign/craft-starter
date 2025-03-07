@@ -1,4 +1,4 @@
-dateModified: 1741366273
+dateModified: 1741371345
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -44,6 +44,21 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0
+    settings:
+      adjustFeedmeLogs: ''
+      assetsEnvironment: ''
+      assetsEnvironmentOverwrite: ''
+      cacheClearMode: full
+      clearCachesOnSave: always
+      disableDynamic: ''
+      disableTransforms: ''
+      fsMapsEnabled: ''
+      imageAutoConversion: avif
+      injectCors: ''
+      projectSlug: ''
+      securityKey: ''
+      suppressWarnings: ''
+      useLocalVolumes: false
   typogrify:
     edition: standard
     enabled: true
