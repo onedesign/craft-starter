@@ -2,4 +2,4 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 const fontFamily = {};
 
-module.exports = fontFamily;
+export default fontFamily;

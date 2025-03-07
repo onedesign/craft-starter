@@ -1,3 +1,3 @@
 const corePlugins = {};
 
-module.exports = corePlugins;
+export default corePlugins;

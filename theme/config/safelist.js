@@ -1,3 +1,3 @@
 const safelist = [];
 
-module.exports = safelist;
+export default safelist;
