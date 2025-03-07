@@ -1,21 +1,7 @@
 #!/bin/sh
 
-# See if a project name was passed in, if not, bug
-# the user about it.
-if [[ $# -eq 1 ]]; then
-  projectSlug=$1
-  if [ "$(ls -A $(pwd)/${projectSlug} 2>/dev/null)" ]; then
-       echo "Directory exists and is not empty."
-       exit 1
-    else
-      echo "Creating project directory at $(pwd)/${projectSlug}"
-      mkdir -p $projectSlug && cd $projectSlug
-  fi
-else
-  echo "Usage:"
-  echo -e '\tType "craft-base.sh [project slug]" to create a project and set the project slug'
-  exit 1
-fi
+# Get the project slug from the directory name.
+projectSlug=${PWD##*/}
 
 # Set the site name and admin email for Craft.
 while true; do
@@ -43,25 +29,15 @@ done
 
 # Initialize DDEV and install Craft
 ddev config \
---name=${projectSlug} \
+--project-name=${projectSlug} \
 
 ddev start && \
-ddev exec app/./craft setup/db-creds --interactive=0 --database=db --user=db --password=db --server=ddev-${projectSlug}-db --driver=mysql && \
+# install composer
+ddev composer update && \
+ddev composer install && \
 ddev exec app/./craft install --language=en-us --interactive=0 --email=\"$adminEmail\" --username=odcadmin --password=$adminP --siteName=\"$siteName\" --siteUrl=https://${projectSlug}.ddev.site && \
 
-# Require and install some common plugins.
-ddev composer require --dev \
-craftcms/generator \
-nystudio107/craft-autocomplete && \
-
-ddev composer require \
-craftcms/ckeditor \
-nystudio107/craft-seomatic \
-nystudio107/craft-typogrify \
-spacecatninja/imager-x \
-servd/craft-asset-storage \
-verbb/hyper && \
-
+# Install and enable plugins
 ddev craft plugin/install ckeditor && \
 ddev craft plugin/enable ckeditor && \
 ddev craft plugin/install seomatic && \
@@ -75,10 +51,14 @@ ddev craft plugin/enable servd-asset-storage && \
 ddev craft plugin/install hyper && \
 ddev craft plugin/enable hyper && \
 
-// Restart the server, build the project, and launch the site.
+# remove "app/config/project/" and "app/config/license.key" from .gitignore
+echo "Removing 'app/config/project/' and 'app/config/license.key' from .gitignore" && \
+sed -i '' '/app\/config\/project\//d' .gitignore && \
+sed -i '' '/app\/config\/license.key/d' .gitignore && \
+
+# Restart the server, build the project, and launch the site.
+echo "Restarting and building the project..." && \
 ddev restart && \
-ddev composer update && \
-ddev composer install && \
 ddev craft up && \
 ddev nvm install && \
 ddev nvm use && \
