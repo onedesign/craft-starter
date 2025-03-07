@@ -18,6 +18,10 @@ read -r -p "What email address should be used for the admin? (default: dev@onede
 adminEmail=${adminEmail:-dev\@onedesigncompany.com}
 echo "$adminEmail"
 
+read -r -p "What username should be used for the admin? (default: odcadmin) `echo $'\n> '`" adminU
+adminU=${adminU:-odcadmin}
+echo "$adminU"
+
 while true; do
     read -s -p "Please choose an admin password (must be at least 6 characters). `echo $'\n> '`" adminP
     if [[ -z $adminP ]]; then
