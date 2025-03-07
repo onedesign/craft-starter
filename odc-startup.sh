@@ -39,7 +39,8 @@ ddev start && \
 # install composer
 ddev composer update && \
 ddev composer install && \
-ddev exec app/./craft install --language=en-us --interactive=0 --email=\"$adminEmail\" --username=odcadmin --password=$adminP --siteName=\"$siteName\" --siteUrl=https://${projectSlug}.ddev.site && \
+ddev exec app/./craft install --language=en-us --interactive=0 --email=\"$adminEmail\" --username=\"$adminU\" --password=$adminP --siteName=\"$siteName\" --siteUrl=https://${projectSlug}.ddev.site && \
+dde exec app/./craft php project-config/set system.edition pro && \
 
 # Install and enable plugins
 ddev craft plugin/install ckeditor && \
