@@ -27,6 +27,9 @@ export default defineConfig(({ command, mode }) => {
       port: 3000,
       host: '0.0.0.0',
       strictPort: true,
+      cors: {
+        origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
+      },
     },
     build: {
       emptyOutDir: true,
