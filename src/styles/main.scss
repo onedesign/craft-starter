@@ -1,17 +1,18 @@
+@use 'sass:meta';
 // Vendor
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 // Configuration
-@import 'variables';
+@include meta.load-css('variables');
 
 // Base
-@import 'base/base';
-@import 'base/webfonts';
+@include meta.load-css('base/base');
+@include meta.load-css('base/webfonts');
 
 // Components
-@import 'components/skip-link';
+@include meta.load-css('components/skip-link');
 
 // Utilities
-@import 'utilities';
+@include meta.load-css('utilities');
