@@ -1,4 +1,4 @@
-dateModified: 1741366084
+dateModified: 1741366273
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -53,7 +53,7 @@ system:
   live: true
   name: 'One Craft Starter'
   retryDuration: null
-  schemaVersion: 5.0.0.21
+  schemaVersion: 5.6.0.2
   timeZone: America/Chicago
 users:
   allowPublicRegistration: false
