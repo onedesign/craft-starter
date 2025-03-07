@@ -14,12 +14,12 @@ This is a starter project for Craft 5 projects at [One Design Company](https://o
 1. Run `ddev describe` and make note of the database connection information as well as primary site url.
 1. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
 1. Install Composer dependencies: `ddev composer install`.
-1. Update Craft and plugins to latest stable versions: `ddev composer update`.
 1. Create an application key: `ddev craft setup/app-id`
 1. Set a security key in your `.env` by typing: `ddev craft setup/security-key`
 1. Use the correct version of Node and install front end dependencies: `ddev nvm use && ddev npm install`.
 1. Install Craft: `ddev craft install`
 1. (Optional) If importing an existing project, run `ddev import-db --file=dumpfile.sql.gz`. If you'd like to use a database GUI, see the [DDEV docs](https://ddev.readthedocs.io/en/latest/users/usage/database-management/#database-guis) for available commands.
+1. Update Craft and plugins to latest stable versions: `ddev composer update`.
 1. Start your vite server: `ddev npm start`.
 1. Fire up your site: `ddev launch`.
 
