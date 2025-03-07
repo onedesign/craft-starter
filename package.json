@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Base craft install for ODC projects",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -24,19 +25,19 @@
   "homepage": "https://github.com/onedesign/craft-starter/blob/main/README.md",
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
-    "@rollup/plugin-eslint": "^9.0.3",
+    "@rollup/plugin-eslint": "^9.0.5",
     "autoprefixer": "^10.4.12",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.4.7",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-compat": "^4.0.2",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^3.2.5",
-    "sass": "^1.55.0",
-    "tailwindcss": "^3.1.8",
-    "vite": "^4.0.4",
-    "vite-plugin-craftcms": "^1.0.0",
-    "vite-plugin-restart": "^0.3.0"
+    "sass": "^1.85.1",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.3",
+    "vite-plugin-craftcms": "^3.0.0",
+    "vite-plugin-restart": "^0.4.1"
   },
   "browserslist": [
     "defaults",
