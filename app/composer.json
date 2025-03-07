@@ -6,7 +6,6 @@
     "nystudio107/craft-typogrify": "^5.0.1",
     "servd/craft-asset-storage": "^4.0.3",
     "spacecatninja/imager-x": "^5.0.1",
-    "verbb/formie": "^3.0.0-beta.16",
     "verbb/hyper": "^2.0.2",
     "vlucas/phpdotenv": "^5.4.0"
   },
