@@ -45,6 +45,13 @@ DDEV provides wrappers for most things you will need (including the `craft` comm
 
 `ddev craft plugin/enable imager-x`
 
+## About Servd
+
+This starter comes with the Servd plugin pre-installed. If the site is being hosted on [Servd](https://servd.host/) you will need to set up a new project on Servd and update the `.env` file with the appropriate values before you can set up a filesystem and assets in the Craft settings. See the [How-to: Server Configuration](https://www.notion.so/onedesigncompany/How-to-Server-Configuration-8a359e7ba9444c7098b2c6bc3af51a2d?pvs=4) document for full details on how to set up a new Servd Project, but there are two key settings in the Servd plugin to pay attention to:
+
+- Inject CSRF tokens using AJAX: IF the site has any forms, and the site is being cached, which it should be, you'll want to enable this setting so the CSRF tokens are injected into the form.
+- Image Format Autoconversion: By default this template has this setting set to "AVIF with WebP fallback". As of march of 2025, AVIF has enough browser support to be used reliably, and doesn't result in any quality/color loss like WebP can, but if for some reason assets shouldn't be converted to AVIF, make sure you update this setting.
+
 ## Requirements for Deployment Infrastructure
 
 - [Composer >= 2](https://getcomposer.org/)
@@ -59,7 +66,6 @@ DDEV provides wrappers for most things you will need (including the `craft` comm
 
 - [Servd Assets and Helpers](https://plugins.craftcms.com/servd-asset-storage)
 - [CKEditor](https://plugins.craftcms.com/ckeditor)
-- [Twig Perversion](https://plugins.craftcms.com/twig-perversion)
 - [SEOMatic](https://plugins.craftcms.com/seomatic)
 - [Typogrify](https://plugins.craftcms.com/typogrify)
 - [Imager X](https://plugins.craftcms.com/imager-x)
