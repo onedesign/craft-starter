@@ -16,22 +16,11 @@ You can either run `odc-startup.sh` or follow the steps below:
 1. Run `ddev describe` and make note of the database connection information as well as primary site url.
 1. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
 1. Update and Install Composer dependencies: `ddev composer update && ddev composer install`.
-1. Install Craft: `ddev craft install`.
+1. Install Craft and follow the setup instructions: `ddev craft install`.
 1. Install all of our base plugins:
 
 ```
-ddev craft plugin/install ckeditor && \
-ddev craft plugin/enable ckeditor && \
-ddev craft plugin/install seomatic && \
-ddev craft plugin/enable seomatic && \
-ddev craft plugin/install typogrify && \
-ddev craft plugin/enable typogrify && \
-ddev craft plugin/install imager-x && \
-ddev craft plugin/enable imager-x && \
-ddev craft plugin/install servd-asset-storage && \
-ddev craft plugin/enable servd-asset-storage && \
-ddev craft plugin/install hyper && \
-ddev craft plugin/enable hyper`
+ddev craft plugin/install ckeditor && ddev craft plugin/enable ckeditor && ddev craft plugin/install seomatic && ddev craft plugin/enable seomatic && ddev craft plugin/install typogrify && ddev craft plugin/enable typogrify && ddev craft plugin/install imager-x && ddev craft plugin/enable imager-x && ddev craft plugin/install servd-asset-storage && ddev craft plugin/enable servd-asset-storage && ddev craft plugin/install hyper && ddev craft plugin/enable hyper
 ```
 
 1. Remove `app/config/project/` and `app/config/license.key` from `.gitignore` and commit them to the repository.
