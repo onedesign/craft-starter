@@ -7,23 +7,51 @@ This is a starter project for Craft 5 projects at [One Design Company](https://o
 - [Docker](https://www.docker.com/)
 - [DDEV >= 1.22.0](https://ddev.com/)
 
-### Initial Startup
+## Initial Startup
+
+You can either run `odc-startup.sh` or follow the steps below:
 
 1. Rename the `name:` in the `.ddev/config.yaml` file to match the name of your project.
 1. Start DDEV by running `ddev start` from the project root.
 1. Run `ddev describe` and make note of the database connection information as well as primary site url.
 1. Fill out the appropriate values in the `.env` file. Sensitive data should be stored in a 1Password entry related to the project.
-1. Install Composer dependencies: `ddev composer install`.
-1. Create an application key: `ddev craft setup/app-id`
-1. Set a security key in your `.env` by typing: `ddev craft setup/security-key`
-1. Use the correct version of Node and install front end dependencies: `ddev nvm use && ddev npm install`.
-1. Install Craft: `ddev craft install`. **Make sure you do this before updating composer, or your DB and Composer dependencies might be out of sync.**
-1. (Optional) If importing an existing project, run `ddev import-db --file=dumpfile.sql.gz`. If you'd like to use a database GUI, see the [DDEV docs](https://ddev.readthedocs.io/en/latest/users/usage/database-management/#database-guis) for available commands.
-1. Update Craft and plugins to latest stable versions: `ddev composer update`.
+1. Update and Install Composer dependencies: `ddev composer update && ddev composer install`.
+1. Install Craft: `ddev craft install`.
+1. Install all of our base plugins:
+
+```
+ddev craft plugin/install ckeditor && \
+ddev craft plugin/enable ckeditor && \
+ddev craft plugin/install seomatic && \
+ddev craft plugin/enable seomatic && \
+ddev craft plugin/install typogrify && \
+ddev craft plugin/enable typogrify && \
+ddev craft plugin/install imager-x && \
+ddev craft plugin/enable imager-x && \
+ddev craft plugin/install servd-asset-storage && \
+ddev craft plugin/enable servd-asset-storage && \
+ddev craft plugin/install hyper && \
+ddev craft plugin/enable hyper`
+```
+
+1. Remove `app/config/project/` and `app/config/license.key` from `.gitignore` and commit them to the repository.
+1. Set ddev to use the NPM version set in `.nvmrc`: `ddev nvm install && ddev nvm use`
+1. Install Node dependencies: `ddev npm install`.
 1. Start your vite server: `ddev npm start`.
 1. Fire up your site: `ddev launch`.
 
-### Ongoing Development
+## Starting an existing project
+
+1. `ddev start` to initialize the DDEV environment.
+1. Copy the contents of the `.env` file from 1Password and paste it into `/app/.env`
+1. Install Composer dependencies: `ddev composer install`.
+1. Run `ddev import-db --file=dumpfile.sql.gz`. If you'd like to use a database GUI, see the [DDEV docs](https://ddev.readthedocs.io/en/latest/users/usage/database-management/#database-guis) for available commands.
+1. Make sure you're using the correct version of Node: `ddev nvm install && ddev nvm use`
+1. Install Node dependencies: `ddev npm install`.
+1. Start your vite server: `ddev npm start`.
+1. Fire up your site: `ddev launch`.
+
+## Ongoing Development
 
 1. `ddev start`
 2. `ddev npm run start`
