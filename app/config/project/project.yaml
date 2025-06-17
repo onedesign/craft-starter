@@ -1,4 +1,4 @@
-dateModified: 1741372226
+dateModified: 1750196089
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -28,17 +28,16 @@ plugins:
   hyper:
     edition: standard
     enabled: true
-    licenseKey: 9BATK7KQ68NND6QUWAM0SKF4
+    licenseKey: 2V2YU9DYKVEUSNX488QXJ73N
     schemaVersion: 1.0.0
   imager-x:
-    edition: lite
+    edition: pro
     enabled: true
-    licenseKey: NKDDI9I1H4YW7F1HD0H8WOT1
     schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: SN3FM9DHGRNVKRS8U0Q6I9X2
+    licenseKey: 04O9GUYP1ZQ0G64VWHQH7HWP
     schemaVersion: 3.0.12
   servd-asset-storage:
     edition: standard
@@ -68,5 +67,5 @@ system:
   live: true
   name: 'One Craft Starter'
   retryDuration: null
-  schemaVersion: 5.6.0.2
+  schemaVersion: 5.7.0.3
   timeZone: America/Chicago

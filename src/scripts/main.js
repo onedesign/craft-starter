@@ -1,1 +1,1 @@
-console.log('Hello, dev!');
+document.documentElement.className = 'js';

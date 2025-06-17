@@ -18,6 +18,8 @@ return GeneralConfig::create()
     ->omitScriptNameInUrls()
     // Enable Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
     ->devMode(App::env('DEV_MODE') ?? false)
+    // Don't send an X-Powered-By: Craft CMS header
+    ->sendPoweredByHeader(false)
     // Preload Single entries as Twig variables
     ->preloadSingles()
     // Allow administrative changes

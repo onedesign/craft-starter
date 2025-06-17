@@ -2,5 +2,7 @@
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "singleQuote": true,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "tailwindStylesheet": "./src/styles/main.css",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
