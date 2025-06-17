@@ -1,4 +1,4 @@
-dateModified: 1750196089
+dateModified: 1750197238
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -25,6 +25,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: ELULRL1FQ1QS0F00XQJJ7PR0
+    schemaVersion: 3.4.8
   hyper:
     edition: standard
     enabled: true
@@ -33,12 +38,13 @@ plugins:
   imager-x:
     edition: pro
     enabled: true
+    licenseKey: V892EHPT90EAX7D755B4THPS
     schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
     licenseKey: 04O9GUYP1ZQ0G64VWHQH7HWP
-    schemaVersion: 3.0.12
+    schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard
     enabled: true
