@@ -28,22 +28,22 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey: ELULRL1FQ1QS0F00XQJJ7PR0
+    licenseKey:
     schemaVersion: 3.4.8
   hyper:
     edition: standard
     enabled: true
-    licenseKey: 2V2YU9DYKVEUSNX488QXJ73N
+    licenseKey:
     schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
-    licenseKey: V892EHPT90EAX7D755B4THPS
+    licenseKey:
     schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: 04O9GUYP1ZQ0G64VWHQH7HWP
+    licenseKey:
     schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard
