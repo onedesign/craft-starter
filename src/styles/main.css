@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import './base/typography.css';
-@import './components/skip-link.css';
+@import './skip-link.css';
 @import './theme.css';
 
 @layer base {
