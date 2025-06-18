@@ -2,6 +2,7 @@ import path from 'path';
 import * as dotenv from 'dotenv';
 dotenv.config({ path: path.resolve(process.cwd(), 'app/.env') });
 import { defineConfig, loadEnv } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 import { vitePluginCraftCms } from 'vite-plugin-craftcms';
 import viteRestart from 'vite-plugin-restart';
 import eslint from '@rollup/plugin-eslint';
@@ -46,6 +47,7 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     plugins: [
+      tailwindcss(),
       vitePluginCraftCms({
         outputFile: './app/templates/_partials/vite.twig',
       }),

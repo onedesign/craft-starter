@@ -1,0 +1,5 @@
+/* All Tailwind Theme Customizations */
+@theme {
+  /* Disable all tailwind utility classes driven by theme vars: https://tailwindcss.com/docs/theme#using-a-custom-theme */
+  --*: initial;
+}
