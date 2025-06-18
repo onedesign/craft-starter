@@ -5,6 +5,8 @@
 
 @layer base {
   body {
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
   }
 
   /* Remove animations and transitions for people who prefer not to see them */
