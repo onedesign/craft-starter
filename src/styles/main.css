@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import './base/typography.css';
+@import './typography.css';
 @import './skip-link.css';
 @import './theme.css';
 
