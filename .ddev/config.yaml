@@ -15,6 +15,7 @@ composer_version: "2"
 web_environment:
     - CRAFT_CMD_ROOT=./app
 nodejs_version: "20"
+disable_settings_management: true
 
 # Key features of DDEV's config.yaml:
 
