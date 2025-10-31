@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: featuredUpdates
+instructions: null
+name: 'Featured Updates'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 6
+  minRelations: 1
+  selectionLabel: 'Add an update'
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:ff54c854-6bee-489e-a544-c525730fc02a' # News
+  targetSiteId: null
+  validateRelatedElements: true
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

@@ -1,0 +1,97 @@
+color: null
+description: null
+fieldLayouts:
+  bc6a9942-8887-4a0e-b03b-45de1b58cdb5:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T16:14:31+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e6f2324d-a9fb-4f05-ae8d-d3ea24bdb15a # Eyebrow Headline
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a246c5e5-48c8-4a12-bd98-938bf1ee4262
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T16:14:31+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 50270287-d748-4f31-b958-1a3dbad34870 # Headline
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec9001f9-867f-471b-a750-69c12f6cdd88
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T16:14:31+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 85dc5f6b-ae4e-4995-bb54-c5fb9e6784c0 # Rich Text Simple
+            handle: copy
+            includeInCards: false
+            instructions: null
+            label: Copy
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9c97f0dd-425c-4099-a8a2-98c08b7f4522
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e6816add-8bcb-47dc-b02a-e1246bce8d74
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T16:14:31+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 67138424-3419-4f93-9e4e-c29ba8609ff2 # Block ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7da7bfce-39b7-44e2-93b0-8fb832e9695f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Configuration
+        uid: 99594cd9-44ae-43fe-9082-051ed475f150
+        userCondition: null
+handle: splitStatement
+hasTitleField: false
+icon: block-brick
+name: 'Split Statement'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

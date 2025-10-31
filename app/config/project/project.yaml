@@ -1,4 +1,86 @@
-dateModified: 1750197238
+dateModified: 1761946761
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - structure
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:2d21966f-5c75-41de-b5dc-937feb3edd4e' # Pages
+      tableAttributes:
+        - status
+        - revisionCreator
+        - dateUpdated
+        - link
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      defaultViewMode: cards
+      disabled: false
+      key: 'section:f091b4ec-a345-4b02-98c7-d35cfe1cca89' # People
+      tableAttributes:
+        - status
+        - type
+        - link
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:ff54c854-6bee-489e-a544-c525730fc02a' # News
+      tableAttributes:
+        - status
+        - postDate
+        - authors
+        - type
+        - link
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:a58d8e41-03e5-4d79-a6aa-aae6f706fa6b' # News Tags
+      tableAttributes:
+        - status
+        - link
+      type: native
+    -
+      heading: ''
+      key: 'heading:d8d88e9e-8efe-482f-8b88-ca15ab4782eb'
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - status
+        - section
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      disabled: true
+      key: singles
+      tableAttributes:
+        - status
+        - link
+      type: native
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -13,13 +95,59 @@ email:
   transportType: craft\mail\transportadapters\Smtp
 meta:
   __names__:
+    0a9e06ce-7bf5-4160-bc63-c63409f9590d: 'Featured Updates' # Featured Updates
     0d1c338d-da32-4a10-88f4-f030b2e38530: Simple # Simple
-    23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: 'Craft Starter' # Craft Starter
+    1ba3d681-1b8f-4211-8d66-c521ef0ff42c: 'Long-Form Content' # Long-Form Content
+    1d593c0c-7efc-4a06-afcd-f0ad3f7a3bf3: Footer # Footer
+    1f5b7e4f-0e19-4407-ae7f-10a7e698ee38: 'Without Bio' # Without Bio
+    1fc3b334-46ca-4331-9212-833a8d6b7375: 'Split Statement' # Split Statement
+    2a94a80e-68a6-4280-a5ad-c0bbd8911e10: 'Social Links' # Social Links
+    2d21966f-5c75-41de-b5dc-937feb3edd4e: Pages # Pages
+    4a9f2db4-9535-4db0-a05b-86b08f437cfb: 'Link Field' # Link Field
+    4b5de6af-966d-4e52-9da5-b83972e0d00a: 'Rich Text Full' # Rich Text Full
+    4cf46868-62b4-4c0c-ba82-5f3e2f80eede: 'External News' # External News
+    5c3787a0-a88b-47f4-8269-56ff7feedbea: Footer # Footer
+    5ce345f6-0c2e-4a26-b89e-1731972f298c: Navigation # Navigation
+    6af1a57c-745a-478b-ae01-d627582f4e93: 'Internal News' # Internal News
+    6c31c09d-b667-497d-bd9a-e1c7b3d93b72: Header # Header
+    9be162ac-846b-422f-9831-a7690930b725: 'External URL' # External URL
+    9c1b52b5-e818-41cd-b448-fab7aef480d3: 'Social Link' # Social Link
+    9f55c63a-2ef5-4e4e-aac6-331af69cbb6e: 'Global Settings' # Global Settings
+    23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: Serif # Serif
+    26f36e45-0e9c-4532-9e80-373f1c117f3c: SEO # SEO
+    57fd0d4f-dcaf-49d8-b468-70ce7e1cc0b5: Full # Full
+    77b07adf-7152-4c9f-a760-1779aa04da2c: Tags # Tags
+    77b2695c-8cd0-4011-b979-924697cfc05b: 'Global Settings' # Global Settings
+    85dc5f6b-ae4e-4995-bb54-c5fb9e6784c0: 'Rich Text Simple' # Rich Text Simple
+    211a2968-3fc2-40e8-8745-210f69c3d94c: Footnotes # Footnotes
+    258bb2e0-ea73-4718-94b9-bd858d22214c: 'Page CTA' # Page CTA
     439b957e-893e-4d96-ae87-cbd86af179c1: Common # Common
+    499fa419-21a5-4c15-876b-5083bad00ae9: 'Page Content' # Page Content
+    549dcef6-16a7-4fd6-951a-c48d1f1fa71f: 'Team Members' # Team Members
+    648e3c79-748f-4439-bd9c-d840201eb834: Default # Default
+    729ec4da-6b24-4451-a304-ec6e2c758129: Team # Team
     911bd1d5-53ff-4a53-b9da-5546fba0a849: Default # Default
+    2660cb33-0932-4447-86f3-2aacdf48b085: Address # Address
+    9317d1cd-f6f9-4dda-9851-88bc60ed4033: 'Plain Text' # Plain Text
+    14726d3c-4fef-460e-9c38-5d960a735db5: 'Featured Updates' # Featured Updates
+    3933963a-5f45-487c-b520-016b0876031e: 'Long-Form Text' # Long-Form Text
+    6197413c-4483-4e2b-90aa-b0fd61ac3c6f: Footnote # Footnote
+    32313570-32b5-4e93-a8ad-7c56cca253aa: 'Updates Count' # Updates Count
+    50270287-d748-4f31-b958-1a3dbad34870: Headline # Headline
+    67138424-3419-4f93-9e4e-c29ba8609ff2: 'Block ID' # Block ID
+    a6d150e4-110a-4312-a5a3-4e5e2c52ead5: Header # Header
+    a58d8e41-03e5-4d79-a6aa-aae6f706fa6b: 'News Tags' # News Tags
+    af807bbf-df83-4085-b1ab-9c18ce3bc36f: 'With Bio' # With Bio
+    b457dfc4-c62c-4207-b9bc-037ecc62f77a: Taxonomy # Taxonomy
     c51820fb-df82-4cd2-b955-e6f381846903: 'Contact Form' # Contact Form
+    d7bf7f78-c950-4bc1-9eb4-157df0f9ba51: 'Full Statement' # Full Statement
+    d25d6dcb-ab5c-4685-a616-bd5648b63d9e: 'Nav Item' # Nav Item
+    e6f2324d-a9fb-4f05-ae8d-d3ea24bdb15a: 'Eyebrow Headline' # Eyebrow Headline
     e32fd166-977b-4969-8fd4-021cfac178cc: New # New
+    f091b4ec-a345-4b02-98c7-d35cfe1cca89: People # People
     f19c0ae7-fefa-45b3-aeee-297dea098f94: 'Public Schema' # Public Schema
+    f757ce1f-ebf0-405e-8948-0c29ab5cad25: 'Recent Updates' # Recent Updates
+    ff54c854-6bee-489e-a544-c525730fc02a: News # News
 plugins:
   ckeditor:
     edition: standard
@@ -28,22 +156,22 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey:
-    schemaVersion: 3.4.8
+    licenseKey: 71VFM9BDH67ZN0PYHYNGCAS2
+    schemaVersion: 3.4.10
   hyper:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: P1IP98WKELED2VGUPKVAEPSV
     schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
-    licenseKey:
+    licenseKey: 8O5W4PMZXN5M7WNPJYB4QYMS
     schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: OKAMEPEQJJD4QTZ7R1HVUTMX
     schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard
@@ -73,5 +201,5 @@ system:
   live: true
   name: 'One Craft Starter'
   retryDuration: null
-  schemaVersion: 5.7.0.3
+  schemaVersion: 5.8.0.3
   timeZone: America/Chicago

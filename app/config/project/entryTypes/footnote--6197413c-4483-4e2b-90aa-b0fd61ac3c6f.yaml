@@ -1,0 +1,49 @@
+color: null
+description: null
+fieldLayouts:
+  f5177eef-4051-4f68-921b-2af631088b11:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T17:02:37+00:00'
+            elementCondition: null
+            template: _cp/footnotes.twig
+            templateMode: site
+            type: craft\fieldlayoutelements\Template
+            uid: bd863c12-df6c-4f41-8607-eef793560924
+            userCondition: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T17:02:37+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 85dc5f6b-ae4e-4995-bb54-c5fb9e6784c0 # Rich Text Simple
+            handle: description
+            includeInCards: false
+            instructions: null
+            label: Description
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 97dd4c21-e255-4b45-b0ed-3b155d32bdff
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 91fd83b3-f4ca-455e-8f69-a8c0afee27d3
+        userCondition: null
+handle: footnote
+hasTitleField: false
+icon: shoe-prints
+name: Footnote
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

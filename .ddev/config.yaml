@@ -1,4 +1,4 @@
-name: craft-starter
+name: serif
 type: craftcms
 docroot: app/web
 php_version: "8.2"

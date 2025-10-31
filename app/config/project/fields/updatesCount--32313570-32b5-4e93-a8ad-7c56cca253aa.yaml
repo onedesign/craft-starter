@@ -1,0 +1,19 @@
+columnSuffix: null
+handle: updatesCount
+instructions: null
+name: 'Updates Count'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 1
+  max: 6
+  min: 1
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  step: 1
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

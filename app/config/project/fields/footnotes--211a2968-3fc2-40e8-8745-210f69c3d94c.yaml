@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: footnotes
+instructions: null
+name: Footnotes
+searchable: false
+settings:
+  createButtonLabel: 'New footnote'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 6197413c-4483-4e2b-90aa-b0fd61ac3c6f # Footnote
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,97 @@
+color: null
+description: null
+fieldLayouts:
+  c53d3f1e-9c86-43fa-b971-716e2a894904:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T21:38:55+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 50270287-d748-4f31-b958-1a3dbad34870 # Headline
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 21e6dddd-ff60-4fb4-b1ab-0f241fb5d995
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T21:38:55+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4a9f2db4-9535-4db0-a05b-86b08f437cfb # Link Field
+            handle: cta
+            includeInCards: false
+            instructions: null
+            label: CTA
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0997413c-7191-4e6a-8a9f-246906f1b1c3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T21:38:55+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 14726d3c-4fef-460e-9c38-5d960a735db5 # Featured Updates
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4042972a-2a0d-4886-93a1-1af5e9f41043
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 4ddf9a75-4341-4a6a-887e-329a061fc2b3
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T21:38:55+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 67138424-3419-4f93-9e4e-c29ba8609ff2 # Block ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6eef8f58-b396-4fed-8501-b439c902da19
+            userCondition: null
+            warning: null
+            width: 100
+        name: Configuration
+        uid: 58faa112-65cb-4937-a64f-f5e854b54284
+        userCondition: null
+handle: featuredUpdates
+hasTitleField: false
+icon: block-brick
+name: 'Featured Updates'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,46 @@
+  /* ------------------------------------------------------------------------- */
+  /* Eliza, serif typeface
+  /* ------------------------------------------------------------------------- */
+  @font-face {
+    font-family: 'Eliza';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Eliza-Regular.woff2') format('woff2');
+  }
+
+  /* Adjusted Fallback font for Eliza. Credit: https://screenspan.net/fallback */
+  @font-face {
+    font-family: 'Adjusted Times New Roman Fallback';
+    src: local(Times New Roman);
+    size-adjust: 111%;
+    ascent-override: normal;
+    descent-override: normal;
+    line-gap-override: normal;
+  }
+
+  /* ------------------------------------------------------------------------- */
+  /* Denim, sans-serif typeface
+  /* ------------------------------------------------------------------------- */
+  @font-face {
+    font-family: 'Denim';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Denim-Regular.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Denim';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/Denim-Regular.woff2') format('woff2');
+  }
+
+  /* Adjusted Fallback font for Denim. Credit: https://screenspan.net/fallback */
+  @font-face {
+    font-family: 'Adjusted Arial Fallback';
+    src: local(Arial);
+    size-adjust: 94%;
+    ascent-override: 99%;
+    descent-override: 20%;
+    line-gap-override: normal;
+}
+

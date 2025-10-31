@@ -1,0 +1,104 @@
+color: null
+description: null
+fieldLayouts:
+  4335e04b-6d2a-4a7e-bdfd-c1c1e5ab4789:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-10-31T17:02:20+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 7f008696-c1a3-498c-8a26-465e19b83c38
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T17:11:40+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 77b07adf-7152-4c9f-a760-1779aa04da2c # Tags
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e8a6afbf-4530-4758-a752-ad17a17d8617
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T17:05:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9317d1cd-f6f9-4dda-9851-88bc60ed4033 # Plain Text
+            handle: source
+            includeInCards: true
+            instructions: null
+            label: Source
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8506b6c7-868e-4bfd-9f47-0c454d44b09c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T17:05:54+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9be162ac-846b-422f-9831-a7690930b725 # External URL
+            handle: sourceUrl
+            includeInCards: true
+            instructions: null
+            label: 'Source URL'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9832446e-050d-425c-896c-6d712e32c115
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 2cdca2a0-2c46-4f3f-a003-1ead4b5e643f
+        userCondition: null
+handle: externalNews
+hasTitleField: true
+icon: newspaper
+name: 'External News'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

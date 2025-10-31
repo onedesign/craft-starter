@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 6af1a57c-745a-478b-ae01-d627582f4e93 # Internal News
+  -
+    uid: 4cf46868-62b4-4c0c-ba82-5f3e2f80eede # External News
+handle: news
+maxAuthors: 1
+name: News
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+  -
+    label: 'News index'
+    refresh: '1'
+    urlFormat: /updates
+propagationMethod: all
+siteSettings:
+  23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: # Serif
+    enabledByDefault: true
+    hasUrls: true
+    template: news/_entry.twig
+    uriFormat: "{% if type == 'internalNews' %}updates/{slug}{% endif %}"
+type: channel

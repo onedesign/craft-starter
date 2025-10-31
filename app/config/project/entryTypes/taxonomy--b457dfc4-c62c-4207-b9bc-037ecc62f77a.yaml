@@ -1,0 +1,62 @@
+color: null
+description: null
+fieldLayouts:
+  573be402-3b14-43f0-95a1-df72b9bb7429:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-10-31T17:07:14+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 2e014f48-3d22-45a3-8649-3dce060cf88d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T17:09:16+00:00'
+            elementCondition: null
+            template: _cp/related-entries.twig
+            templateMode: site
+            type: craft\fieldlayoutelements\Template
+            uid: 9bc9ccb7-91d0-42b0-bf87-9435ec78dbda
+            userCondition: null
+            width: 100
+        name: Content
+        uid: f5f26049-8905-44d0-bde1-f017210ce7dd
+        userCondition: null
+handle: taxonomy
+hasTitleField: true
+icon: tag
+name: Taxonomy
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

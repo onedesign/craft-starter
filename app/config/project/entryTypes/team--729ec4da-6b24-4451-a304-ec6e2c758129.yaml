@@ -1,0 +1,57 @@
+color: null
+description: null
+fieldLayouts:
+  147bd166-f0ae-4063-b99a-2b8efbc917b3:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T18:42:41+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 50270287-d748-4f31-b958-1a3dbad34870 # Headline
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0129584d-a110-4016-8cd9-ca0a68b1aa08
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T18:42:41+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 549dcef6-16a7-4fd6-951a-c48d1f1fa71f # Team Members
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a6b38160-6300-473f-bf82-1e439adc66e9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 5e48c166-e296-496c-b501-d8f50510460c
+        userCondition: null
+handle: team
+hasTitleField: false
+icon: block-brick
+name: Team
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,80 @@
+color: null
+description: null
+fieldLayouts:
+  b0339650-4a2f-4fb4-911a-f5af0c49565b:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T18:40:22+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4a9f2db4-9535-4db0-a05b-86b08f437cfb # Link Field
+            handle: linkOne
+            includeInCards: false
+            instructions: null
+            label: 'Link One'
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 582b6174-5418-4512-9dae-d6df86be91d8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T18:40:22+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4a9f2db4-9535-4db0-a05b-86b08f437cfb # Link Field
+            handle: linkTwo
+            includeInCards: false
+            instructions: null
+            label: 'Link Two'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cbdb51bc-8b4d-402e-bc8c-4eec8a44c517
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ff1366db-cf0d-4a23-8d0d-bf7642e46a92
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T18:40:22+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 67138424-3419-4f93-9e4e-c29ba8609ff2 # Block ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a88ca20b-579a-4e49-8fc3-a2892cd442b6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Configuration
+        uid: c48e4320-542e-4c41-b1eb-2ff03136ee4a
+        userCondition: null
+handle: pageCta
+hasTitleField: false
+icon: block-brick
+name: 'Page CTA'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

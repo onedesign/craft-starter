@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: richTextSimple
+instructions: null
+name: 'Rich Text Simple'
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  characterLimit: null
+  ckeConfig: 0d1c338d-da32-4a10-88f4-f030b2e38530 # Simple
+  createButtonLabel: null
+  defaultTransform: null
+  expandEntryButtons: false
+  fullGraphqlData: true
+  parseEmbeds: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: true
+  sourceEditingGroups:
+    - __ADMINS__
+  wordLimit: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

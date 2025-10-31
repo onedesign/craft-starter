@@ -1,0 +1,54 @@
+{% set relatedSections = ['news', 'people'] %}
+{% set empty = true %}
+
+<style>
+	#odc_cp_container li div {
+		display: flex;
+		column-gap: 1em;
+		background-color: #fefefe;
+		justify-content: space-between;
+		padding: 0.5em 0.5em 0.5em 0.25em;
+	}
+	#odc_cp_container li div span {
+		flex-basis: auto;
+	}
+	#odc_cp_container li div span.actions {
+		text-wrap: nowrap;
+	}
+	#odc_cp_container li:nth-child(odd) div {
+		background-color: #f0f0f0;
+	}
+</style>
+
+<div id="odc_cp_container" style="display:grid;row-gap:1.5rem;">
+	{% for relatedSection in relatedSections %}
+		{% set relatedEntries = craft.entries().section(relatedSection).relatedTo(element).all() %}
+		{% if relatedEntries|length %}
+			{% set empty = false %}
+			<div style="overflow:hidden;">
+				<h2>Related
+					{{ relatedSection|capitalize }}
+					({{ relatedEntries|length }})</h2>
+				<ul style="padding-left:1.25em;list-style:decimal;font-size:1rem;">
+					{% for entry in relatedEntries %}
+						<li>
+							<div>
+								<span>{{ entry.title }}</span>
+								<span class="actions">
+									<a href="{{ entry.cpEditUrl }}">Edit</a>
+									|
+									<a href="{{ entry.url }}" target="_blank">View</a>
+								</span>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	{% endfor %}
+
+	{% if empty %}
+		<h2>There are no entries related to
+			{{ element.title }}.</h2>
+	{% endif %}
+</div>

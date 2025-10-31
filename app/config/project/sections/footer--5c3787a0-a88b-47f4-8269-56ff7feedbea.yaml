@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 1d593c0c-7efc-4a06-afcd-f0ad3f7a3bf3 # Footer
+handle: footer
+maxAuthors: 1
+name: Footer
+previewTargets:
+  -
+    label: Home
+    refresh: '1'
+    urlFormat: /
+propagationMethod: all
+siteSettings:
+  23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: # Serif
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

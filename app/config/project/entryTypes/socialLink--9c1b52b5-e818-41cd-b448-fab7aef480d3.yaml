@@ -1,0 +1,40 @@
+color: null
+description: null
+fieldLayouts:
+  378bdcba-d9af-488a-a730-c3cd9b2bc014:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T16:47:00+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4a9f2db4-9535-4db0-a05b-86b08f437cfb # Link Field
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bcf61220-06c3-44b9-a72c-1ba6566d5f63
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 21e443cd-f168-4c3d-b409-7e91d34507dd
+        userCondition: null
+handle: socialLink
+hasTitleField: false
+icon: link-simple
+name: 'Social Link'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

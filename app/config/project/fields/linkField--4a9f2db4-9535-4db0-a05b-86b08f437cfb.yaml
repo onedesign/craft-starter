@@ -1,0 +1,62 @@
+columnSuffix: null
+handle: linkField
+instructions: null
+name: 'Link Field'
+searchable: false
+settings:
+  advancedFields:
+    - target
+    - ariaLabel
+  fullGraphqlData: true
+  maxLength: 255
+  showLabelField: true
+  typeSettings:
+    __assoc__:
+      -
+        - entry
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - showUnpermittedSections
+              - ''
+            -
+              - showUnpermittedEntries
+              - ''
+      -
+        - url
+        -
+          __assoc__:
+            -
+              - allowRootRelativeUrls
+              - '1'
+            -
+              - allowAnchors
+              - '1'
+            -
+              - allowCustomSchemes
+              - ''
+      -
+        - asset
+        -
+          __assoc__:
+            -
+              - allowedKinds
+              - '*'
+            -
+              - showUnpermittedVolumes
+              - ''
+            -
+              - showUnpermittedFiles
+              - ''
+  types:
+    - entry
+    - url
+    - asset
+    - email
+    - tel
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Link

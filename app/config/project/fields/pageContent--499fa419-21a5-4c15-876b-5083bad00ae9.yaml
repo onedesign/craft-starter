@@ -1,0 +1,69 @@
+columnSuffix: null
+handle: pageContent
+instructions: null
+name: 'Page Content'
+searchable: false
+settings:
+  createButtonLabel: 'New block'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - d7bf7f78-c950-4bc1-9eb4-157df0f9ba51 # Full Statement
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 1fc3b334-46ca-4331-9212-833a8d6b7375 # Split Statement
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 258bb2e0-ea73-4718-94b9-bd858d22214c # Page CTA
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 729ec4da-6b24-4451-a304-ec6e2c758129 # Team
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - f757ce1f-ebf0-405e-8948-0c29ab5cad25 # Recent Updates
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 0a9e06ce-7bf5-4160-bc63-c63409f9590d # Featured Updates
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

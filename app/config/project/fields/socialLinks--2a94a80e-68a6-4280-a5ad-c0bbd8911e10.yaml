@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: socialLinks
+instructions: null
+name: 'Social Links'
+searchable: false
+settings:
+  createButtonLabel: 'New link'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 9c1b52b5-e818-41cd-b448-fab7aef480d3 # Social Link
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

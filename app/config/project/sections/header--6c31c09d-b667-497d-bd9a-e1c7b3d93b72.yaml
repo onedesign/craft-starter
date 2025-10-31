@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: a6d150e4-110a-4312-a5a3-4e5e2c52ead5 # Header
+handle: header
+maxAuthors: 1
+name: Header
+previewTargets:
+  -
+    label: Home
+    refresh: '1'
+    urlFormat: /
+propagationMethod: all
+siteSettings:
+  23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: # Serif
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

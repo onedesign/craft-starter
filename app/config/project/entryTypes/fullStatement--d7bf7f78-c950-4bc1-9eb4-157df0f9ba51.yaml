@@ -1,0 +1,63 @@
+color: null
+description: null
+fieldLayouts:
+  547378d2-8044-4231-b567-b46729b4904d:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T21:20:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 85dc5f6b-ae4e-4995-bb54-c5fb9e6784c0 # Rich Text Simple
+            handle: copy
+            includeInCards: false
+            instructions: null
+            label: Copy
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5f1cd455-0bde-4e14-a9fd-294cf5c4e10c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c794c1f2-a781-4e87-904d-8cee05fe913a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T21:20:33+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 67138424-3419-4f93-9e4e-c29ba8609ff2 # Block ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd1bf54e-04ee-4375-8765-d55f74004440
+            userCondition: null
+            warning: null
+            width: 100
+        name: Configuration
+        uid: 7e3de68f-47a5-4ebd-9596-cd55b599ae44
+        userCondition: null
+handle: fullStatement
+hasTitleField: false
+icon: block-brick
+name: 'Full Statement'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

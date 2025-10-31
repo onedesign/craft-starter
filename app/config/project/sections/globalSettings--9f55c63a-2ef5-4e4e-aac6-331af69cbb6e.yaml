@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: false
+entryTypes:
+  -
+    uid: 77b2695c-8cd0-4011-b979-924697cfc05b # Global Settings
+handle: globalSettings
+maxAuthors: 1
+name: 'Global Settings'
+previewTargets:
+  -
+    label: Homepage
+    refresh: '1'
+    urlFormat: /
+propagationMethod: all
+siteSettings:
+  23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: # Serif
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

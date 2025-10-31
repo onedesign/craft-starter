@@ -1,0 +1,30 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: af807bbf-df83-4085-b1ab-9c18ce3bc36f # With Bio
+  -
+    uid: 1f5b7e4f-0e19-4407-ae7f-10a7e698ee38 # Without Bio
+handle: people
+maxAuthors: 1
+name: People
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+  -
+    label: 'Team page'
+    refresh: '1'
+    urlFormat: /team
+propagationMethod: all
+siteSettings:
+  23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: # Serif
+    enabledByDefault: true
+    hasUrls: true
+    template: people/_entry.twig
+    uriFormat: "{% if type == 'personWithBio' %}team/{slug}{% endif %}"
+structure:
+  maxLevels: 1
+  uid: f83086a9-4681-4881-a93e-5d2149698c38
+type: structure

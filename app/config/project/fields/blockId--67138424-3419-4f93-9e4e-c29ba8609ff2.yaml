@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: blockId
+instructions: 'Optionally add an ID to make this block linkable as an anchor link. Example: "my-block" can be linked to at https://www.website.com/example-page#my-block'
+name: 'Block ID'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

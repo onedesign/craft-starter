@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  d8a17e70-dcc7-4f22-8b70-8d9643f37c78:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-31T18:22:49+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9317d1cd-f6f9-4dda-9851-88bc60ed4033 # Plain Text
+            handle: contactEmail
+            includeInCards: false
+            instructions: null
+            label: 'Contact Email'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ba7a1723-1a8c-46a9-85c5-eff68f48a895
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T18:22:49+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9317d1cd-f6f9-4dda-9851-88bc60ed4033 # Plain Text
+            handle: contactPhone
+            includeInCards: false
+            instructions: null
+            label: 'Contact Phone'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d60d294d-fa6b-4cca-ae91-98fd2ae76d4f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-31T18:22:49+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 2660cb33-0932-4447-86f3-2aacdf48b085 # Address
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6caa1eac-ee99-4d6d-8c32-86f21f8f4635
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 3134f877-53d0-4536-b970-5859b6a2c5b2
+        userCondition: null
+handle: globalSettings
+hasTitleField: false
+icon: globe
+name: 'Global Settings'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
