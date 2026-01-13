@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:compat/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:compat/recommended", "prettier"],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "requireConfigFile": false

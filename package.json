@@ -26,8 +26,8 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "@rollup/plugin-eslint": "^9.0.5",
-    "@tailwindcss/vite": "^4.1.8",
     "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.8",
     "dotenv": "^16.4.7",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
@@ -39,7 +39,8 @@
     "tailwindcss": "^4.1",
     "vite": "^6.0.3",
     "vite-plugin-craftcms": "^3.0.0",
-    "vite-plugin-restart": "^0.4.1"
+    "vite-plugin-restart": "^0.4.1",
+    "@zackad/prettier-plugin-twig": "^0.16.2"
   },
   "browserslist": [
     "defaults",

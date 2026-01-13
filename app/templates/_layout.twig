@@ -18,19 +18,23 @@
 {# --------------------------------------------------------- #}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ craft.app.language }}" class="no-js">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ systemName }}</title>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {{ systemName }}
+    </title>
+  </head>
 
-<body>
+  <body>
+    <main id="main-content" tabindex="-1">
+      <header>
+        <a class="skip-link" href="#main-content">Skip to content</a>
+      </header>
 
-<main id="main-content" tabindex="-1">
-  <header><a class="skip-link" href="#main-content">Skip to content</a></header>
+      {% block content %}
 
-  {% block content %}{% endblock %}
-</main>
-
-</body>
+      {% endblock %}
+    </main>
+  </body>
 </html>

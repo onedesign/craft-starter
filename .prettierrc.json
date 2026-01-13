@@ -1,8 +1,11 @@
 {
+  "printWidth": 180,
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "singleQuote": true,
   "trailingComma": "es5",
   "tailwindStylesheet": "./src/styles/main.css",
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "plugins": ["@zackad/prettier-plugin-twig", "prettier-plugin-tailwindcss"],
+  "twigAlwaysBreakObjects": false,
+  "twigMultiTags": ["nav,endnav", "switch,case,default,endswitch", "ifchildren,endifchildren", "cache,endcache"]
 }
