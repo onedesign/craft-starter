@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35592bb6830df65e804e5c0c656a4c6b",
+    "content-hash": "fedbb2b4ac20a81eec71c1e39596892b",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -6412,11 +6412,11 @@
         },
         {
             "name": "servd/craft-asset-storage",
-            "version": "4.0.17",
+            "version": "4.2.4.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/servdhost/craft-asset-storage/zipball/bf8ee35061bb5842d7fcd6629581ddc87bbbbff5",
-                "reference": "bf8ee35061bb5842d7fcd6629581ddc87bbbbff5",
+                "url": "https://api.github.com/repos/servdhost/craft-asset-storage/zipball/19a0c761b2a0f486dd247622e6ff1669b11b79ca",
+                "reference": "19a0c761b2a0f486dd247622e6ff1669b11b79ca",
                 "shasum": ""
             },
             "require": {
@@ -6459,7 +6459,7 @@
                 "source": "https://github.com/servdhost/craft-asset-storage",
                 "docs": "https://github.com/servdhost/craft-asset-storage"
             },
-            "time": "2025-06-13T09:44:23+00:00"
+            "time": "2026-03-24T08:41:57+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
