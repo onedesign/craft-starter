@@ -104,3 +104,12 @@ If you are referencing a Composer package that requires authentication, for exam
 `exit`
 
 Doing that will allow `ddev composer install` to succeed. The downside is that the container's global Composer config is ephemeral, so if you need to authenticate again for any reason, you will have to repeat the steps above.
+
+## Plugins
+### Sherlock
+Added as requests for a Content Security Policy (CSP) have increased. 
+Common services that need inclusion:
+- [CookieYes](https://www.cookieyes.com/documentation/content-security-policy/)
+- [Bugherd](https://support.bugherd.com/en/articles/11430711-content-security-policy-csp)
+  - Note: Necessitates `unsafe-inline` for script-src. Consider removing this from the CSP once the need for Bugherd has passed.
+- [Google Analytics](https://developers.google.com/tag-platform/security/guides/csp)
