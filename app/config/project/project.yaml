@@ -1,4 +1,4 @@
-dateModified: 1750197238
+dateModified: 1779122786
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -28,22 +28,22 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey: null
+    licenseKey: VZRG3JT11K9ZCUDUC7N11BLM
     schemaVersion: 3.4.8
   hyper:
     edition: standard
     enabled: true
-    licenseKey: null
+    licenseKey: 53UKRMQOK82SFLVKZLYI5R0T
     schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
-    licenseKey: null
+    licenseKey: XDBURZYNZ6AJGV8MG92QS9WM
     schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: null
+    licenseKey: 586EB94Y4ITM12OQ2JSALMXX
     schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard
@@ -64,6 +64,286 @@ plugins:
       securityKey: ''
       suppressWarnings: ''
       useLocalVolumes: false
+  sherlock:
+    edition: lite
+    enabled: true
+    schemaVersion: 5.1.0
+    settings:
+      apiKey: ucfhfvecfnegetqkebicwkqxkhwnncmv
+      basicAuthEnabled: false
+      basicAuthPassword: ''
+      basicAuthUsername: ''
+      blowfishHashCost:
+        __assoc__:
+          -
+            - threshold
+            - 13
+      contentSecurityPolicy:
+        __assoc__:
+          -
+            - canFail
+            - true
+      contentSecurityPolicySettings:
+        __assoc__:
+          -
+            - enabled
+            - false
+          -
+            - enforce
+            - false
+          -
+            - header
+            - true
+          -
+            - directives
+            -
+              -
+                - 1
+                - default-src
+                - "'self'"
+      cooldownDuration:
+        __assoc__:
+          -
+            - threshold
+            - 300
+      cors:
+        __assoc__:
+          -
+            - forceFail
+            - true
+      craftFilePermissions:
+        __assoc__:
+          -
+            - canFail
+            - true
+      craftFolderPermissions:
+        __assoc__:
+          -
+            - canFail
+            - true
+      craftFoldersAboveWebRoot:
+        __assoc__:
+          -
+            - canFail
+            - true
+      criticalCraftUpdates:
+        __assoc__:
+          -
+            - forceFail
+            - true
+      criticalPluginUpdates:
+        __assoc__:
+          -
+            - forceFail
+            - true
+      defaultDirMode:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - threshold
+            - 509
+      defaultFileMode:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - threshold
+            - 436
+      defaultTokenDuration:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - threshold
+            - 86400
+      devMode:
+        __assoc__:
+          -
+            - forceFail
+            - true
+      disabledTests: null
+      elevatedSessionDuration:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - threshold
+            - 300
+      enableCsrfProtection:
+        __assoc__:
+          -
+            - canFail
+            - true
+      headerProtectionSettings:
+        __assoc__:
+          -
+            - enabled
+            - true
+          -
+            - headers
+            -
+              -
+                - true
+                - Referrer-Policy
+                - no-referrer-when-downgrade
+              -
+                - true
+                - Strict-Transport-Security
+                - max-age=15552000
+              -
+                - true
+                - X-Content-Type-Options
+                - nosniff
+              -
+                - true
+                - X-Frame-Options
+                - SAMEORIGIN
+              -
+                - true
+                - X-Xss-Protection
+                - '1; mode=block'
+      highSecurityLevel: false
+      httpsControlPanel:
+        __assoc__:
+          -
+            - forceFail
+            - true
+      httpsFrontEnd:
+        __assoc__:
+          -
+            - forceFail
+            - true
+      integrationSettings: null
+      invalidLoginWindowDuration:
+        __assoc__:
+          -
+            - threshold
+            - 3600
+      maxInvalidLogins:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - threshold
+            - 5
+      maxScans: 100
+      monitor: false
+      notificationEmailAddresses: dev@onedesigncompany.com
+      phpComposerVersion:
+        __assoc__:
+          -
+            - canFail
+            - true
+      phpVersion:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - thresholds
+            -
+              __assoc__:
+                -
+                  - '8.2'
+                  - '2027-01-01'
+                -
+                  - '8.3'
+                  - '2028-01-01'
+      preventUserEnumeration:
+        __assoc__:
+          -
+            - canFail
+            - true
+      referrerPolicy:
+        __assoc__:
+          -
+            - canFail
+            - true
+      rememberedUserSessionDuration:
+        __assoc__:
+          -
+            - threshold
+            - 12096004
+      requireEmailVerification:
+        __assoc__:
+          -
+            - canFail
+            - true
+      sanitizeSvgUploads:
+        __assoc__:
+          -
+            - canFail
+            - true
+      sendPoweredByHeader:
+        __assoc__:
+          -
+            - canFail
+            - false
+      strictTransportSecurity:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - threshold
+            - 15552000
+      testToEmailAddress:
+        __assoc__:
+          -
+            - canFail
+            - true
+      translationDebugOutput:
+        __assoc__:
+          -
+            - canFail
+            - true
+      useSecureCookies:
+        __assoc__:
+          -
+            - canFail
+            - true
+      userSessionDuration:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - threshold
+            - 3600
+      verificationCodeDuration:
+        __assoc__:
+          -
+            - canFail
+            - true
+          -
+            - threshold
+            - 86400
+      webAliasInSiteBaseUrl:
+        __assoc__:
+          -
+            - forceFail
+            - true
+      webAliasInVolumeBaseUrl:
+        __assoc__:
+          -
+            - forceFail
+            - true
+      xContentTypeOptions:
+        __assoc__:
+          -
+            - canFail
+            - true
+      xFrameOptions:
+        __assoc__:
+          -
+            - canFail
+            - true
   typogrify:
     edition: standard
     enabled: true
@@ -73,5 +353,5 @@ system:
   live: true
   name: 'One Craft Starter'
   retryDuration: null
-  schemaVersion: 5.8.0.3
+  schemaVersion: 5.10.0.0
   timeZone: America/Chicago
