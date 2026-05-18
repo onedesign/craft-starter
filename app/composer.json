@@ -4,6 +4,7 @@
     "craftcms/cms": "^5.8.2",
     "nystudio107/craft-seomatic": "^5.0.4",
     "nystudio107/craft-typogrify": "^5.0.1",
+    "putyourlightson/craft-sherlock": "^5.2",
     "servd/craft-asset-storage": "4.0.17",
     "spacecatninja/imager-x": "^5.0.1",
     "verbb/formie": "^3.1",
