@@ -28,22 +28,22 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: null
     schemaVersion: 3.4.8
   hyper:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: null
     schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
-    licenseKey:
+    licenseKey: null
     schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: null
     schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard
@@ -73,5 +73,5 @@ system:
   live: true
   name: 'One Craft Starter'
   retryDuration: null
-  schemaVersion: 5.7.0.3
+  schemaVersion: 5.8.0.3
   timeZone: America/Chicago
