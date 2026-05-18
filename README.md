@@ -107,8 +107,13 @@ Doing that will allow `ddev composer install` to succeed. The downside is that t
 
 ## Plugins
 ### Sherlock
-Added as requests for a Content Security Policy (CSP) have increased. 
+Added as requests for a [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP) have increased. 
+Included are common services we use, but each site should be adjusted and evaluated based on their stack and security needs.
+This is installed in "Report-Only" Mode, so it will not actually enforce the CSP until it is switched to "Enforce." You should test your CSP in Report mode on prod to ensure there are no violations before switching to Enforce. Otherwise, you risk those services being blocked by your CSP and potentially breaking your site.
+
 Common services that need inclusion:
+- [Formie](https://github.com/verbb/formie/issues/2050)
+  - Should include a server-generated nonce/hash within the Formie-generated script attributes.
 - [CookieYes](https://www.cookieyes.com/documentation/content-security-policy/)
 - [Bugherd](https://support.bugherd.com/en/articles/11430711-content-security-policy-csp)
   - Note: Necessitates `unsafe-inline` for script-src. Consider removing this from the CSP once the need for Bugherd has passed.
