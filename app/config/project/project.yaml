@@ -1,4 +1,4 @@
-dateModified: 1779122786
+dateModified: 1779123846
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -87,20 +87,48 @@ plugins:
         __assoc__:
           -
             - enabled
-            - false
+            - '1'
           -
             - enforce
-            - false
+            - ''
           -
             - header
-            - true
+            - '1'
           -
             - directives
             -
               -
-                - 1
+                - '1'
                 - default-src
+                - "'none'"
+              -
+                - '1'
+                - script-src
+                - "‘self‘ cdn-cookieyes.com 'unsafe-inline' *.bugherd.com *.pusher.com https://www.googletagmanager.com"
+              -
+                - '1'
+                - style-src
+                - '‘self‘ ‘unsafe-inline‘ *.bugherd.com d2iiunr5ws5ch1.cloudfront.net bugherd-attachments.s3.amazonaws.com *.bugherd.com data:'
+              -
+                - '1'
+                - connect-src
+                - '‘self‘ *.cookieyes.com cdn-cookieyes.com *.pusher.com sessions.bugsnag.com *.bugherd.com www.googletagmanager.com www.google.com'
+              -
+                - '1'
+                - img-src
+                - '‘self‘ cdn-cookieyes.com *.bugherd.com d2iiunr5ws5ch1.cloudfront.net bugherd-attachments.s3.amazonaws.com *.bugherd.com data: www.googletagmanager.com'
+              -
+                - '1'
+                - font-src
                 - "'self'"
+              -
+                - '1'
+                - object-src
+                - "'none'"
+              -
+                - ''
+                - frame-src
+                - '*.bugherd.com'
       cooldownDuration:
         __assoc__:
           -
@@ -183,28 +211,28 @@ plugins:
         __assoc__:
           -
             - enabled
-            - true
+            - '1'
           -
             - headers
             -
               -
-                - true
+                - '1'
                 - Referrer-Policy
                 - no-referrer-when-downgrade
               -
-                - true
+                - '1'
                 - Strict-Transport-Security
                 - max-age=15552000
               -
-                - true
+                - '1'
                 - X-Content-Type-Options
                 - nosniff
               -
-                - true
+                - '1'
                 - X-Frame-Options
                 - SAMEORIGIN
               -
-                - true
+                - '1'
                 - X-Xss-Protection
                 - '1; mode=block'
       highSecurityLevel: false
@@ -218,7 +246,32 @@ plugins:
           -
             - forceFail
             - true
-      integrationSettings: null
+      integrationSettings:
+        __assoc__:
+          -
+            - putyourlightson\sherlock\integrations\BugsnagIntegration
+            -
+              __assoc__:
+                -
+                  - apiKey
+                  - ''
+          -
+            - putyourlightson\sherlock\integrations\RollbarIntegration
+            -
+              __assoc__:
+                -
+                  - accessToken
+                  - ''
+          -
+            - putyourlightson\sherlock\integrations\SentryIntegration
+            -
+              __assoc__:
+                -
+                  - dsn
+                  - ''
+                -
+                  - tracesSampleRate
+                  - ''
       invalidLoginWindowDuration:
         __assoc__:
           -
