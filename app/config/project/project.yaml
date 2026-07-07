@@ -1,4 +1,4 @@
-dateModified: 1779123846
+dateModified: 1783439913
 email:
   fromEmail: dev@onedesigncompany.com
   fromName: 'Craft Starter'
@@ -13,7 +13,6 @@ email:
   transportType: craft\mail\transportadapters\Smtp
 meta:
   __names__:
-    0d1c338d-da32-4a10-88f4-f030b2e38530: Simple # Simple
     23a06aab-c3b7-4b29-bcfb-ecdb987b69e9: 'Craft Starter' # Craft Starter
     439b957e-893e-4d96-ae87-cbd86af179c1: Common # Common
     911bd1d5-53ff-4a53-b9da-5546fba0a849: Default # Default
@@ -24,26 +23,26 @@ plugins:
   ckeditor:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.0.0
+    schemaVersion: 5.6.0.0
   formie:
     edition: standard
     enabled: true
-    licenseKey: VZRG3JT11K9ZCUDUC7N11BLM
-    schemaVersion: 3.4.8
+    licenseKey: null
+    schemaVersion: 3.4.12
   hyper:
     edition: standard
     enabled: true
-    licenseKey: 53UKRMQOK82SFLVKZLYI5R0T
+    licenseKey: null
     schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
-    licenseKey: XDBURZYNZ6AJGV8MG92QS9WM
+    licenseKey: null
     schemaVersion: 4.0.0
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: 586EB94Y4ITM12OQ2JSALMXX
+    licenseKey: null
     schemaVersion: 3.0.13
   servd-asset-storage:
     edition: standard
@@ -64,339 +63,6 @@ plugins:
       securityKey: ''
       suppressWarnings: ''
       useLocalVolumes: false
-  sherlock:
-    edition: lite
-    enabled: true
-    schemaVersion: 5.1.0
-    settings:
-      apiKey: ucfhfvecfnegetqkebicwkqxkhwnncmv
-      basicAuthEnabled: false
-      basicAuthPassword: ''
-      basicAuthUsername: ''
-      blowfishHashCost:
-        __assoc__:
-          -
-            - threshold
-            - 13
-      contentSecurityPolicy:
-        __assoc__:
-          -
-            - canFail
-            - true
-      contentSecurityPolicySettings:
-        __assoc__:
-          -
-            - enabled
-            - '1'
-          -
-            - enforce
-            - ''
-          -
-            - header
-            - '1'
-          -
-            - directives
-            -
-              -
-                - '1'
-                - default-src
-                - "'none'"
-              -
-                - '1'
-                - script-src
-                - "‘self‘ cdn-cookieyes.com 'unsafe-inline' *.bugherd.com *.pusher.com https://www.googletagmanager.com"
-              -
-                - '1'
-                - style-src
-                - '‘self‘ ‘unsafe-inline‘ *.bugherd.com d2iiunr5ws5ch1.cloudfront.net bugherd-attachments.s3.amazonaws.com *.bugherd.com data:'
-              -
-                - '1'
-                - connect-src
-                - '‘self‘ *.cookieyes.com cdn-cookieyes.com *.pusher.com sessions.bugsnag.com *.bugherd.com www.googletagmanager.com www.google.com'
-              -
-                - '1'
-                - img-src
-                - '‘self‘ cdn-cookieyes.com *.bugherd.com d2iiunr5ws5ch1.cloudfront.net bugherd-attachments.s3.amazonaws.com *.bugherd.com data: www.googletagmanager.com'
-              -
-                - '1'
-                - font-src
-                - "'self'"
-              -
-                - '1'
-                - object-src
-                - "'none'"
-              -
-                - ''
-                - frame-src
-                - '*.bugherd.com'
-      cooldownDuration:
-        __assoc__:
-          -
-            - threshold
-            - 300
-      cors:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      craftFilePermissions:
-        __assoc__:
-          -
-            - canFail
-            - true
-      craftFolderPermissions:
-        __assoc__:
-          -
-            - canFail
-            - true
-      craftFoldersAboveWebRoot:
-        __assoc__:
-          -
-            - canFail
-            - true
-      criticalCraftUpdates:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      criticalPluginUpdates:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      defaultDirMode:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 509
-      defaultFileMode:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 436
-      defaultTokenDuration:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 86400
-      devMode:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      disabledTests: null
-      elevatedSessionDuration:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 300
-      enableCsrfProtection:
-        __assoc__:
-          -
-            - canFail
-            - true
-      headerProtectionSettings:
-        __assoc__:
-          -
-            - enabled
-            - '1'
-          -
-            - headers
-            -
-              -
-                - '1'
-                - Referrer-Policy
-                - no-referrer-when-downgrade
-              -
-                - '1'
-                - Strict-Transport-Security
-                - max-age=15552000
-              -
-                - '1'
-                - X-Content-Type-Options
-                - nosniff
-              -
-                - '1'
-                - X-Frame-Options
-                - SAMEORIGIN
-              -
-                - '1'
-                - X-Xss-Protection
-                - '1; mode=block'
-      highSecurityLevel: false
-      httpsControlPanel:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      httpsFrontEnd:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      integrationSettings:
-        __assoc__:
-          -
-            - putyourlightson\sherlock\integrations\BugsnagIntegration
-            -
-              __assoc__:
-                -
-                  - apiKey
-                  - ''
-          -
-            - putyourlightson\sherlock\integrations\RollbarIntegration
-            -
-              __assoc__:
-                -
-                  - accessToken
-                  - ''
-          -
-            - putyourlightson\sherlock\integrations\SentryIntegration
-            -
-              __assoc__:
-                -
-                  - dsn
-                  - ''
-                -
-                  - tracesSampleRate
-                  - ''
-      invalidLoginWindowDuration:
-        __assoc__:
-          -
-            - threshold
-            - 3600
-      maxInvalidLogins:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 5
-      maxScans: 100
-      monitor: false
-      notificationEmailAddresses: dev@onedesigncompany.com
-      phpComposerVersion:
-        __assoc__:
-          -
-            - canFail
-            - true
-      phpVersion:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - thresholds
-            -
-              __assoc__:
-                -
-                  - '8.2'
-                  - '2027-01-01'
-                -
-                  - '8.3'
-                  - '2028-01-01'
-      preventUserEnumeration:
-        __assoc__:
-          -
-            - canFail
-            - true
-      referrerPolicy:
-        __assoc__:
-          -
-            - canFail
-            - true
-      rememberedUserSessionDuration:
-        __assoc__:
-          -
-            - threshold
-            - 12096004
-      requireEmailVerification:
-        __assoc__:
-          -
-            - canFail
-            - true
-      sanitizeSvgUploads:
-        __assoc__:
-          -
-            - canFail
-            - true
-      sendPoweredByHeader:
-        __assoc__:
-          -
-            - canFail
-            - false
-      strictTransportSecurity:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 15552000
-      testToEmailAddress:
-        __assoc__:
-          -
-            - canFail
-            - true
-      translationDebugOutput:
-        __assoc__:
-          -
-            - canFail
-            - true
-      useSecureCookies:
-        __assoc__:
-          -
-            - canFail
-            - true
-      userSessionDuration:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 3600
-      verificationCodeDuration:
-        __assoc__:
-          -
-            - canFail
-            - true
-          -
-            - threshold
-            - 86400
-      webAliasInSiteBaseUrl:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      webAliasInVolumeBaseUrl:
-        __assoc__:
-          -
-            - forceFail
-            - true
-      xContentTypeOptions:
-        __assoc__:
-          -
-            - canFail
-            - true
-      xFrameOptions:
-        __assoc__:
-          -
-            - canFail
-            - true
   typogrify:
     edition: standard
     enabled: true

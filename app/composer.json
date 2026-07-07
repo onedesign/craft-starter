@@ -1,12 +1,12 @@
 {
   "require": {
-    "craftcms/ckeditor": "^4.11.4",
+    "craftcms/ckeditor": "^5.6.1",
     "craftcms/cms": "^5.10",
     "nystudio107/craft-seomatic": "^5.1.21",
     "nystudio107/craft-typogrify": "^5.0.3",
     "putyourlightson/craft-sherlock": "^5.2",
     "servd/craft-asset-storage": "^4.2",
-    "spacecatninja/imager-x": "^5.2.1",
+    "spacecatninja/imager-x": "^6.0.0",
     "verbb/formie": "^3.1",
     "verbb/hyper": "^2.3.7",
     "vlucas/phpdotenv": "^5.4.0"
