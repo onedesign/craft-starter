@@ -109,15 +109,31 @@ Doing that will allow `ddev composer install` to succeed. The downside is that t
 
 ### Sherlock
 
-Added as requests for a [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP) have increased.
-Included are common services we use, but each site should be adjusted and evaluated based on their stack and security needs.
-This is installed in "Report-Only" Mode, so it will not actually enforce the CSP until it is switched to "Enforce." You should test your CSP in Report mode on prod to ensure there are no violations before switching to Enforce. Otherwise, you risk those services being blocked by your CSP and potentially breaking your site.
+Added as requests for a [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP) have increased. [`config/sherlock.php`](app/config/sherlock.php) ships with a generic CSP and a set of security headers covering the services One Design most commonly uses, but each site should be adjusted and evaluated based on their stack and security needs.
 
-Common services that need inclusion:
+The CSP is installed in "Report-Only" Mode while `CRAFT_ENVIRONMENT=dev` (see the `enforce` setting), so it will not actually block anything until it's switched to "Enforce" in staging/production. You should test the CSP in Report mode against real traffic to ensure there are no violations before switching to Enforce. Otherwise, you risk those services being blocked by the CSP and potentially breaking your site.
 
-- [Formie](https://github.com/verbb/formie/issues/2050)
-  - Should include a server-generated nonce/hash within the Formie-generated script attributes.
-- [CookieYes](https://www.cookieyes.com/documentation/content-security-policy/)
-- [Bugherd](https://support.bugherd.com/en/articles/11430711-content-security-policy-csp)
-  - Note: Necessitates `unsafe-inline` for script-src. Consider removing this from the CSP once the need for Bugherd has passed.
-- [Google Analytics](https://developers.google.com/tag-platform/security/guides/csp)
+#### Per-project setup
+
+A few pieces of the CSP are pulled from environment variables so they don't need to be hardcoded per project:
+
+- `PRIMARY_SITE_URL` – added to `default-src`, and used to build the Vite dev server/websocket entries.
+- `SERVD_PROJECT_SLUG` – used to derive the Servd asset CDN hosts (`*.transforms.svdcdn.com` / `*.files.svdcdn.com`) added to `connect-src`, `img-src`, and `media-src`.
+- `CSP_IMAGE_TRANSFORMS_URL` – optional, for an additional image transforms/CDN host (e.g. imgix, Cloudflare Images) not covered by Servd.
+
+Beyond that, review each directive and add/remove domains for the third-party services actually in use on the project (chat widgets, additional analytics, embeds, etc.).
+
+#### Services included by default
+
+- **Google reCAPTCHA / Turnstile** – bot protection, commonly used with Formie.
+  - [Formie CSP guidance](https://github.com/verbb/formie/issues/2050) – `script-src` includes `unsafe-inline` by default, which covers Formie's inline scripts. Consider tightening this with a nonce/hash if the project can move away from `unsafe-inline`.
+- [CookieYes](https://www.cookieyes.com/documentation/content-security-policy/) – cookie consent banner.
+- [Bugherd](https://support.bugherd.com/en/articles/11430711-content-security-policy-csp) – client feedback/QA tool. Necessitates `unsafe-inline` for `script-src`. Remove Bugherd's entries once the need for it has passed on a project.
+- [Google Analytics / Tag Manager](https://developers.google.com/tag-platform/security/guides/csp)
+- [Bugsnag](https://docs.bugsnag.com/) – error monitoring.
+- Google Fonts and Adobe Typekit.
+- Video embeds: YouTube, Vimeo, and Mux.
+
+#### Header protection
+
+In addition to the CSP, `sherlock.php` sets `Referrer-Policy`, `Strict-Transport-Security`, `X-Content-Type-Options`, `X-Frame-Options`, and `X-Xss-Protection` headers. These are generic best-practice defaults and shouldn't need per-project changes.
