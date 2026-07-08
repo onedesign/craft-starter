@@ -95,6 +95,12 @@ $CSP_DIRECTIVES = [
         'https://www.gstatic.com',
         'https://www.recaptcha.net',
 
+        // HubSpot (forms, tracking, chat)
+        '*.hubapi.com',
+        '*.hubspot.com',
+        '*.hsforms.com',
+        '*.usemessages.com',
+
         // Mux (video)
         'https://*.litix.io',
         'https://*.mux.com',
@@ -103,10 +109,17 @@ $CSP_DIRECTIVES = [
 
         // Typekit
         'https://*.typekit.net',
+
+        // Vimeo (video)
+        'https://player.vimeo.com',
+        'https://vimeo.com',
     ],
     'font-src' => [
         $self,
         'data:',
+
+        // Fonts.com (Monotype)
+        'https://fast.fonts.net',
 
         // Google Fonts
         'https://fonts.gstatic.com',
@@ -114,6 +127,9 @@ $CSP_DIRECTIVES = [
         // Typekit
         'https://*.typekit.net',
         'https://use.typekit.net',
+
+        // Typography.com (Hoefler & Co.)
+        'https://cloud.typography.com',
     ],
     'frame-src' => [
         $self,
@@ -129,6 +145,10 @@ $CSP_DIRECTIVES = [
         'https://www.google.com',
         'https://www.gstatic.com',
         'https://www.recaptcha.net',
+
+        // HubSpot (meetings, chat)
+        '*.hubspot.com',
+        '*.usemessages.com',
 
         // Video platforms
         'https://player.mux.com',
@@ -158,6 +178,10 @@ $CSP_DIRECTIVES = [
         'https://www.google-analytics.com',
         'https://www.googletagmanager.com',
 
+        // HubSpot (forms, chat)
+        '*.hubspot.com',
+        '*.hsforms.com',
+
         // Video platforms
         'https://*.ytimg.com',
         'https://i.vimeocdn.com',
@@ -175,6 +199,9 @@ $CSP_DIRECTIVES = [
         'https://*.mux.com',
         'https://image.mux.com',
         'https://stream.mux.com',
+
+        // Vimeo (video)
+        'https://player.vimeo.com',
     ],
     'script-src' => [
         $self,
@@ -203,10 +230,22 @@ $CSP_DIRECTIVES = [
         'https://www.google.com',
         'https://www.gstatic.com',
         'https://www.recaptcha.net',
+
+        // HubSpot (forms, tracking, chat)
+        '*.hs-analytics.net',
+        '*.hs-banner.com',
+        '*.hs-scripts.com',
+        '*.hsadspixel.net',
+        '*.hscollectedforms.net',
+        '*.hsforms.net',
+        '*.usemessages.com',
     ],
     'style-src' => [
         $self,
         "'unsafe-inline'",
+
+        // Fonts.com (Monotype)
+        'https://fast.fonts.net',
 
         // Google Fonts
         'https://fonts.googleapis.com',
@@ -214,6 +253,9 @@ $CSP_DIRECTIVES = [
         // Typekit
         'https://p.typekit.net',
         'https://use.typekit.net',
+
+        // Typography.com (Hoefler & Co.)
+        'https://cloud.typography.com',
     ],
     'worker-src' => [
         'blob:',
