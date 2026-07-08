@@ -4,11 +4,6 @@
 @import './theme.css';
 
 @layer base {
-  html {
-    overflow-y: auto;
-    scrollbar-gutter: stable;
-  }
-
   body {
     -moz-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
