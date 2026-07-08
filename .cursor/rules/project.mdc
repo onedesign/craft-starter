@@ -1,0 +1,7 @@
+---
+description: Craft CMS starter project conventions (stack, DDEV, Tailwind v4, formatting)
+globs:
+alwaysApply: true
+---
+
+Follow the project instructions in [AGENTS.md](mdc:AGENTS.md).

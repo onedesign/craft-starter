@@ -1,0 +1,35 @@
+# SYSTEM
+.DS_Store
+Thumbs.db
+.eslintcache
+
+# BUILD FILES
+/node_modules
+/yarn-error.log
+/npm-debug.log
+package-lock.json
+
+# TEMP
+.cache
+*.log
+/logs/
+/tmp
+
+# CRAFT — ENVIRONMENT
+/app/.env
+
+# CRAFT — COMPOSER
+/app/vendor
+/app/composer.lock
+
+# CRAFT — STORAGE
+/app/storage/*
+!/app/storage/rebrand/
+
+# CRAFT — WEB
+/app/web/cpresources
+/app/web/assets
+/app/web/dist
+
+# BUILD FILES
+/app/templates/_partials/vite.twig
