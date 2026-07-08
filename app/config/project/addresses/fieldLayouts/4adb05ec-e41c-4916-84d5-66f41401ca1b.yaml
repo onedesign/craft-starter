@@ -1,3 +1,5 @@
+cardView:
+  - 'layoutElement:62abf081-6777-4fb1-91e4-9fea7763aca6'
 tabs:
   -
     elementCondition: null
@@ -11,7 +13,6 @@ tabs:
         disabled: false
         elementCondition: null
         id: null
-        includeInCards: false
         inputType: null
         instructions: null
         label: null
@@ -20,7 +21,6 @@ tabs:
         name: null
         orientation: null
         placeholder: null
-        providesThumbs: false
         readonly: false
         requirable: false
         size: null
@@ -37,11 +37,9 @@ tabs:
         dateAdded: '2025-03-07T12:29:26-06:00'
         elementCondition: null
         id: null
-        includeInCards: false
         instructions: null
         label: null
         orientation: null
-        providesThumbs: false
         requirable: false
         tip: null
         type: craft\fieldlayoutelements\addresses\CountryCodeField
@@ -52,10 +50,8 @@ tabs:
       -
         dateAdded: '2025-03-07T12:29:26-06:00'
         elementCondition: null
-        includeInCards: true
         instructions: null
         label: null
-        providesThumbs: false
         required: false
         tip: null
         type: craft\fieldlayoutelements\addresses\AddressField
