@@ -52,6 +52,18 @@ This starter comes with the Servd plugin pre-installed. If the site is being hos
 - Inject CSRF tokens using AJAX: IF the site has any forms, and the site is being cached, which it should be, you'll want to enable this setting so the CSRF tokens are injected into the form.
 - Image Format Autoconversion: By default this template has this setting set to "AVIF with WebP fallback". As of march of 2025, AVIF has enough browser support to be used reliably, and doesn't result in any quality/color loss like WebP can, but if for some reason assets shouldn't be converted to AVIF, make sure you update this setting.
 
+### Pull database from production
+
+```
+ddev craft servd-asset-storage/local/pull-database
+```
+
+### Pull assets from production
+
+```
+ddev craft servd-asset-storage/local/pull-assets
+```
+
 ## Requirements for Deployment Infrastructure
 
 - [Composer >= 2](https://getcomposer.org/)
