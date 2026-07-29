@@ -29,6 +29,11 @@ $servdSlug = App::env('SERVD_PROJECT_SLUG');
 $servdTransformsUrl = $servdSlug ? "https://{$servdSlug}.transforms.svdcdn.com" : null;
 $servdFilesUrl = $servdSlug ? "https://{$servdSlug}.files.svdcdn.com" : null;
 
+// Servd Asset Storage serves video assets from its Bunny CDN pull zone rather
+// than the hosts above, so it needs allowing separately in media-src.
+$servdVideosUrl = $servdSlug ? "https://servd-{$servdSlug}.b-cdn.net" : null;
+
+
 // Optional additional image transforms host (imgix, Cloudflare Images, etc.).
 $imageTransformsUrl = App::env('CSP_IMAGE_TRANSFORMS_URL') ?: null;
 
@@ -194,6 +199,7 @@ $CSP_DIRECTIVES = [
         // Servd asset CDNs
         $servdTransformsUrl,
         $servdFilesUrl,
+        $servdVideosUrl,
 
         // Mux (video)
         'https://*.mux.com',
