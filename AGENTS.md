@@ -4,7 +4,7 @@ Guidance for working in this repo. It's a [One Design Company](https://onedesign
 
 ## Stack
 
-- **CMS**: Craft CMS 5, PHP 8.4, Twig templates
+- **CMS**: Craft CMS 5, PHP 8.5, Twig templates
 - **Local env**: DDEV (Docker) — see [README.md](README.md) for full setup
 - **Build**: Vite 6 via `vite-plugin-craftcms`
 - **CSS**: Tailwind CSS v4 (CSS-first config, no `tailwind.config.js`)
