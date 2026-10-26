@@ -40,12 +40,10 @@ $imageTransformsUrl = App::env('CSP_IMAGE_TRANSFORMS_URL') ?: null;
 $self = "'self'";
 $devSocket = null;
 
-if ($isDev) {
-    $devServer = "$primarySiteUrl:3000";
-    $self .= " $devServer";
-
-    // Set up the WebSocket connection for Vite HMR in development.
-    $devSocket = str_replace('https://', 'wss://', $devServer);
+if ($isDev && $primarySiteUrl) {
+    // Vite is proxied through the site's own origin at /__vite/ (see .ddev/nginx/vite.conf),
+    // so only its HMR WebSocket needs allowing.
+    $devSocket = preg_replace('#^http#', 'ws', $primarySiteUrl);
 }
 
 $CSP_DIRECTIVES = [
