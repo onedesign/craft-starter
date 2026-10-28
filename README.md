@@ -83,6 +83,18 @@ ddev craft servd-asset-storage/local/pull-assets
 - [Imager X](https://plugins.craftcms.com/imager-x)
 - [Hyper](https://plugins.craftcms.com/hyper)
 
+### Testing on Mobile Devices
+
+In development, the Vite server is proxied through the site's own origin at `/__vite/` (see `.ddev/nginx/vite.conf`), and `PRIMARY_SITE_URL` is derived from the request host (see `app/bootstrap.php`). That means the site, its assets and HMR work on whatever hostname you reach it through, with no CORS issues.
+
+`*.ddev.site` only resolves on your own machine, so a phone needs a different URL. The simplest option is a tunnel:
+
+1. `ddev npm run start`
+1. `ddev share` (ngrok, requires a free account) or `ddev share --provider=cloudflared` (no account; `brew install cloudflared`)
+1. Open the printed `https://` URL on your device.
+
+To inspect the page, connect the device by cable and use Safari → Develop → [device] (iOS) or `chrome://inspect` (Android).
+
 ### Production Configuration
 
 This project template comes with an `.htaccess` file that contains updates and optimizations for One Design Craft CMS projects. Once you have a production domain for you project, go into this file and update all the places where `yourproject.com` appears with the actual production domain.
@@ -129,7 +141,7 @@ The CSP is installed in "Report-Only" Mode while `CRAFT_ENVIRONMENT=dev` (see th
 
 A few pieces of the CSP are pulled from environment variables so they don't need to be hardcoded per project:
 
-- `PRIMARY_SITE_URL` – added to `default-src`, and used to build the Vite dev server/websocket entries.
+- `PRIMARY_SITE_URL` – added to `default-src`, and used to build the Vite HMR websocket entry in dev.
 - `SERVD_PROJECT_SLUG` – used to derive the Servd asset CDN hosts (`*.transforms.svdcdn.com` / `*.files.svdcdn.com`) added to `connect-src`, `img-src`, and `media-src`.
 - `CSP_IMAGE_TRANSFORMS_URL` – optional, for an additional image transforms/CDN host (e.g. imgix, Cloudflare Images) not covered by Servd.
 
