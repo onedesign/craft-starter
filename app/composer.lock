@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f7a28bc38bd349bd1788fd50d14aba0",
+    "content-hash": "2b6c4dc191df5cea4044de343029f86c",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -10272,60 +10272,6 @@
             "time": "2026-06-27T00:36:29+00:00"
         },
         {
-            "name": "verbb/hyper",
-            "version": "2.3.10",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/verbb/hyper/zipball/4aff609efaa06481a5cd53fb1b661b438cd3d60e",
-                "reference": "4aff609efaa06481a5cd53fb1b661b438cd3d60e",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^5.0.0",
-                "embed/embed": "^3.0.0 || ^4.0.0",
-                "nystudio107/craft-plugin-vite": "^5.0.0",
-                "php": "^8.2",
-                "verbb/base": "^3.0.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Hyper",
-                "handle": "hyper",
-                "changelogUrl": "https://raw.githubusercontent.com/verbb/hyper/craft-5/CHANGELOG.md",
-                "class": "verbb\\hyper\\Hyper"
-            },
-            "autoload": {
-                "psr-4": {
-                    "verbb\\hyper\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Verbb",
-                    "homepage": "https://verbb.io"
-                }
-            ],
-            "description": "A user-friendly links field for Craft.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "hyper"
-            ],
-            "support": {
-                "email": "support@verbb.io",
-                "issues": "https://github.com/verbb/hyper/issues?state=open",
-                "source": "https://github.com/verbb/hyper",
-                "docs": "https://github.com/verbb/hyper",
-                "rss": "https://github.com/verbb/hyper/commits/v2.atom"
-            },
-            "time": "2026-06-27T00:43:08+00:00"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v5.6.4",
             "source": {
@@ -13461,7 +13407,7 @@
     "platform": {},
     "platform-dev": {},
     "platform-overrides": {
-        "php": "8.4"
+        "php": "8.5"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }
