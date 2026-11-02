@@ -29,11 +29,6 @@ plugins:
     enabled: true
     licenseKey: APDWVN8BIKBEBSZ87OW6NGNQ
     schemaVersion: 3.4.12
-  hyper:
-    edition: standard
-    enabled: true
-    licenseKey: PCMO6NAVSO9ZXFCQE0K0A4RX
-    schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
